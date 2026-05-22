@@ -1,0 +1,10 @@
+{
+  "project_name": "Pranav Portfolio",
+  "workflow_version": "1.0",
+  "phase_prefix": "phase",
+  "commit_per_task": true,
+  "research_enabled": false,
+  "deployment_target": "vercel",
+  "priority": "speed",
+  "brownfield": true
+}

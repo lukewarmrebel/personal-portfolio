@@ -1,0 +1,59 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-05-22T19:58:40.536Z",
+  "phase": null,
+  "phase_name": "pre-phase — project initialized, no phases started",
+  "phase_dir": null,
+  "plan": null,
+  "task": null,
+  "total_tasks": null,
+  "status": "paused",
+  "completed_tasks": [
+    {"id": 1, "name": "Portfolio website built (Hero, About, Experience, Projects, InfoPanel, Navbar)", "status": "done"},
+    {"id": 2, "name": "Data layer created at site/src/data/portfolio.ts", "status": "done"},
+    {"id": 3, "name": "GSD project initialized (.planning/ with PROJECT.md, REQUIREMENTS.md, ROADMAP.md, STATE.md, config.json)", "status": "done"},
+    {"id": 4, "name": "Codebase mapped to .planning/codebase-map.md", "status": "done"},
+    {"id": 5, "name": "git init at E:\\Projects\\Portfolio", "status": "done"}
+  ],
+  "remaining_tasks": [
+    {"id": 1, "name": "Wire Skills, Education, Contact components into page.tsx", "status": "not_started"},
+    {"id": 2, "name": "Fix InfoPanel.tsx to use edu.color from data instead of hardcoded eduGradients", "status": "not_started"},
+    {"id": 3, "name": "Extract GithubIcon/LinkedinIcon SVGs to site/src/components/icons.tsx", "status": "not_started"},
+    {"id": 4, "name": "Add OpenGraph metadata to site/src/app/layout.tsx", "status": "not_started"},
+    {"id": 5, "name": "Remove 5 unused scaffold SVGs from site/public/", "status": "not_started"},
+    {"id": 6, "name": "Verify/fix personal.resumeUrl", "status": "not_started"},
+    {"id": 7, "name": "Deploy to Vercel", "status": "not_started"}
+  ],
+  "blockers": [
+    {
+      "description": "personal.resumeUrl in portfolio.ts needs a real hosted URL for the resume PDF download",
+      "type": "human_action",
+      "workaround": "Can use Google Drive shareable link or upload to Vercel public folder"
+    }
+  ],
+  "human_actions_pending": [
+    {
+      "action": "Provide a hosted resume PDF URL to put in personal.resumeUrl",
+      "context": "Currently may be a placeholder — needs to be a real downloadable link before launch",
+      "blocking": false
+    }
+  ],
+  "decisions": [
+    {"decision": "IIM Ranchi MBA (not Bath/CSUF)", "rationale": "User confirmed — all 6 resumes showed IIM Ranchi", "phase": "setup"},
+    {"decision": "Light mode, white/cream (#F8F7F4) background, indigo/purple accents", "rationale": "User preference", "phase": "setup"},
+    {"decision": "Sticky sidebar for Contact/Education/Skills (InfoPanel)", "rationale": "User wanted these visible without scrolling", "phase": "setup"},
+    {"decision": "Fix & Polish as Phase 1 goal, then Vercel deploy", "rationale": "User is actively job hunting, needs live site ASAP", "phase": "setup"},
+    {"decision": "GVP B.Tech Mechanical Engineering 2017", "rationale": "Confirmed from resumes", "phase": "setup"}
+  ],
+  "uncommitted_files": [
+    ".planning/PROJECT.md",
+    ".planning/REQUIREMENTS.md",
+    ".planning/ROADMAP.md",
+    ".planning/STATE.md",
+    ".planning/config.json",
+    ".planning/codebase-map.md",
+    "site/ (entire Next.js portfolio — all changes uncommitted)"
+  ],
+  "next_action": "Run /gsd:plan-phase 1 to generate execution plan for Phase 1, then execute it",
+  "context_notes": "The portfolio site at site/ is visually complete and dev server works. Core issue: Skills, Education, Contact components are fully built but orphaned (not in page.tsx). Navbar links to #skills, #education, #contact which currently scroll nowhere. Phase 1 is about wiring these up and cleaning code before Vercel deploy."
+}
