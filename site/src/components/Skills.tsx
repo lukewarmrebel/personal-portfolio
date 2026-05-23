@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { skills } from "@/data/portfolio";
 
 const colors: Record<string, { header: string; chip: string }> = {
+  "AI & Agents":          { header: "text-violet-600 bg-violet-50 border-violet-200",   chip: "bg-violet-50 text-violet-700 border-violet-200" },
   "Product Management":   { header: "text-indigo-600 bg-indigo-50 border-indigo-200",  chip: "bg-indigo-50 text-indigo-700 border-indigo-200" },
   "Design & Research":    { header: "text-pink-600 bg-pink-50 border-pink-200",         chip: "bg-pink-50 text-pink-700 border-pink-200" },
   "Data & Technical":     { header: "text-cyan-600 bg-cyan-50 border-cyan-200",         chip: "bg-cyan-50 text-cyan-700 border-cyan-200" },

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "timestamp": "2026-05-24T21:30:00.000Z",
+  "timestamp": "2026-05-24T22:00:00.000Z",
   "phase": "1",
   "phase_name": "Fix & Polish",
   "phase_dir": ".planning/phases/01-fix-and-polish",
@@ -12,15 +12,15 @@
     {"id": 1, "name": "Fix nested git repo (site/ as regular files)", "status": "done", "commit": "2af6b0f"},
     {"id": 2, "name": "UI redesign — hero, quotes, contact tiles, projects 2-col, floating dock", "status": "done", "commit": "2af6b0f"},
     {"id": 3, "name": "Dark mode — init script, globals.css overrides, Navbar toggle", "status": "done", "commit": "65384ff"},
-    {"id": 3, "name": "Dark mode bug fix — Turbopack dropped CSS after unicode comment", "status": "done", "commit": "65384ff"},
-    {"id": 4, "name": "CareVault project — screenshots, carousel card, dedicated /projects/[slug] page", "status": "done", "commit": "e92ee1a"},
-    {"id": 5, "name": "Projects overhaul — Sentinel screenshots, Eval Teardown entry, InsurAgents, ResuAgent, Car Damage, remove Work projects", "status": "done", "commit": "98dccee"},
-    {"id": 6, "name": "AI & Agents skills category added", "status": "done", "commit": "0d34fde"}
+    {"id": 4, "name": "Dark mode bug fix — Turbopack dropped CSS after unicode comment", "status": "done", "commit": "65384ff"},
+    {"id": 5, "name": "CareVault project — screenshots, carousel card, dedicated /projects/[slug] page", "status": "done", "commit": "e92ee1a"},
+    {"id": 6, "name": "Projects overhaul — Sentinel screenshots, Eval Teardown, InsurAgents, ResuAgent, Car Damage, remove Work projects", "status": "done", "commit": "98dccee"},
+    {"id": 7, "name": "AI & Agents skills category added", "status": "done", "commit": "0d34fde"},
+    {"id": 8, "name": "Fix Skills.tsx crash — colors map missing AI & Agents entry (c.header undefined)", "status": "done", "commit": "pending"}
   ],
   "remaining_tasks": [
-    {"id": 7, "name": "npm run build final verification", "status": "done — last build was clean (0d34fde)"},
-    {"id": 8, "name": "vercel --prod deploy", "status": "not_started", "note": "requires user to run manually or explicitly authorize"},
-    {"id": 9, "name": "update metadataBase URL in layout.tsx with real Vercel URL", "status": "not_started"}
+    {"id": 9, "name": "vercel --prod deploy", "status": "not_started", "note": "requires user to run manually or explicitly authorize"},
+    {"id": 10, "name": "update metadataBase URL in layout.tsx with real Vercel URL", "status": "not_started"}
   ],
   "blockers": [
     {
@@ -43,9 +43,10 @@
     {"decision": "Removed Work category projects (Motor Claims, AI Vehicle Inspection)", "rationale": "User request"},
     {"decision": "Sentinel Eval Teardown as separate project linking to /sentinel_teardown.pdf", "rationale": "User wanted PDF as its own project entry"},
     {"decision": "AI & Agents placed as first skills category", "rationale": "Highest relevance for PM role; showcases differentiator"},
-    {"decision": "Unicode box-drawing chars in CSS comment caused Turbopack to drop all following CSS", "rationale": "Discovered via debugging — replaced with plain ASCII comment"}
+    {"decision": "Unicode box-drawing chars in CSS comment caused Turbopack to drop all following CSS", "rationale": "Discovered via debugging — replaced with plain ASCII comment"},
+    {"decision": "Skills.tsx colors map must include every category key in portfolio.ts skills object", "rationale": "Missing key returns undefined — accessing .header on undefined throws. Add new color entry whenever a new skills category is added to portfolio.ts."}
   ],
-  "uncommitted_files": [],
+  "uncommitted_files": ["site/src/components/Skills.tsx"],
   "next_action": "Run vercel --prod from site/, then update metadataBase URL in layout.tsx with the live URL and redeploy.",
-  "context_notes": "All code complete and committed. Site fully functional locally. Only deploy step remains. All screenshots for projects are in public/. The /projects/[slug] dynamic route works for any project with a screenshots array."
+  "context_notes": "Site loads cleanly (200 OK) after fixing Skills.tsx crash. The crash was caused by the AI & Agents category being in portfolio.ts but not in the colors map in Skills.tsx. Fix is committed. Only deploy remains."
 }
