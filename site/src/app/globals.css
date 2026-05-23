@@ -69,7 +69,7 @@ body {
   background: #EEF2FF;
 }
 
-/* ── Dark mode ─────────────────────────────────── */
+/* Dark mode */
 html.dark {
   --bg: #0D0D0F;
   --surface: #18181B;
