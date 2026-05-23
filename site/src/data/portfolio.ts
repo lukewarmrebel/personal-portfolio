@@ -1,3 +1,12 @@
+export function projectSlug(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^\w\s]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+}
+
 export const personal = {
   name: "Pranav Thatavarti",
   title: "Product Manager",
