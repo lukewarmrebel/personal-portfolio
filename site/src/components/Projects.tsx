@@ -21,7 +21,7 @@ export default function Projects() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, i) => (
             <motion.div key={project.title}
               initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.07 }}
@@ -30,30 +30,30 @@ export default function Projects() {
               {/* Top bar */}
               <div className={`h-1 -mx-6 -mt-6 mb-5 rounded-t-2xl bg-gradient-to-r ${project.color}`} />
 
-              <div className="flex items-start justify-between mb-3">
+              <div className="flex items-start justify-between mb-4">
                 <span className="text-3xl">{project.emoji}</span>
                 <div className="flex items-center gap-2">
-                  <span className={`text-xs px-2 py-0.5 rounded-full border font-medium ${categoryColors[project.category]}`}>
+                  <span className={`text-xs px-2.5 py-1 rounded-full border font-medium ${categoryColors[project.category]}`}>
                     {project.category}
                   </span>
                   {project.duration && (
                     <span className="flex items-center gap-1 text-xs text-zinc-400">
-                      <Clock size={10} />{project.duration}
+                      <Clock size={11} />{project.duration}
                     </span>
                   )}
                 </div>
               </div>
 
-              <h3 className="font-bold text-zinc-900 text-base mb-0.5">{project.title}</h3>
-              <p className={`text-xs font-semibold mb-3 bg-gradient-to-r ${project.color} bg-clip-text text-transparent`}>{project.subtitle}</p>
-              <p className="text-sm text-zinc-600 leading-relaxed mb-4 flex-1">{project.summary}</p>
+              <h3 className="font-bold text-zinc-900 text-lg mb-1">{project.title}</h3>
+              <p className={`text-sm font-semibold mb-3 bg-gradient-to-r ${project.color} bg-clip-text text-transparent`}>{project.subtitle}</p>
+              <p className="text-sm text-zinc-600 leading-relaxed mb-5 flex-1">{project.summary}</p>
 
               {/* Stats */}
               {project.stats && project.stats.length > 0 && (
-                <div className="flex gap-3 mb-4 flex-wrap">
+                <div className="flex gap-3 mb-5 flex-wrap">
                   {project.stats.map((s) => (
-                    <div key={s.label} className="bg-zinc-50 border border-zinc-100 rounded-lg px-3 py-1.5 text-center">
-                      <p className={`text-sm font-bold bg-gradient-to-r ${project.color} bg-clip-text text-transparent`}>{s.value}</p>
+                    <div key={s.label} className="bg-zinc-50 border border-zinc-100 rounded-xl px-4 py-2 text-center">
+                      <p className={`text-base font-bold bg-gradient-to-r ${project.color} bg-clip-text text-transparent`}>{s.value}</p>
                       <p className="text-xs text-zinc-400">{s.label}</p>
                     </div>
                   ))}

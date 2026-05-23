@@ -13,9 +13,9 @@ const links = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 px-6 bg-zinc-50/60">
+    <section id="contact" className="py-16 px-6 bg-zinc-50/60">
       <div className="max-w-6xl mx-auto">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-12">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-10">
           <span className="text-xs font-semibold tracking-widest uppercase text-indigo-500">Get in touch</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-2 text-zinc-900">
             Let&apos;s <span className="gradient-text">connect</span>
@@ -43,9 +43,6 @@ export default function Contact() {
         </div>
       </div>
 
-      <p className="text-center text-zinc-400 text-xs mt-16">
-        © {new Date().getFullYear()} Pranav Thatavarti · Built with Next.js & Tailwind CSS
-      </p>
     </section>
   );
 }
