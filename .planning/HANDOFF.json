@@ -1,0 +1,51 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-05-24T21:30:00.000Z",
+  "phase": "1",
+  "phase_name": "Fix & Polish",
+  "phase_dir": ".planning/phases/01-fix-and-polish",
+  "plan": 4,
+  "task": 4,
+  "total_tasks": 5,
+  "status": "paused",
+  "completed_tasks": [
+    {"id": 1, "name": "Fix nested git repo (site/ as regular files)", "status": "done", "commit": "2af6b0f"},
+    {"id": 2, "name": "UI redesign — hero, quotes, contact tiles, projects 2-col, floating dock", "status": "done", "commit": "2af6b0f"},
+    {"id": 3, "name": "Dark mode — init script, globals.css overrides, Navbar toggle", "status": "done", "commit": "65384ff"},
+    {"id": 3, "name": "Dark mode bug fix — Turbopack dropped CSS after unicode comment", "status": "done", "commit": "65384ff"},
+    {"id": 4, "name": "CareVault project — screenshots, carousel card, dedicated /projects/[slug] page", "status": "done", "commit": "e92ee1a"},
+    {"id": 5, "name": "Projects overhaul — Sentinel screenshots, Eval Teardown entry, InsurAgents, ResuAgent, Car Damage, remove Work projects", "status": "done", "commit": "98dccee"},
+    {"id": 6, "name": "AI & Agents skills category added", "status": "done", "commit": "0d34fde"}
+  ],
+  "remaining_tasks": [
+    {"id": 7, "name": "npm run build final verification", "status": "done — last build was clean (0d34fde)"},
+    {"id": 8, "name": "vercel --prod deploy", "status": "not_started", "note": "requires user to run manually or explicitly authorize"},
+    {"id": 9, "name": "update metadataBase URL in layout.tsx with real Vercel URL", "status": "not_started"}
+  ],
+  "blockers": [
+    {
+      "description": "vercel --prod blocked by auto-mode classifier — needs explicit user authorization or manual run",
+      "type": "human_action",
+      "workaround": "User runs: cd E:\\Projects\\Portfolio\\site && vercel --prod"
+    }
+  ],
+  "human_actions_pending": [
+    {
+      "action": "Run: cd E:\\Projects\\Portfolio\\site && vercel --prod",
+      "context": "Deploy to production. After getting the live URL, update metadataBase in site/src/app/layout.tsx line 8.",
+      "blocking": true
+    }
+  ],
+  "decisions": [
+    {"decision": "Screenshot carousel uses AnimatePresence slide animation, direction-aware", "rationale": "Polished feel, framer-motion already in project"},
+    {"decision": "Explore button only shown on cards with screenshots array", "rationale": "User asked: only show where media exists"},
+    {"decision": "Project detail at /projects/[slug] (new page, not modal)", "rationale": "User asked for dedicated page"},
+    {"decision": "Removed Work category projects (Motor Claims, AI Vehicle Inspection)", "rationale": "User request"},
+    {"decision": "Sentinel Eval Teardown as separate project linking to /sentinel_teardown.pdf", "rationale": "User wanted PDF as its own project entry"},
+    {"decision": "AI & Agents placed as first skills category", "rationale": "Highest relevance for PM role; showcases differentiator"},
+    {"decision": "Unicode box-drawing chars in CSS comment caused Turbopack to drop all following CSS", "rationale": "Discovered via debugging — replaced with plain ASCII comment"}
+  ],
+  "uncommitted_files": [],
+  "next_action": "Run vercel --prod from site/, then update metadataBase URL in layout.tsx with the live URL and redeploy.",
+  "context_notes": "All code complete and committed. Site fully functional locally. Only deploy step remains. All screenshots for projects are in public/. The /projects/[slug] dynamic route works for any project with a screenshots array."
+}
