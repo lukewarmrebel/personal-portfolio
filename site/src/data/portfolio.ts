@@ -323,6 +323,11 @@ export const projects: Project[] = [
 ];
 
 export const skills = {
+  "AI & Agents": [
+    "Agentic AI", "Multi-Agent Systems", "AI Workflow Design", "Rapid AI Prototyping",
+    "LLM Eval Frameworks", "AI Evals", "RAG Architecture", "Prompt Engineering",
+    "Claude Code", "AI Product Design", "LLM Fine-tuning Concepts", "AI Builder",
+  ],
   "Product Management": [
     "Product Strategy", "Roadmap Planning", "PRD Documentation", "A/B Testing",
     "Backlog Management", "User Stories", "Feature Prioritization", "Product Analytics",
