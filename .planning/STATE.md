@@ -4,25 +4,20 @@
 Phase 1 — Fix & Polish
 
 ## Status
-Ready to execute. 4 plans across 2 waves.
+Wave 1 complete. Needs: git fix (nested repo), then Wave 2 (build + deploy).
 
 ## Last Action
-Phase 1 planned. 4 PLAN.md files created and verified (plan-checker: PASSED). Resume URL resolved (/resume.pdf).
-
-## Plans
-- Wave 1 (parallel): P01 Wire Sections, P02 OpenGraph, P03 Code Cleanup
-- Wave 2 (after Wave 1): P04 Build Verification + Vercel Deploy
+Wave 1 executed inline. All code changes applied and committed (commit abfea37). site/ has nested .git issue — see checkpoint.
 
 ## Blockers
-- None blocking dev work. OpenGraph metadataBase URL is a placeholder — update after Vercel deploy.
+- site/ was added as a gitlink (nested git repo). Must fix before build/deploy.
+- metadataBase URL is placeholder — update after Vercel deploy.
 
 ## Notes
-- Site is at `site/` subdirectory — all Next.js commands run from `E:\Projects\Portfolio\site`
-- Vercel should be configured to deploy from the `site/` subdirectory
-- Git was initialized at project root `E:\Projects\Portfolio`
-- resume.pdf copied to site/public/ and portfolio.ts updated to use /resume.pdf
+- site/ subdirectory — all Next.js commands run from E:\Projects\Portfolio\site
+- Fix nested git: git rm --cached site && Remove-Item -Recurse -Force site\.git && git add site/ && git commit
 
 ## Session Continuity
 Last session: 2026-05-23
-Stopped at: Phase 1 planned, proceeding to execute
-Resume file: .planning/phases/01-fix-and-polish/
+Stopped at: Wave 1 complete, context limit hit
+Resume file: .planning/phases/01-fix-and-polish/.continue-here.md
