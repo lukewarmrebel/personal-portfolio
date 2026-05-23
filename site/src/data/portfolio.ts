@@ -84,6 +84,7 @@ export type Project = {
   color: string;
   emoji: string;
   stats?: { label: string; value: string }[];
+  screenshots?: string[];
 };
 
 export const projects: Project[] = [
@@ -106,6 +107,43 @@ export const projects: Project[] = [
       { label: "Faster Triage", value: "68%" },
       { label: "More Flags", value: "12x" },
       { label: "AI Decision", value: "<3min" },
+    ],
+  },
+  {
+    title: "CareVault",
+    subtitle: "Family Health Management App — Flutter & Supabase",
+    category: "Personal",
+    summary:
+      "Built a full-stack mobile app for families to collaboratively manage medicines, vitals, documents, and appointments for all household members — including proxy profiles for dependents. Offline-first with a fake-data mode; backend powered by Supabase with real-time push notifications.",
+    highlights: [
+      "Medicine tracking with low-stock alerts, reminder times, per-member dose schedules, and stock progress bars",
+      "Vitals monitoring (BP, heart rate, temperature, glucose) with timestamped history per member",
+      "Document vault with masonry grid, category filter chips, and full-screen preview",
+      "Family invite system with 6-character room codes and QR share — invite-only private care rooms",
+      "Offline-first architecture: compile-time USE_FAKES flag switches all repositories from in-memory fakes to live Supabase with zero code changes",
+    ],
+    skills: ["Flutter", "Dart", "Supabase", "Riverpod", "Firebase FCM", "go_router", "Material 3", "0→1 Build"],
+    duration: "3 weeks",
+    color: "from-emerald-500 to-teal-600",
+    emoji: "🏥",
+    stats: [
+      { label: "App Screens", value: "21" },
+      { label: "Features", value: "8" },
+      { label: "Build Mode", value: "Offline-first" },
+    ],
+    screenshots: [
+      "/carevault/06_room_home.png",
+      "/carevault/07_members.png",
+      "/carevault/13_medicine_list.png",
+      "/carevault/17_vitals.png",
+      "/carevault/08_documents.png",
+      "/carevault/09_appointments.png",
+      "/carevault/11_member_hub.png",
+      "/carevault/14_medicine_detail.png",
+      "/carevault/20_audit_timeline.png",
+      "/carevault/01_signup.png",
+      "/carevault/03_family_create.png",
+      "/carevault/05_family_invite.png",
     ],
   },
   {

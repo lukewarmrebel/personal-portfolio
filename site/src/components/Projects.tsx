@@ -30,6 +30,16 @@ export default function Projects() {
               {/* Top bar */}
               <div className={`h-1 -mx-6 -mt-6 mb-5 rounded-t-2xl bg-gradient-to-r ${project.color}`} />
 
+              {/* Screenshot strip */}
+              {project.screenshots && project.screenshots.length > 0 && (
+                <div className="flex gap-2 overflow-x-auto -mx-6 px-6 pb-3 mb-4 scrollbar-none">
+                  {project.screenshots.map((src, idx) => (
+                    <img key={idx} src={src} alt="" loading="lazy"
+                      className="h-40 w-auto rounded-xl flex-shrink-0 object-cover border border-zinc-100 shadow-sm" />
+                  ))}
+                </div>
+              )}
+
               <div className="flex items-start justify-between mb-4">
                 <span className="text-3xl">{project.emoji}</span>
                 <div className="flex items-center gap-2">

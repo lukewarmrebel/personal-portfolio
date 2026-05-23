@@ -69,6 +69,9 @@ body {
   background: #EEF2FF;
 }
 
+.scrollbar-none { scrollbar-width: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
+
 /* Dark mode */
 html.dark {
   --bg: #0D0D0F;
