@@ -27,7 +27,7 @@ const workLogos = experience.filter((job, i, arr) =>
 function LogoTile({ src, alt, href, dark }: { src: string; alt: string; href: string; dark?: boolean }) {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer" title={alt}
-      className={`w-16 h-16 rounded-2xl border shadow-sm overflow-hidden p-2 flex items-center justify-center hover:scale-105 hover:shadow-md transition-all bg-white border-zinc-200 dark:bg-zinc-800 dark:border-zinc-700`}
+      className={`w-28 h-28 rounded-2xl border shadow-sm overflow-hidden p-4 flex items-center justify-center hover:scale-105 hover:shadow-md transition-all bg-white border-zinc-200 dark:bg-zinc-800 dark:border-zinc-700`}
     >
       <img src={src} alt={alt} className="w-full h-full object-contain" />
     </a>
@@ -58,7 +58,7 @@ export default function Hero() {
       </div>
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
 
           {/* Left — Text */}
           <div className="pt-4">
@@ -114,14 +114,14 @@ export default function Hero() {
           </div>
 
           {/* Right — Photo + Logos + Contact */}
-          <div className="flex flex-col items-center lg:items-start gap-6">
+          <div className="flex flex-col items-center lg:items-start gap-6 lg:justify-between">
 
             {/* Photo */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" as const }}
-              className="relative self-center lg:self-start"
+              className="relative self-center"
             >
               <div className="w-44 h-44 md:w-52 md:h-52 rounded-3xl overflow-hidden border-4 border-white shadow-xl shadow-indigo-100/60">
                 <Image
@@ -148,8 +148,8 @@ export default function Hero() {
               <p className="text-[10px] font-semibold tracking-widest uppercase text-indigo-400 mb-3">Education &amp; Work</p>
               <div className="flex items-end gap-5">
                 <div className="flex flex-col gap-2">
-                  <p className="text-[9px] font-semibold tracking-widest uppercase text-zinc-400">Graduated at</p>
-                  <div className="flex gap-2">
+                  <p className="text-[9px] font-semibold tracking-widest uppercase text-zinc-400">Graduated from</p>
+                  <div className="flex gap-3">
                     {education.map((edu) => (
                       <LogoTile key={edu.institution} src={edu.logo} alt={edu.shortName} href={edu.url} dark={edu.logoDark} />
                     ))}
@@ -158,7 +158,7 @@ export default function Hero() {
                 <div className="w-px self-stretch bg-zinc-200 dark:bg-zinc-700 mt-5" />
                 <div className="flex flex-col gap-2">
                   <p className="text-[9px] font-semibold tracking-widest uppercase text-zinc-400">Contributed at</p>
-                  <div className="flex gap-2">
+                  <div className="flex gap-3">
                     {workLogos.map((job) => (
                       <LogoTile key={job.company} src={job.logo} alt={job.company} href={(job as {url?: string}).url ?? "#"} dark={(job as {logoDark?: boolean}).logoDark} />
                     ))}
@@ -169,19 +169,19 @@ export default function Hero() {
 
             {/* Contact — compact 4-tile row */}
             <section id="contact" className="w-full">
-              <motion.div {...up(0.5)}>
+              <motion.div {...up(0.5)} className="w-full">
                 <p className="text-[10px] font-semibold tracking-widest uppercase text-indigo-400 mb-3">Get in touch</p>
-                <div className="grid grid-cols-4 gap-2">
+                <div className="flex gap-5">
                   {contactLinks.map(({ icon: Icon, label, href, color }, i) => (
                     <motion.a key={label} href={href} target="_blank" rel="noopener noreferrer"
                       initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.35, delay: 0.55 + i * 0.06 }}
-                      className="bg-white/80 border border-zinc-100 rounded-xl p-3 flex flex-col items-center gap-1.5 group hover:border-indigo-200 hover:shadow-sm transition-all"
+                      className="w-36 bg-white/80 border border-zinc-100 rounded-xl p-4 py-5 flex flex-col items-center gap-2 group hover:border-indigo-200 hover:shadow-sm transition-all"
                     >
-                      <div className={`w-7 h-7 rounded-lg bg-gradient-to-br ${color} flex items-center justify-center text-white shadow-sm`}>
-                        <Icon className="w-3.5 h-3.5 shrink-0" />
+                      <div className={`w-9 h-9 rounded-lg bg-gradient-to-br ${color} flex items-center justify-center text-white shadow-sm`}>
+                        <Icon className="w-4 h-4 shrink-0" />
                       </div>
-                      <p className="text-[10px] font-medium text-zinc-500 group-hover:text-indigo-600 transition-colors">{label}</p>
+                      <p className="text-[11px] font-medium text-zinc-500 group-hover:text-indigo-600 transition-colors">{label}</p>
                     </motion.a>
                   ))}
                 </div>
