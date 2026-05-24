@@ -21,7 +21,7 @@ export default function About() {
             className="lg:col-span-2"
           >
             <div className="rounded-2xl overflow-hidden border border-zinc-100 shadow-sm">
-              <Image src="/pranav-casual.webp" alt="Pranav — casual" width={400} height={480} className="w-full object-cover" />
+              <Image src="/pranav-casual.webp" alt="Pranav — casual" width={400} height={480} className="w-full object-cover" loading="eager" priority />
             </div>
           </motion.div>
 

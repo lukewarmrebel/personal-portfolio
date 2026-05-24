@@ -84,7 +84,8 @@ export const experience = [
 export type Project = {
   title: string;
   subtitle: string;
-  category: "Personal" | "Work" | "Academic" | "Analysis";
+  category: "AI Systems" | "0→1 Builds" | "PM & Strategy" | "Teardowns";
+  spotlight?: boolean;
   summary: string;
   highlights?: string[];
   skills: string[];
@@ -100,7 +101,8 @@ export const projects: Project[] = [
   {
     title: "Sentinel — Cyber UW Co-Pilot",
     subtitle: "Product Teardown & AI Eval Framework",
-    category: "Analysis",
+    category: "Teardowns",
+    spotlight: true,
     summary:
       "Deep teardown of Sentinel's AI-powered cyber underwriting platform. Explored its 5-layer intelligence stack, Red Flags Engine for document conflict detection, and proposed a 4-tier AI eval rubric — questioning how AI augments underwriting judgment without replacing it.",
     highlights: [
@@ -129,7 +131,8 @@ export const projects: Project[] = [
   {
     title: "Sentinel — AI Eval Teardown",
     subtitle: "4-Tier Eval Framework for Cyber Underwriting AI",
-    category: "Analysis",
+    category: "Teardowns",
+    spotlight: true,
     summary:
       "Structured teardown of how an AI-native underwriting platform should be evaluated end-to-end. Defines a 4-tier rubric — Output Quality, Reasoning Transparency, Human-AI Collaboration, and Portfolio Outcomes — with specific metrics, red flag thresholds, and open questions on confidence calibration.",
     highlights: [
@@ -152,7 +155,8 @@ export const projects: Project[] = [
   {
     title: "CareVault",
     subtitle: "Family Health Management App — Flutter & Supabase",
-    category: "Personal",
+    category: "0→1 Builds",
+    spotlight: true,
     summary:
       "Built a full-stack mobile app for families to collaboratively manage medicines, vitals, documents, and appointments for all household members — including proxy profiles for dependents. Offline-first with a fake-data mode; backend powered by Supabase with real-time push notifications.",
     highlights: [
@@ -189,7 +193,7 @@ export const projects: Project[] = [
   {
     title: "InsurAgents",
     subtitle: "Multi-LLM Insurance Workflow Automation",
-    category: "Personal",
+    category: "AI Systems",
     summary:
       "Built a full-stack AI agent system automating 7 insurance operational workflows — claim triage, fraud detection, policy summaries, risk assessment, compliance verification, and more. Provider-agnostic: swap Claude, GPT-4o, or Gemini without touching downstream code. Ships with ROUGE/BLEU/BERTScore eval benchmarks and a 15-claim accuracy suite.",
     highlights: [
@@ -210,7 +214,8 @@ export const projects: Project[] = [
   {
     title: "ResuAgent",
     subtitle: "AI Resume Tailoring Agent — Gemini Powered",
-    category: "Personal",
+    category: "AI Systems",
+    spotlight: true,
     summary:
       "4-step AI agent pipeline for resume tailoring: upload PDF → parse and verify → AI-rewrite bullet points for target role → preview and export. Gemini rewrites resume points to match JD keywords while preserving the candidate's voice. Includes a Knowledge Base tab for storing role context across sessions.",
     highlights: [
@@ -234,7 +239,7 @@ export const projects: Project[] = [
   {
     title: "Car Damage Annotation",
     subtitle: "AI-Assisted Vehicle Damage Labelling Tool",
-    category: "Personal",
+    category: "AI Systems",
     summary:
       "Browser-based canvas annotation tool for vehicle damage assessment. Draw bounding boxes, circles, and text labels manually — or hit AI Analyze for automatic damage region detection. Batch mode auto-analyzes all uploaded images. Export annotated sets as ZIP for downstream ML training pipelines.",
     highlights: [
@@ -259,7 +264,7 @@ export const projects: Project[] = [
   {
     title: "PM Interview Prep Bot",
     subtitle: "Multi-Agent Workflow Automation",
-    category: "Personal",
+    category: "AI Systems",
     summary:
       "Designed and launched a personalised PM interview simulation tool using RAG and multi-agent orchestration. A Manager Agent coordinates subagents to generate questions, probe weak answers, and compile structured feedback — all context-aware from resume, JD, and MBTI inputs.",
     highlights: [
@@ -276,7 +281,7 @@ export const projects: Project[] = [
   {
     title: "Centrico",
     subtitle: "Interior Design Marketplace — 0 to MVP",
-    category: "Personal",
+    category: "0→1 Builds",
     summary:
       "End-to-end 0→1 build of an interior design marketplace connecting homeowners with designers. Led market research, customer journey mapping, MVP scoping, and rapid prototyping using AI code editors — validating the full GTM hypothesis in 2 weeks.",
     highlights: [
@@ -293,7 +298,7 @@ export const projects: Project[] = [
   {
     title: "Tata Imagination Challenge",
     subtitle: "National Winner — D2C Strategy, IIM Ranchi",
-    category: "Academic",
+    category: "PM & Strategy",
     summary:
       "Ranked #1 nationally (D2C track) at Tata's flagship business competition during MBA at IIM Ranchi. Developed a full D2C strategy for a Tata brand — covering consumer segmentation, digital channel architecture, pricing model, and go-to-market sequencing.",
     highlights: [
@@ -308,17 +313,33 @@ export const projects: Project[] = [
   {
     title: "Eductive",
     subtitle: "EdTech Mental Health Platform — AI & SEL",
-    category: "Academic",
+    category: "PM & Strategy",
     summary:
-      "Designed a digital wellness platform enabling institutions to monitor and improve student mental health using AI-based non-cognitive behavioural insights (SEL). Focused on embedding mental health signals into academic workflows without stigma.",
+      "Designed and pitched a B2B2C digital wellness platform targeting India's student mental health crisis — where >40% of students face severe depression or stress and >80% never seek support. Eductive gives institutions AI-driven non-cognitive behavioural insights (SEL) to detect, track, and intervene in student mental health before it escalates.",
     highlights: [
-      "Researched SEL frameworks and mapped non-cognitive indicators to measurable platform signals",
-      "Designed end-to-end user flows for students, counsellors, and institutional admins",
-      "Developed pitch deck presented to academic reviewers",
+      "Designed 4-tier intervention framework: self-directed (low) → mentor-guided (average) → CBT/DBT/ACT via psychologist (severe)",
+      "Mapped full non-cognitive data pipeline: mood journals, SUDS/PWB/M3 metrics, academic tracking → weekly diagnostic reports",
+      "Built B2B2C model: ₹999/yr freemium (B2C) + bundle subscriptions for institutions (B2B); projected ₹2.04Cr revenue in Year 2",
+      "Sized market: 265M students, 421K private institutes, 16.3% wellness app sector growth",
+      "Defined 4-phase product roadmap: MVP (wireframes + institute portal) → pilot testing → social media sentiment → career guidance",
     ],
-    skills: ["User Research", "Personas", "User Flow", "Wireframing", "AI Product Design", "EdTech"],
+    skills: ["User Research", "Personas", "User Flow", "Wireframing", "AI Product Design", "EdTech", "Business Model Design", "Market Sizing", "Product Roadmap", "Financial Modelling"],
     color: "from-teal-500 to-green-500",
     emoji: "🧠",
+    stats: [
+      { label: "Students Market", value: "265M" },
+      { label: "Private Institutes", value: "421K" },
+      { label: "Sector Growth", value: "16.3%" },
+      { label: "Intervention Tiers", value: "4" },
+    ],
+    screenshots: [
+      "/eductive/00_hero.png",
+      "/eductive/03_emotional_tracker.png",
+      "/eductive/07_ai_chatbot.png",
+      "/eductive/09_portal.png",
+      "/eductive/08_data_flow.png",
+      "/eductive/02_solution.png",
+    ],
   },
 ];
 

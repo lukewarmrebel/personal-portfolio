@@ -1,0 +1,24 @@
+# Supporting documents — not part of the website
+.claude/
+notion markdown format/
+resume/
+carevault_screenshots/
+portfolio_text.txt
+
+# Loose media / decks at repo root (root-level only)
+/*.jpg
+/*.jpeg
+/*.png
+/*.webp
+/*.pdf
+/*.pptx
+/*.zip
+
+# Notion HTML export
+Pranav*/
+Pranav*.html
+
+# Dev screenshots sitting loose inside site/
+/site/*.png
+/site/*.jpg
+/site/*.webp

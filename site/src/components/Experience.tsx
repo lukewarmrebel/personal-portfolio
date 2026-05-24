@@ -15,7 +15,7 @@ export default function Experience() {
         </motion.div>
 
         <div className="relative">
-          <div className="absolute left-0 md:left-6 top-2 bottom-2 w-px bg-zinc-200 hidden md:block" />
+          <div className="absolute left-0 md:left-6 top-2 bottom-2 w-px bg-zinc-200 dark:bg-zinc-700 hidden md:block" />
 
           <div className="space-y-8">
             {experience.map((job, i) => (
@@ -23,7 +23,7 @@ export default function Experience() {
                 initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="md:pl-16 relative">
                 {/* dot */}
-                <div className={`hidden md:flex absolute left-3.5 top-6 w-5 h-5 -translate-x-1/2 rounded-full bg-gradient-to-br ${job.color} items-center justify-center shadow ring-2 ring-white`}>
+                <div className={`hidden md:flex absolute left-3.5 top-6 w-5 h-5 -translate-x-1/2 rounded-full bg-gradient-to-br ${job.color} items-center justify-center shadow ring-2 ring-white dark:ring-zinc-900`}>
                   <div className="w-1.5 h-1.5 rounded-full bg-white" />
                 </div>
 
