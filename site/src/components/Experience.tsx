@@ -3,6 +3,23 @@ import { motion } from "framer-motion";
 import { MapPin, Calendar } from "lucide-react";
 import { experience } from "@/data/portfolio";
 
+function CompanyLogo({ src, alt, color, dark }: { src: string; alt: string; color: string; dark?: boolean }) {
+  return (
+    <div className={`w-9 h-9 rounded-xl border shadow-sm flex items-center justify-center overflow-hidden shrink-0 ${dark ? "bg-zinc-900 border-zinc-700" : "bg-white border-zinc-100"}`}>
+      <img
+        src={src}
+        alt={alt}
+        className="w-7 h-7 object-contain"
+        onError={(e) => {
+          const el = e.currentTarget.parentElement!;
+          el.className = `w-9 h-9 rounded-xl bg-gradient-to-br ${color} flex items-center justify-center shrink-0`;
+          el.innerHTML = `<span class="text-white text-xs font-bold">${alt.slice(0, 2).toUpperCase()}</span>`;
+        }}
+      />
+    </div>
+  );
+}
+
 export default function Experience() {
   return (
     <section id="experience" className="py-24 px-6 bg-zinc-50/60">
@@ -29,9 +46,12 @@ export default function Experience() {
 
                 <div className="card p-6">
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
-                    <div>
-                      <h3 className="text-lg font-bold text-zinc-900">{job.company}</h3>
-                      <p className={`text-sm font-semibold mt-0.5 bg-gradient-to-r ${job.color} bg-clip-text text-transparent`}>{job.role}</p>
+                    <div className="flex items-start gap-3">
+                      <CompanyLogo src={job.logo} alt={job.company} color={job.color} dark={(job as {logoDark?: boolean}).logoDark} />
+                      <div>
+                        <h3 className="text-lg font-bold text-zinc-900">{job.company}</h3>
+                        <p className={`text-sm font-semibold mt-0.5 bg-gradient-to-r ${job.color} bg-clip-text text-transparent`}>{job.role}</p>
+                      </div>
                     </div>
                     <div className="flex flex-col items-start sm:items-end gap-1 shrink-0 text-xs text-zinc-400">
                       <span className="flex items-center gap-1"><Calendar size={11} />{job.period}</span>

@@ -35,6 +35,8 @@ export const experience = [
     location: "Hyderabad, India",
     period: "June 2023 – Present",
     color: "from-violet-500 to-indigo-600",
+    logo: "/logos/icici-lombard.png",
+    url: "https://www.icicilombard.com",
     bullets: [
       "Led fraud risk analytics for Motor P&C claims — operationalised 6 ML risk models with 20+ enriched data parameters; improved fraud detection precision by 20%, realising ₹3.5 Cr+ in annualised savings.",
       "Delivered AI-led vehicle inspection & OCR-based issuance automation — accelerated policy approval TAT by 83% and eliminated manual inspections in 60% of cases.",
@@ -48,6 +50,8 @@ export const experience = [
     location: "Mumbai, India",
     period: "Apr 2022 – Jun 2022",
     color: "from-pink-500 to-rose-500",
+    logo: "/logos/icici-lombard.png",
+    url: "https://www.icicilombard.com",
     bullets: [
       "Conducted risk parameter analysis and competitive benchmarking across 15+ P&C products.",
       "Enhanced pricing model by incorporating agent performance and weather-based risk signals.",
@@ -60,6 +64,8 @@ export const experience = [
     location: "Chennai, India",
     period: "Jan 2022 – Mar 2022",
     color: "from-amber-500 to-orange-500",
+    logo: "/logos/galaxeye.png",
+    url: "https://galaxeye.space",
     bullets: [
       "Built and executed PMF framework at 0→1 stage, validating 100+ applications across target segments.",
       "Conducted competitor landscape analysis across 12 global players, identifying 3 key white space opportunities.",
@@ -72,6 +78,8 @@ export const experience = [
     location: "Bangalore, India",
     period: "Jan 2018 – Jul 2021",
     color: "from-teal-500 to-cyan-600",
+    logo: "/logos/tcs.png",
+    url: "https://www.tcs.com",
     bullets: [
       "Led end-to-end delivery of 20+ financial reports and Power BI dashboards for enterprise clients.",
       "Built 10+ KPI dashboards; reduced data refresh time by 50% through SQL-based data model optimisation.",
@@ -381,6 +389,8 @@ export const education = [
     url: "https://www.iimranchi.ac.in/",
     achievement: "D2C Rank 1 · National Winner — Tata Imagination Challenge",
     color: "from-violet-500 to-indigo-600",
+    logo: "/logos/iim-ranchi.png",
+    shortName: "IIM Ranchi",
   },
   {
     degree: "Bachelor of Technology",
@@ -391,5 +401,8 @@ export const education = [
     url: "https://www.gvpce.ac.in/",
     achievement: "",
     color: "from-orange-400 to-amber-500",
+    logo: "/logos/gvp.png",
+    logoDark: false,
+    shortName: "GVP College",
   },
 ];

@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, FileText } from "lucide-react";
-import { personal } from "@/data/portfolio";
+import { personal, education, experience } from "@/data/portfolio";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { useState, useEffect } from "react";
 
@@ -18,6 +18,21 @@ const quotes = [
   { text: "Done is better than perfect.", author: "Sheryl Sandberg" },
   { text: "A problem well stated is a problem half solved.", author: "Charles Kettering" },
 ];
+
+// Deduplicate experience logos by company name
+const workLogos = experience.filter((job, i, arr) =>
+  arr.findIndex((j) => j.company === job.company) === i
+);
+
+function LogoTile({ src, alt, href, dark }: { src: string; alt: string; href: string; dark?: boolean }) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" title={alt}
+      className={`w-16 h-16 rounded-2xl border shadow-sm overflow-hidden p-2 flex items-center justify-center hover:scale-105 hover:shadow-md transition-all bg-white border-zinc-200 dark:bg-zinc-800 dark:border-zinc-700`}
+    >
+      <img src={src} alt={alt} className="w-full h-full object-contain" />
+    </a>
+  );
+}
 
 const contactLinks = [
   { icon: Mail,         label: "Email",    value: personal.email,       href: `mailto:${personal.email}`, color: "from-indigo-500 to-violet-500" },
@@ -98,56 +113,75 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right — Photo + Contact */}
-          <div className="flex flex-col items-center lg:items-end gap-8">
+          {/* Right — Photo + Logos + Contact */}
+          <div className="flex flex-col items-center lg:items-start gap-6">
 
             {/* Photo */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" as const }}
-              className="relative"
+              className="relative self-center lg:self-start"
             >
-              <div className="w-60 h-60 md:w-64 md:h-64 rounded-3xl overflow-hidden border-4 border-white shadow-xl shadow-indigo-100/60">
+              <div className="w-44 h-44 md:w-52 md:h-52 rounded-3xl overflow-hidden border-4 border-white shadow-xl shadow-indigo-100/60">
                 <Image
                   src="/pranav-formal.jpg"
                   alt="Pranav Thatavarti"
-                  width={320}
-                  height={320}
+                  width={256}
+                  height={256}
                   className="w-full h-full object-cover"
                   priority
                 />
               </div>
               <div className="absolute -inset-3 rounded-3xl border-2 border-dashed border-indigo-200 -z-10" />
-              <div className="absolute -bottom-4 -right-4 bg-white border border-zinc-100 shadow-md rounded-2xl px-4 py-2.5 flex items-center gap-2">
-                <span className="text-lg">👋</span>
+              <div className="absolute -bottom-4 -right-4 bg-white border border-zinc-100 shadow-md rounded-2xl px-3 py-2 flex items-center gap-2">
+                <span className="text-base">👋</span>
                 <div>
                   <p className="text-xs font-bold text-zinc-800">Open to work</p>
-                  <p className="text-xs text-zinc-400">PM roles</p>
+                  <p className="text-[11px] text-zinc-400">PM roles</p>
                 </div>
               </div>
             </motion.div>
 
-            {/* Contact tiles */}
-            <section id="contact" className="w-full max-w-sm">
+            {/* Education & Work logo bar */}
+            <motion.div {...up(0.45)} className="w-full pt-2">
+              <p className="text-[10px] font-semibold tracking-widest uppercase text-indigo-400 mb-3">Education &amp; Work</p>
+              <div className="flex items-end gap-5">
+                <div className="flex flex-col gap-2">
+                  <p className="text-[9px] font-semibold tracking-widest uppercase text-zinc-400">Graduated at</p>
+                  <div className="flex gap-2">
+                    {education.map((edu) => (
+                      <LogoTile key={edu.institution} src={edu.logo} alt={edu.shortName} href={edu.url} dark={edu.logoDark} />
+                    ))}
+                  </div>
+                </div>
+                <div className="w-px self-stretch bg-zinc-200 dark:bg-zinc-700 mt-5" />
+                <div className="flex flex-col gap-2">
+                  <p className="text-[9px] font-semibold tracking-widest uppercase text-zinc-400">Contributed at</p>
+                  <div className="flex gap-2">
+                    {workLogos.map((job) => (
+                      <LogoTile key={job.company} src={job.logo} alt={job.company} href={(job as {url?: string}).url ?? "#"} dark={(job as {logoDark?: boolean}).logoDark} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Contact — compact 4-tile row */}
+            <section id="contact" className="w-full">
               <motion.div {...up(0.5)}>
-                <span className="text-xs font-semibold tracking-widest uppercase text-indigo-500">Get in touch</span>
-                <h3 className="text-2xl font-bold text-zinc-900 mt-1 mb-4">
-                  Let&apos;s <span className="gradient-text">connect</span>
-                </h3>
-                <div className="grid grid-cols-2 gap-2.5">
-                  {contactLinks.map(({ icon: Icon, label, value, href, color }, i) => (
+                <p className="text-[10px] font-semibold tracking-widest uppercase text-indigo-400 mb-3">Get in touch</p>
+                <div className="grid grid-cols-4 gap-2">
+                  {contactLinks.map(({ icon: Icon, label, href, color }, i) => (
                     <motion.a key={label} href={href} target="_blank" rel="noopener noreferrer"
-                      initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: 0.55 + i * 0.07 }}
-                      className="bg-white/80 border border-zinc-100 rounded-2xl p-4 flex flex-col gap-2.5 group hover:border-indigo-200 hover:shadow-sm transition-all">
-                      <div className={`w-9 h-9 rounded-xl bg-gradient-to-br ${color} flex items-center justify-center text-white shadow-sm`}>
-                        <Icon className="w-4 h-4 shrink-0" />
+                      initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.35, delay: 0.55 + i * 0.06 }}
+                      className="bg-white/80 border border-zinc-100 rounded-xl p-3 flex flex-col items-center gap-1.5 group hover:border-indigo-200 hover:shadow-sm transition-all"
+                    >
+                      <div className={`w-7 h-7 rounded-lg bg-gradient-to-br ${color} flex items-center justify-center text-white shadow-sm`}>
+                        <Icon className="w-3.5 h-3.5 shrink-0" />
                       </div>
-                      <div>
-                        <p className="text-[10px] text-zinc-400 uppercase tracking-wider mb-0.5">{label}</p>
-                        <p className="text-xs font-semibold text-zinc-700 group-hover:text-indigo-600 transition-colors truncate">{value}</p>
-                      </div>
+                      <p className="text-[10px] font-medium text-zinc-500 group-hover:text-indigo-600 transition-colors">{label}</p>
                     </motion.a>
                   ))}
                 </div>
