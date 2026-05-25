@@ -26,13 +26,13 @@ function Carousel({ screenshots }: { screenshots: string[] }) {
     <div>
       {/* Main viewer */}
       <div className="relative overflow-hidden rounded-2xl mb-3" style={{ background: "var(--surface)" }}>
-        <div className="flex items-center justify-center py-8" style={{ minHeight: "26rem" }}>
+        <div className="flex items-center justify-center py-4 sm:py-8 min-h-48 sm:min-h-[26rem]">
           <AnimatePresence mode="wait" initial={false}>
             <motion.img
               key={idx}
               src={screenshots[idx]}
               alt={`Screenshot ${idx + 1}`}
-              className="h-96 w-auto rounded-xl shadow-2xl"
+              className="max-h-60 sm:max-h-96 w-auto max-w-full rounded-xl shadow-2xl object-contain"
               initial={{ opacity: 0, x: dir * 64 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: dir * -64 }}
@@ -143,10 +143,10 @@ export default function ProjectPage() {
             )}
           </div>
 
-          <div className="flex items-center gap-4 mb-2">
-            <span className="text-5xl leading-none">{project.emoji}</span>
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold leading-tight" style={{ color: "var(--text)" }}>
+          <div className="flex items-start gap-3 mb-2">
+            <span className="text-4xl leading-none shrink-0">{project.emoji}</span>
+            <div className="min-w-0">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight" style={{ color: "var(--text)" }}>
                 {project.title}
               </h1>
               <p className={`text-base font-semibold mt-1 bg-gradient-to-r ${project.color} bg-clip-text text-transparent`}>

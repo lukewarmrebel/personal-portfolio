@@ -27,7 +27,7 @@ const workLogos = experience.filter((job, i, arr) =>
 function LogoTile({ src, alt, href, dark }: { src: string; alt: string; href: string; dark?: boolean }) {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer" title={alt}
-      className={`w-28 h-28 rounded-2xl border shadow-sm overflow-hidden p-4 flex items-center justify-center hover:scale-105 hover:shadow-md transition-all bg-white border-zinc-200 dark:bg-zinc-800 dark:border-zinc-700`}
+      className={`w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-24 lg:h-24 xl:w-28 xl:h-28 rounded-xl sm:rounded-2xl border shadow-sm overflow-hidden p-3 sm:p-4 flex items-center justify-center hover:scale-105 hover:shadow-md transition-all bg-white border-zinc-200 dark:bg-zinc-800 dark:border-zinc-700`}
     >
       <img src={src} alt={alt} className="w-full h-full object-contain" />
     </a>
@@ -62,7 +62,7 @@ export default function Hero() {
 
           {/* Left — Text */}
           <div className="pt-4">
-            <motion.h1 {...up(0.1)} className="text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-900 mb-4 leading-tight">
+            <motion.h1 {...up(0.1)} className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-900 mb-4 leading-tight">
               Hi, I&apos;m{" "}
               <span className="gradient-text block">{personal.name}</span>
             </motion.h1>
@@ -97,7 +97,7 @@ export default function Hero() {
                   transition={{ duration: 0.45, ease: "easeInOut" }}
                 >
                   <span className="text-7xl leading-none font-serif bg-gradient-to-br from-indigo-400 to-violet-400 bg-clip-text text-transparent select-none block mb-2 text-center">&ldquo;</span>
-                  <p className="text-2xl md:text-3xl text-zinc-700 italic leading-snug font-medium mb-4 text-center">{quotes[quoteIdx].text}</p>
+                  <p className="text-xl sm:text-2xl md:text-3xl text-zinc-700 italic leading-snug font-medium mb-4 text-center">{quotes[quoteIdx].text}</p>
                   <p className="text-sm text-zinc-400 text-center">— {quotes[quoteIdx].author}</p>
                 </motion.div>
               </AnimatePresence>
@@ -146,19 +146,19 @@ export default function Hero() {
             {/* Education & Work logo bar */}
             <motion.div {...up(0.45)} className="w-full pt-2">
               <p className="text-[10px] font-semibold tracking-widest uppercase text-indigo-400 mb-3">Education &amp; Work</p>
-              <div className="flex items-end gap-5">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:gap-5 lg:flex-col lg:items-start lg:gap-3">
                 <div className="flex flex-col gap-2">
                   <p className="text-[9px] font-semibold tracking-widest uppercase text-zinc-400">Graduated from</p>
-                  <div className="flex gap-3">
+                  <div className="flex gap-2 sm:gap-3">
                     {education.map((edu) => (
                       <LogoTile key={edu.institution} src={edu.logo} alt={edu.shortName} href={edu.url} dark={edu.logoDark} />
                     ))}
                   </div>
                 </div>
-                <div className="w-px self-stretch bg-zinc-200 dark:bg-zinc-700 mt-5" />
+                <div className="hidden sm:block lg:hidden w-px self-stretch bg-zinc-200 dark:bg-zinc-700 mt-5" />
                 <div className="flex flex-col gap-2">
                   <p className="text-[9px] font-semibold tracking-widest uppercase text-zinc-400">Contributed at</p>
-                  <div className="flex gap-3">
+                  <div className="flex gap-2 sm:gap-3">
                     {workLogos.map((job) => (
                       <LogoTile key={job.company} src={job.logo} alt={job.company} href={(job as {url?: string}).url ?? "#"} dark={(job as {logoDark?: boolean}).logoDark} />
                     ))}
@@ -171,12 +171,12 @@ export default function Hero() {
             <section id="contact" className="w-full">
               <motion.div {...up(0.5)} className="w-full">
                 <p className="text-[10px] font-semibold tracking-widest uppercase text-indigo-400 mb-3">Get in touch</p>
-                <div className="flex gap-5">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   {contactLinks.map(({ icon: Icon, label, href, color }, i) => (
                     <motion.a key={label} href={href} target="_blank" rel="noopener noreferrer"
                       initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.35, delay: 0.55 + i * 0.06 }}
-                      className="w-36 bg-white/80 border border-zinc-100 rounded-xl p-4 py-5 flex flex-col items-center gap-2 group hover:border-indigo-200 hover:shadow-sm transition-all"
+                      className="min-w-0 bg-white/80 border border-zinc-100 rounded-xl p-4 py-5 flex flex-col items-center gap-2 group hover:border-indigo-200 hover:shadow-sm transition-all"
                     >
                       <div className={`w-9 h-9 rounded-lg bg-gradient-to-br ${color} flex items-center justify-center text-white shadow-sm`}>
                         <Icon className="w-4 h-4 shrink-0" />
