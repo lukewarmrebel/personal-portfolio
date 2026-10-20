@@ -16,7 +16,7 @@ export const personal = {
   phone: "+91 8919053740",
   linkedin: "https://linkedin.com/in/pranav-thatavarthi",
   github: "https://github.com/lukewarmrebel",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "/Pranav_Thatavarti_Resume.pdf",
   bio: "Product Manager with a strong foundation in software engineering and an MBA from IIM Ranchi. Drawing on 7 years of experience in Data, Platform, and P&C Insurance, I drive product strategy, lead cross-functional teams, and deliver impactful solutions at the intersection of AI, analytics, and user experience.",
   bio2: "I help drive growth and efficiency for companies in dynamic environments by building scalable, data-driven products using design thinking and first principles.",
   featuredSkills: ["Product Strategy", "Cross-functional Leadership", "0 → 1 Products", "Data-driven Decisions", "User-centric Design", "P&C Insurance"],
@@ -28,48 +28,45 @@ export const personal = {
   ],
 };
 
-export const experience = [
+// Work history, taken line by line from Pranav_Thatavarti_Resume.pdf (Oct 2026).
+// Each bullet is [outcome, how]. The outcome shows in bold so it reads at a glance.
+export type ExpBullet = string | [string, string];
+
+export const experience: {
+  company: string; role: string; location: string; period: string; color: string;
+  logo: string; url: string; logoDark?: boolean; bullets: ExpBullet[];
+}[] = [
   {
-    company: "ICICI Lombard General Insurance",
-    role: "Chief Manager — Business Strategy",
+    company: "ICICI Lombard",
+    role: "Product Manager",
     location: "Hyderabad, India",
-    period: "June 2023 – Present",
+    period: "Jun 2023 – Present",
     color: "from-violet-500 to-indigo-600",
     logo: "/logos/icici-lombard.png",
     url: "https://www.icicilombard.com",
     bullets: [
-      "Led fraud risk analytics for Motor P&C claims — operationalised 6 ML risk models with 20+ enriched data parameters; improved fraud detection precision by 20%, realising ₹3.5 Cr+ in annualised savings.",
-      "Delivered AI-led vehicle inspection & OCR-based issuance automation — accelerated policy approval TAT by 83% and eliminated manual inspections in 60% of cases.",
-      "Led 3+ parallel workstreams on the Motor Claims Platform — delivered 65% TAT improvement and 28% increase in mobile app adoption across 3 digital touchpoints.",
-      "Aligned 5 cross-functional teams (eng, ops, legal, data science, compliance) on 12-month roadmap, resolving 8+ critical blockers to ship features on time.",
-    ],
-  },
-  {
-    company: "ICICI Lombard General Insurance",
-    role: "Consultant (Internship)",
-    location: "Mumbai, India",
-    period: "Apr 2022 – Jun 2022",
-    color: "from-pink-500 to-rose-500",
-    logo: "/logos/icici-lombard.png",
-    url: "https://www.icicilombard.com",
-    bullets: [
-      "Conducted risk parameter analysis and competitive benchmarking across 15+ P&C products.",
-      "Enhanced pricing model by incorporating agent performance and weather-based risk signals.",
-      "Recognised as Top 10 intern — presented findings directly to CEO and senior leadership.",
+      ["Cut policy approval time by 83%", " and manual car inspections by 60% by automating vehicle inspection with AI. It saves ₹1.5 Cr+ a year in operating costs."],
+      ["Saved ₹3.5 Cr+", " with a claim decision engine I own: 20+ automatic checks on whether a claim is covered."],
+      ["Raised fraud detection by 20%", " by adding 6 machine-learning risk models to the fraud checks, while keeping claim approval rates steady."],
+      ["Grew self-serve inspections by 30%", " by building do-it-yourself inspection flows and fixing 15+ points where customers got stuck."],
+      ["Shipped 100% of critical features on time", " across a 12-month roadmap, keeping engineering, operations, legal and design in step."],
+      ["Managed 7+ generative AI projects", ", including voice analysis that flags inconsistent stories in calls with customers and claim surveyors."],
+      ["Leading AI that reads underwriting documents", " (the papers checked before a policy is issued). Two proofs of concept done, for sorting documents and pulling out data. Rollout in progress."],
+      ["Built 5+ live dashboards for leadership", " to track lost revenue and fraud, used to make decisions and fix processes."],
     ],
   },
   {
     company: "Galaxeye",
     role: "Product Manager",
     location: "Chennai, India",
-    period: "Jan 2022 – Mar 2022",
+    period: "Jan 2022 – Apr 2022",
     color: "from-amber-500 to-orange-500",
     logo: "/logos/galaxeye.png",
     url: "https://galaxeye.space",
     bullets: [
-      "Built and executed PMF framework at 0→1 stage, validating 100+ applications across target segments.",
-      "Conducted competitor landscape analysis across 12 global players, identifying 3 key white space opportunities.",
-      "Created dashboards to track adoption and retention, enabling data-driven 0→1 market insights.",
+      ["Tested 100+ possible uses of the product", " with a product-market-fit framework. The results shaped the roadmap and key design decisions."],
+      ["Found 3 gaps in the market", " by studying 12+ competitors, which set which features came first."],
+      ["Built adoption and retention dashboards", " to guide the early product and its growth."],
     ],
   },
   {
@@ -81,10 +78,10 @@ export const experience = [
     logo: "/logos/tcs.png",
     url: "https://www.tcs.com",
     bullets: [
-      "Led end-to-end delivery of 20+ financial reports and Power BI dashboards for enterprise clients.",
-      "Built 10+ KPI dashboards; reduced data refresh time by 50% through SQL-based data model optimisation.",
-      "Automated reporting workflows using Python scripts across regional business units.",
-      "Awarded 'Star Employee' twice — 2019 and 2020.",
+      ["Sped up decision-making by 40%", " with 20+ Power BI dashboards built on SQL and data pipelines."],
+      ["Halved report refresh time", " by redesigning the data model behind the reports."],
+      ["Built Power BI reports tracking 10+ financial KPIs", " for business teams."],
+      ["Automated recurring performance reports", " and data workflows with SQL and Python."],
     ],
   },
 ];
@@ -381,28 +378,29 @@ export const skills = {
 
 export const education = [
   {
-    degree: "Master of Business Administration",
-    field: "IT Strategy",
+    degree: "MBA",
+    field: "IT, Strategy",
     institution: "Indian Institute of Management, Ranchi",
-    location: "India",
-    period: "2021 – 2023",
+    location: "Ranchi, India",
+    period: "Class of 2023",
     url: "https://www.iimranchi.ac.in/",
-    achievement: "D2C Rank 1 · National Winner — Tata Imagination Challenge",
+    achievement: "",
     color: "from-violet-500 to-indigo-600",
     logo: "/logos/iim-ranchi.png",
+    logoDark: false,
     shortName: "IIM Ranchi",
   },
   {
     degree: "Bachelor of Technology",
     field: "Mechanical Engineering",
-    institution: "Gayatri Vidya Parishad College of Engineering",
+    institution: "Gayatri Vidya Parishad",
     location: "India",
-    period: "2013 – 2017",
+    period: "Class of 2017",
     url: "https://www.gvpce.ac.in/",
     achievement: "",
     color: "from-orange-400 to-amber-500",
     logo: "/logos/gvp.png",
     logoDark: false,
-    shortName: "GVP College",
+    shortName: "GVP",
   },
 ];
