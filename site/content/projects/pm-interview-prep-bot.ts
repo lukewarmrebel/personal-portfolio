@@ -753,7 +753,7 @@ const project: ProjectFile = {
       "AI Product Design"
     ],
     "paragraphs": [
-      "Designed and launched a personalised PM interview simulation tool using RAG and multi-agent orchestration. A Manager Agent coordinates subagents to generate questions, probe weak answers, and compile structured feedback — all context-aware from resume, JD, and MBTI inputs."
+      "I designed and launched a personalised PM mock interview tool using RAG and several AI agents. A Manager Agent runs subagents that ask questions, probe weak answers and put together structured feedback. Everything is tailored to your resume, the JD and your MBTI."
     ]
   }
 };

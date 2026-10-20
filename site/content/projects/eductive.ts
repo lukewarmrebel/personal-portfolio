@@ -787,7 +787,7 @@ const project: ProjectFile = {
       "Financial Modelling"
     ],
     "paragraphs": [
-      "Designed and pitched a B2B2C digital wellness platform targeting India's student mental health crisis — where >40% of students face severe depression or stress and >80% never seek support. Eductive gives institutions AI-driven non-cognitive behavioural insights (SEL) to detect, track, and intervene in student mental health before it escalates."
+      "I designed and pitched a B2B2C digital wellness platform for India's student mental health crisis. Over 40% of students face severe depression or stress, and over 80% never seek support. Eductive gives institutions AI-driven non-cognitive behavioural insights (SEL). They can spot, track and act on student mental health before it gets worse."
     ]
   }
 };

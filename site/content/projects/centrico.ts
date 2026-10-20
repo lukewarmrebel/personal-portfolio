@@ -754,7 +754,7 @@ const project: ProjectFile = {
       "Customer Journey Map"
     ],
     "paragraphs": [
-      "End-to-end 0→1 build of an interior design marketplace connecting homeowners with designers. Led market research, customer journey mapping, MVP scoping, and rapid prototyping using AI code editors — validating the full GTM hypothesis in 2 weeks."
+      "I took an interior design marketplace from 0 to 1. It connects homeowners with designers. I led the market research, mapped the customer journey, scoped the MVP and built quick prototypes with AI code editors. I tested the full GTM hypothesis in 2 weeks."
     ]
   }
 };

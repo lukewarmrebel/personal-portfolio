@@ -749,7 +749,7 @@ const project: ProjectFile = {
   "extra": {
     "highlights": [
       "7 workflows: claim triage (APPROVE/DENY/ESCALATE), fraud scoring (LOW/MEDIUM/HIGH), policy summary, customer comms, risk assessment, compliance check, policy comparison",
-      "Multi-provider LLM factory: Anthropic Claude, OpenAI GPT-4o, Google Gemini — swappable via single config",
+      "Multi-provider LLM factory: Anthropic Claude, OpenAI GPT-4o, Google Gemini, swappable via a single config",
       "Built-in eval suite: ROUGE, BLEU, BERTScore + 15-claim benchmark measuring triage accuracy across auto and homeowner scenarios"
     ],
     "skills": [
@@ -763,7 +763,7 @@ const project: ProjectFile = {
       "InsurTech"
     ],
     "paragraphs": [
-      "Built a full-stack AI agent system automating 7 insurance operational workflows — claim triage, fraud detection, policy summaries, risk assessment, compliance verification, and more. Provider-agnostic: swap Claude, GPT-4o, or Gemini without touching downstream code. Ships with ROUGE/BLEU/BERTScore eval benchmarks and a 15-claim accuracy suite."
+      "I built a full-stack AI agent system that automates 7 insurance workflows. They include claim triage, fraud detection, policy summaries, risk assessment and compliance checks. It works with any provider: you can swap Claude, GPT-4o or Gemini without touching the code after it. It ships with ROUGE/BLEU/BERTScore eval benchmarks and a 15-claim accuracy suite."
     ]
   }
 };

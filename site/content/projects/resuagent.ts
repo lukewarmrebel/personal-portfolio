@@ -744,7 +744,7 @@ const project: ProjectFile = {
       "Step 1–4 pipeline: Upload → Verify & Edit parsed data → AI-tailor bullet points → Preview & Export",
       "Gemini-powered tailoring: rewrites resume bullets to align with JD without losing authenticity",
       "Knowledge Base module persists role preferences and context across sessions",
-      "Client-side API key management — no server-side credential storage"
+      "Client-side API key management, with no server-side credential storage"
     ],
     "skills": [
       "AI Agent Design",
@@ -755,7 +755,7 @@ const project: ProjectFile = {
       "Prompt Engineering"
     ],
     "paragraphs": [
-      "4-step AI agent pipeline for resume tailoring: upload PDF → parse and verify → AI-rewrite bullet points for target role → preview and export. Gemini rewrites resume points to match JD keywords while preserving the candidate's voice. Includes a Knowledge Base tab for storing role context across sessions."
+      "I built a 4-step AI agent pipeline that tailors a resume: upload PDF → parse and verify → AI-rewrite bullet points for the target role → preview and export. Gemini rewrites resume points to match JD keywords and keeps the candidate's voice. A Knowledge Base tab stores role context across sessions."
     ]
   }
 };

@@ -67,7 +67,7 @@ const project: ProjectFile = {
           "report": "Fast triage, conflicts flagged with proof, a draft decision they control.",
           "cut": "Start with red flags and document conflicts. They save the most reading time.",
           "list": "Risk score, red flags engine, document compare, co-pilot chat, renewal alerts.",
-          "evaluate": "More automation saves time but risks trust. Every flag must cite its source.",
+          "evaluate": "More automation saves time but risks trust. Every flag must link to its page.",
           "summarise": "An AI helper that reads and flags. The underwriter still decides."
         }
       },
@@ -107,7 +107,7 @@ const project: ProjectFile = {
             "group": "Risk"
           },
           {
-            "insight": "Trust needs a source",
+            "insight": "Trust needs proof",
             "evidence": "Hypothesis: flags without a page link get ignored",
             "group": "Trust"
           }
@@ -147,7 +147,7 @@ const project: ProjectFile = {
             "Explains with proof"
           ],
           "y": [
-            "One data source",
+            "One data feed",
             "Reads everything"
           ],
           "points": [
@@ -179,7 +179,7 @@ const project: ProjectFile = {
             "Reads documents",
             "External scan",
             "Conflict check",
-            "Cites source",
+            "Links to proof",
             "Feedback loop"
           ],
           "rows": [
@@ -258,7 +258,7 @@ const project: ProjectFile = {
           },
           {
             "when": "I'm ready to quote",
-            "want": "a drafted summary with sources",
+            "want": "a drafted summary with page links",
             "so": "I check, edit and send in minutes"
           }
         ]
@@ -324,7 +324,7 @@ const project: ProjectFile = {
             "note": "Doubts the AI"
           },
           {
-            "step": "Checks the source",
+            "step": "Checks the page",
             "feeling": 1,
             "note": "Page link shows it"
           },
@@ -339,7 +339,7 @@ const project: ProjectFile = {
             "note": "Done in one sitting"
           }
         ],
-        "note": "The dip is the moment of doubt. Showing the source is the fix."
+        "note": "The dip is the moment of doubt. Showing the page is the fix."
       },
       {
         "kind": "rice",
@@ -549,8 +549,8 @@ const project: ProjectFile = {
           {
             "dimension": "Engagement",
             "goal": "Flags get checked, not skipped",
-            "signal": "Source opened",
-            "metric": "% flags with source viewed"
+            "signal": "Page link opened",
+            "metric": "% flags with page link viewed"
           },
           {
             "dimension": "Adoption",
@@ -641,7 +641,7 @@ const project: ProjectFile = {
         }
       },
       {
-        "label": "Red flags and conflicts listed with sources"
+        "label": "Red flags and conflicts listed with page links"
       },
       {
         "label": "Case ranked in the work queue"
@@ -672,7 +672,7 @@ const project: ProjectFile = {
       },
       {
         "src": "/projects/sentinel-cyber-uw-copilot/2-flags.svg",
-        "caption": "Red flags, each with its source"
+        "caption": "Red flags, each with its page link"
       },
       {
         "src": "/projects/sentinel-cyber-uw-copilot/3-compare.svg",
@@ -692,7 +692,7 @@ const project: ProjectFile = {
       "Enrich: outside scan data and past cases add context",
       "Check: rules match facts against underwriting guidelines",
       "Rank: cases sorted by risk in a work queue",
-      "Draft: an AI summary with sources for the underwriter to edit"
+      "Draft: an AI summary with page links for the underwriter to edit"
     ],
     "decisions": [
       {
@@ -722,7 +722,7 @@ const project: ProjectFile = {
       },
       {
         "name": "Reasoning",
-        "target": "est. 90% with valid source",
+        "target": "est. 90% with a valid page link",
         "how": "Check the cited page actually supports the flag"
       },
       {
@@ -791,7 +791,7 @@ const project: ProjectFile = {
       "System Design"
     ],
     "paragraphs": [
-      "Deep teardown of Sentinel's AI-powered cyber underwriting platform. Explored its 5-layer intelligence stack, Red Flags Engine for document conflict detection, and proposed a 4-tier AI eval rubric — questioning how AI augments underwriting judgment without replacing it."
+      "I took apart Sentinel's AI-powered cyber underwriting platform. I studied its 5-layer intelligence stack and its Red Flags Engine, which finds conflicts between documents. I proposed a 4-tier AI eval rubric. My question was how AI can support underwriting judgment without replacing it."
     ]
   }
 };

@@ -769,7 +769,7 @@ const project: ProjectFile = {
       "Benchmarking"
     ],
     "paragraphs": [
-      "Structured teardown of how an AI-native underwriting platform should be evaluated end-to-end. Defines a 4-tier rubric: Output Quality, Reasoning Transparency, Human-AI Collaboration, and Portfolio Outcomes: with specific metrics, red flag thresholds, and open questions on confidence calibration."
+      "This is my teardown of how an AI-native underwriting platform should be tested end to end. I set out a 4-tier rubric: Output Quality, Reasoning Transparency, Human-AI Collaboration and Portfolio Outcomes. Each tier has specific metrics and red flag thresholds. I also list open questions on confidence calibration."
     ]
   },
   "label": "A teardown of my own prototype, Sentinel. The scorecard is how I'd judge it; screen numbers are sample data."

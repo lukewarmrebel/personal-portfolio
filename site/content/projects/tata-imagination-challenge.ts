@@ -732,7 +732,7 @@ const project: ProjectFile = {
       "Storytelling"
     ],
     "paragraphs": [
-      "Ranked #1 nationally (D2C track) at Tata's flagship business competition during MBA at IIM Ranchi. Developed a full D2C strategy for a Tata brand — covering consumer segmentation, digital channel architecture, pricing model, and go-to-market sequencing."
+      "I ranked #1 nationally (D2C track) at Tata's flagship business competition during my MBA at IIM Ranchi. I built a full D2C strategy for a Tata brand. It covered consumer segmentation, digital channels, the pricing model and the go-to-market order."
     ]
   }
 };

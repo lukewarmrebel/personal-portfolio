@@ -156,7 +156,7 @@ const project: ProjectFile = {
           ],
           "points": [
             {
-              "name": "Open-source labelers",
+              "name": "Free labeling tools",
               "x": 0.15,
               "y": 0.25
             },
@@ -188,7 +188,7 @@ const project: ProjectFile = {
           ],
           "rows": [
             {
-              "name": "Open-source labelers",
+              "name": "Free labeling tools",
               "values": [
                 "yes",
                 "partial",
@@ -750,7 +750,7 @@ const project: ProjectFile = {
       "Annotation Tooling"
     ],
     "paragraphs": [
-      "Browser-based canvas annotation tool for vehicle damage assessment. Draw bounding boxes, circles, and text labels manually — or hit AI Analyze for automatic damage region detection. Batch mode auto-analyzes all uploaded images. Export annotated sets as ZIP for downstream ML training pipelines."
+      "I built a browser-based canvas tool for marking vehicle damage. You can draw boxes, circles and text labels by hand, or tap AI Analyze to find damage regions automatically. Batch mode analyzes every uploaded image. You export the marked set as a ZIP to train ML models later."
     ]
   }
 };
