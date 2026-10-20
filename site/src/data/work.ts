@@ -200,7 +200,7 @@ export const workGroups: WorkGroup[] = [
         title: "Faster insurance approvals for hospital treatment (US)",
         tag: "Healthcare · “PreAuth Copilot”",
         what: "Most approval delays come from incomplete paperwork, not hard medical decisions. An AI helper makes each request complete the first time, and it is never allowed to refuse one.",
-        stat: "Most appealed Medicare Advantage denials are overturned: 80.7% (KFF).",
+        stat: "Most appealed Medicare Advantage denials are overturned: 80.7%.",
         links: [
           { label: "Read the case study", href: "/case-studies/preauth-copilot", kind: "page" },
           { label: "PDF version", href: "/case-studies/pdf/Pranav_AIPM_CaseStudy_Healthcare.pdf", kind: "pdf" },
@@ -221,7 +221,7 @@ export const workGroups: WorkGroup[] = [
         title: "Stopping UPI scams before the money leaves",
         tag: "Payments · “Pause”",
         what: "Hold the few payments that look like a scam in progress, explain why in plain words, and let every other payment go through.",
-        stat: "98.5% of UPI fraud money is in payments above ₹10,000 (RBI).",
+        stat: "98.5% of UPI fraud money is in payments above ₹10,000.",
         links: [
           { label: "Read the case study", href: "/case-studies/pause", kind: "page" },
           { label: "PDF version", href: "/case-studies/pdf/Pranav_AIPM_CaseStudy_Payments.pdf", kind: "pdf" },

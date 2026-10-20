@@ -78,9 +78,9 @@ export default function Hero() {
             </motion.p>
 
             <motion.div {...up(0.4)} className="flex flex-wrap gap-3 mb-10">
-              <a href="/work"
+              <a href="/projects"
                 className="px-6 py-2.5 rounded-full text-sm font-semibold bg-zinc-900 text-white hover:bg-zinc-700 transition-colors shadow-sm">
-                See my work
+                See my projects
               </a>
               <a href={personal.resumeUrl} target="_blank" rel="noopener noreferrer"
                 className="px-6 py-2.5 rounded-full text-sm font-semibold border border-zinc-300 text-zinc-700 hover:border-indigo-400 hover:text-indigo-600 transition-colors">

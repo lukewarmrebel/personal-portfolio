@@ -1,9 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import WorkHighlights from "@/components/WorkHighlights";
+import FeaturedProjects from "@/components/FeaturedProjects";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
-import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Education from "@/components/Education";
 import FloatingDock from "@/components/FloatingDock";
@@ -13,10 +12,9 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <WorkHighlights />
+      <FeaturedProjects />
       <About />
       <Experience />
-      <Projects />
       <Skills />
       <Education />
       <footer className="py-6 text-center text-xs text-zinc-400 border-t border-zinc-100">

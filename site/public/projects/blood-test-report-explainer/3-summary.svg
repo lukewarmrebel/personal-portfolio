@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#18181B">Nanna · October report</text>
+<text x="20" y="70" font-size="10" fill="#71717A">Grouped the way a doctor reads it</text>
+<rect x="16" y="86" width="54" height="22" rx="11" fill="#18181B" stroke="#D4D4D8"/><text x="43.0" y="101" font-size="9.5" fill="#FFFFFF" text-anchor="middle">Telugu</text>
+<rect x="76" y="86" width="60" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/><text x="106.0" y="101" font-size="9.5" fill="#3F3F46" text-anchor="middle">English</text>
+<rect x="142" y="86" width="48" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/><text x="166.0" y="101" font-size="9.5" fill="#3F3F46" text-anchor="middle">Hindi</text>
+<rect x="16" y="116" width="208" height="40" rx="8" fill="#F8F7F4" stroke="#E4E4E7"/>
+<text x="26" y="133" font-size="11" font-weight="600" fill="#18181B">HbA1c  6.6 %</text>
+<text x="26" y="147" font-size="9" fill="#71717A">Above range by 0.9 · page 2</text>
+<circle cx="210" cy="136" r="5" fill="#B9381B"/>
+<rect x="16" y="162" width="208" height="40" rx="8" fill="#F8F7F4" stroke="#E4E4E7"/>
+<text x="26" y="179" font-size="11" font-weight="600" fill="#18181B">LDL  168 mg/dL</text>
+<text x="26" y="193" font-size="9" fill="#71717A">68 above range · page 3</text>
+<circle cx="210" cy="182" r="5" fill="#B9381B"/>
+<rect x="16" y="208" width="208" height="40" rx="8" fill="#F8F7F4" stroke="#E4E4E7"/>
+<text x="26" y="225" font-size="11" font-weight="600" fill="#18181B">Vitamin D  14 ng/mL</text>
+<text x="26" y="239" font-size="9" fill="#71717A">Below range by 16 · page 4</text>
+<circle cx="210" cy="228" r="5" fill="#B9381B"/>
+<rect x="16" y="254" width="208" height="40" rx="8" fill="#F8F7F4" stroke="#E4E4E7"/>
+<text x="26" y="271" font-size="11" font-weight="600" fill="#18181B">TSH  3.1 µIU/mL</text>
+<text x="26" y="285" font-size="9" fill="#71717A">Inside range · page 3</text>
+<circle cx="210" cy="274" r="5" fill="#3F7D58"/>
+<rect x="16" y="300" width="208" height="40" rx="8" fill="#F8F7F4" stroke="#E4E4E7"/>
+<text x="26" y="317" font-size="11" font-weight="600" fill="#18181B">Creatinine  (unreadable)</text>
+<text x="26" y="331" font-size="9" fill="#71717A">Could not read. Not guessed.</text>
+<circle cx="210" cy="320" r="5" fill="#A1A1AA"/>
+<rect x="16" y="346" width="208" height="34" rx="17" fill="#18181B"/><text x="120.0" y="367" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">5 questions for the doctor</text>
+<text x="120.0" y="466" font-size="8.5" fill="#A1A1AA" text-anchor="middle">Wireframe · sample data</text>
+</svg>
