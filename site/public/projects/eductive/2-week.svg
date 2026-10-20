@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#3F3F46">Your week</text>
+<text x="20" y="70" font-size="10" font-weight="400" fill="#71717A">Private to you · sample data</text>
+<rect x="16" y="88" width="208" height="100" rx="8" fill="#FAFAF9" stroke="#D4D4D8"/>
+<path d="M30 148 L60 156 L90 143 L120 130 L150 138 L180 120 L210 126" fill="none" stroke="#6366F1" stroke-width="2.5"/>
+<text x="30" y="186" font-size="7.5" font-weight="400" fill="#A1A1AA" text-anchor="middle">M</text>
+<text x="60" y="186" font-size="7.5" font-weight="400" fill="#A1A1AA" text-anchor="middle">T</text>
+<text x="90" y="186" font-size="7.5" font-weight="400" fill="#A1A1AA" text-anchor="middle">W</text>
+<text x="120" y="186" font-size="7.5" font-weight="400" fill="#A1A1AA" text-anchor="middle">T</text>
+<text x="150" y="186" font-size="7.5" font-weight="400" fill="#A1A1AA" text-anchor="middle">F</text>
+<text x="180" y="186" font-size="7.5" font-weight="400" fill="#A1A1AA" text-anchor="middle">S</text>
+<text x="210" y="186" font-size="7.5" font-weight="400" fill="#A1A1AA" text-anchor="middle">S</text>
+<rect x="16" y="200" width="208" height="42" rx="8" fill="#FAFAF9"/>
+<text x="26" y="219" font-size="10" font-weight="400" fill="#3F3F46">Mood dipped on exam days.</text>
+<text x="26" y="233" font-size="10" font-weight="400" fill="#3F3F46">Sleep was under 6 hours twice.</text>
+<text x="20" y="260" font-size="8.5" font-weight="700" fill="#A1A1AA">TRY THIS</text>
+<rect x="16" y="272" width="208" height="43" rx="8" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="26" y="290" font-size="10.5" font-weight="600" fill="#18181B">4-minute breathing</text>
+<rect x="174.0" y="279" width="40.0" height="16" rx="8" fill="#EEF2FF"/>
+<text x="194.0" y="290.5" font-size="8.5" font-weight="600" fill="#3730A3" text-anchor="middle">Start</text>
+<text x="26" y="306" font-size="9" font-weight="400" fill="#71717A">Self-help · level 1</text>
+<rect x="16" y="323" width="208" height="43" rx="8" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="26" y="341" font-size="10.5" font-weight="600" fill="#18181B">Talk to your mentor</text>
+<rect x="179.2" y="330" width="34.8" height="16" rx="8" fill="#EEF2FF"/>
+<text x="196.6" y="341.5" font-size="8.5" font-weight="600" fill="#3730A3" text-anchor="middle">Book</text>
+<text x="26" y="357" font-size="9" font-weight="400" fill="#71717A">Level 2 · replies within a day</text>
+<text x="120" y="466" font-size="8.5" font-weight="400" fill="#A1A1AA" text-anchor="middle">Wireframe · sample data</text>
+</svg>
