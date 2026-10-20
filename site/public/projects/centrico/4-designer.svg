@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#3F3F46">Designer dashboard</text>
+<text x="20" y="70" font-size="10" font-weight="400" fill="#71717A">For designers · this week (sample)</text>
+<text x="20" y="88" font-size="10" font-weight="400" fill="#3F3F46">Profile views</text>
+<text x="220" y="88" font-size="10" font-weight="600" fill="#18181B" text-anchor="end">142</text>
+<rect x="20" y="94" width="200" height="8" rx="4" fill="#E4E4E7"/>
+<rect x="20" y="94" width="140.0" height="8" rx="4" fill="#6366F1"/>
+<text x="20" y="122" font-size="10" font-weight="400" fill="#3F3F46">Consultations booked</text>
+<text x="220" y="122" font-size="10" font-weight="600" fill="#18181B" text-anchor="end">6</text>
+<rect x="20" y="128" width="200" height="8" rx="4" fill="#E4E4E7"/>
+<rect x="20" y="128" width="60.0" height="8" rx="4" fill="#6366F1"/>
+<text x="20" y="164" font-size="8.5" font-weight="700" fill="#A1A1AA">UPCOMING</text>
+<rect x="16" y="176" width="208" height="43" rx="8" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="26" y="194" font-size="10.5" font-weight="600" fill="#18181B">Sat 25 · 14:30</text>
+<rect x="158.4" y="183" width="55.6" height="16" rx="8" fill="#EEF2FF"/>
+<text x="186.2" y="194.5" font-size="8.5" font-weight="600" fill="#3730A3" text-anchor="middle">New lead</text>
+<text x="26" y="210" font-size="9" font-weight="400" fill="#71717A">2BHK, Kondapur · ₹6-8L</text>
+<rect x="16" y="227" width="208" height="43" rx="8" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="26" y="245" font-size="10.5" font-weight="600" fill="#18181B">Sun 26 · 11:00</text>
+<rect x="158.4" y="234" width="55.6" height="16" rx="8" fill="#EEF2FF"/>
+<text x="186.2" y="245.5" font-size="8.5" font-weight="600" fill="#3730A3" text-anchor="middle">New lead</text>
+<text x="26" y="261" font-size="9" font-weight="400" fill="#71717A">3BHK villa, Gachibowli · ₹15L+</text>
+<rect x="16" y="278" width="208" height="34" rx="17" fill="#FFFFFF" stroke="#3F3F46"/>
+<text x="120" y="299" font-size="11" font-weight="600" fill="#18181B" text-anchor="middle">Add a project to portfolio</text>
+<text x="120" y="466" font-size="8.5" font-weight="400" fill="#A1A1AA" text-anchor="middle">Wireframe · sample data</text>
+</svg>
