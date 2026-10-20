@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#3F3F46">Red flags</text>
+<text x="20" y="70" font-size="10" font-weight="400" fill="#71717A">Acme Logistics · 3 found</text>
+<rect x="16" y="88" width="62.8" height="22" rx="11" fill="#18181B" stroke="#D4D4D8"/>
+<text x="47.4" y="103" font-size="9.5" font-weight="400" fill="#FFFFFF" text-anchor="middle">Critical</text>
+<rect x="84.8" y="88" width="68.4" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="119.0" y="103" font-size="9.5" font-weight="400" fill="#3F3F46" text-anchor="middle">Conflicts</text>
+<rect x="159.2" y="88" width="34.8" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="176.6" y="103" font-size="9.5" font-weight="400" fill="#3F3F46" text-anchor="middle">All</text>
+<rect x="16" y="122" width="208" height="56" rx="8" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="26" y="140" font-size="10.5" font-weight="600" fill="#18181B">Missing MFA on VPN</text>
+<rect x="158.4" y="129" width="55.6" height="16" rx="8" fill="#FDECE7"/>
+<text x="186.2" y="140.5" font-size="8.5" font-weight="600" fill="#B9381B" text-anchor="middle">Critical</text>
+<text x="26" y="156" font-size="9" font-weight="400" fill="#71717A">Found in: audit report, page 14</text>
+<text x="26" y="169" font-size="9" font-weight="400" fill="#71717A">AI confidence 92% (sample)</text>
+<rect x="16" y="186" width="208" height="56" rx="8" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="26" y="204" font-size="10.5" font-weight="600" fill="#18181B">Open remote desktop port</text>
+<rect x="158.4" y="193" width="55.6" height="16" rx="8" fill="#FDECE7"/>
+<text x="186.2" y="204.5" font-size="8.5" font-weight="600" fill="#B9381B" text-anchor="middle">Critical</text>
+<text x="26" y="220" font-size="9" font-weight="400" fill="#71717A">Found in: external scan</text>
+<text x="26" y="233" font-size="9" font-weight="400" fill="#71717A">AI confidence 97% (sample)</text>
+<rect x="16" y="250" width="208" height="56" rx="8" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="26" y="268" font-size="10.5" font-weight="600" fill="#18181B">Backups: forms disagree</text>
+<rect x="158.4" y="257" width="55.6" height="16" rx="8" fill="#EEF2FF"/>
+<text x="186.2" y="268.5" font-size="8.5" font-weight="600" fill="#3730A3" text-anchor="middle">Conflict</text>
+<text x="26" y="284" font-size="9" font-weight="400" fill="#71717A">Proposal: tested weekly</text>
+<text x="26" y="297" font-size="9" font-weight="400" fill="#71717A">Audit: no restore test in 3 years</text>
+<text x="20" y="314" font-size="8.5" font-weight="700" fill="#A1A1AA">IS THIS FLAG RIGHT?</text>
+<rect x="16" y="328" width="100" height="28" rx="14" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="66" y="346" font-size="10" font-weight="600" fill="#18181B" text-anchor="middle">Yes, keep</text>
+<rect x="124" y="328" width="100" height="28" rx="14" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="174" y="346" font-size="10" font-weight="600" fill="#18181B" text-anchor="middle">No, wrong</text>
+<text x="120" y="466" font-size="8.5" font-weight="400" fill="#A1A1AA" text-anchor="middle">Wireframe · sample data</text>
+</svg>
