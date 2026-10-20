@@ -12,7 +12,7 @@ function CompanyLogo({ src, alt, color, dark }: { src: string; alt: string; colo
         className="w-7 h-7 object-contain"
         onError={(e) => {
           const el = e.currentTarget.parentElement!;
-          el.className = `w-9 h-9 rounded-xl bg-gradient-to-br ${color} flex items-center justify-center shrink-0`;
+          el.className = `w-9 h-9 rounded-xl bg-indigo-500 flex items-center justify-center shrink-0`;
           el.innerHTML = `<span class="text-white text-xs font-bold">${alt.slice(0, 2).toUpperCase()}</span>`;
         }}
       />
@@ -27,7 +27,7 @@ export default function Experience() {
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-12">
           <span className="text-xs font-semibold tracking-widest uppercase text-indigo-500">Work experience</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-2 text-zinc-900">
-            Where I&apos;ve <span className="gradient-text">made an impact</span>
+            Where I&apos;ve <span className="text-indigo-600">made an impact</span>
           </h2>
         </motion.div>
 
@@ -40,7 +40,7 @@ export default function Experience() {
                 initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="md:pl-16 relative">
                 {/* dot */}
-                <div className={`hidden md:flex absolute left-3.5 top-6 w-5 h-5 -translate-x-1/2 rounded-full bg-gradient-to-br ${job.color} items-center justify-center shadow ring-2 ring-white dark:ring-zinc-900`}>
+                <div className={`hidden md:flex absolute left-3.5 top-6 w-5 h-5 -translate-x-1/2 rounded-full bg-indigo-500 items-center justify-center shadow ring-2 ring-white dark:ring-zinc-900`}>
                   <div className="w-1.5 h-1.5 rounded-full bg-white" />
                 </div>
 
@@ -50,7 +50,7 @@ export default function Experience() {
                       <CompanyLogo src={job.logo} alt={job.company} color={job.color} dark={(job as {logoDark?: boolean}).logoDark} />
                       <div>
                         <h3 className="text-lg font-bold text-zinc-900">{job.company}</h3>
-                        <p className={`text-sm font-semibold mt-0.5 bg-gradient-to-r ${job.color} bg-clip-text text-transparent`}>{job.role}</p>
+                        <p className="text-sm font-semibold mt-0.5 text-indigo-600">{job.role}</p>
                       </div>
                     </div>
                     <div className="flex flex-col items-start sm:items-end gap-1 shrink-0 text-xs text-zinc-400">
@@ -60,9 +60,11 @@ export default function Experience() {
                   </div>
                   <ul className="space-y-2">
                     {job.bullets.map((b, bi) => (
-                      <li key={bi} className="flex gap-2.5 text-sm text-zinc-600 leading-relaxed">
-                        <span className="mt-2 shrink-0 w-1 h-1 rounded-full bg-indigo-400" />
-                        {b}
+                      <li key={bi} className="flex gap-2.5 text-[15px] text-zinc-600 leading-relaxed">
+                        <span className="mt-[9px] shrink-0 w-1.5 h-1.5 rounded-full bg-indigo-400" />
+                        <span>
+                          {typeof b === "string" ? b : (<><strong className="font-semibold text-zinc-900">{b[0]}</strong>{b[1]}</>)}
+                        </span>
                       </li>
                     ))}
                   </ul>

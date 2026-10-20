@@ -4,12 +4,12 @@ import { Sun, Moon } from "lucide-react";
 import { personal } from "@/data/portfolio";
 
 const navLinks = [
+  { label: "Work", href: "/work" },
+  { label: "Case Studies", href: "/case-studies" },
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
-  { label: "Case Studies", href: "/case-studies" },
   { label: "Skills", href: "#skills" },
-  { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ];
 

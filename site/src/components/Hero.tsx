@@ -5,6 +5,7 @@ import { Mail, FileText } from "lucide-react";
 import { personal, education, experience } from "@/data/portfolio";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { useState, useEffect } from "react";
+import NewWorkBanner from "@/components/NewWorkBanner";
 
 const up = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -62,6 +63,7 @@ export default function Hero() {
 
           {/* Left — Text */}
           <div className="pt-4">
+            <motion.div {...up(0)}><NewWorkBanner /></motion.div>
             <motion.h1 {...up(0.1)} className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-900 mb-4 leading-tight">
               Hi, I&apos;m{" "}
               <span className="gradient-text block">{personal.name}</span>
@@ -76,9 +78,9 @@ export default function Hero() {
             </motion.p>
 
             <motion.div {...up(0.4)} className="flex flex-wrap gap-3 mb-10">
-              <a href="#projects"
+              <a href="/work"
                 className="px-6 py-2.5 rounded-full text-sm font-semibold bg-zinc-900 text-white hover:bg-zinc-700 transition-colors shadow-sm">
-                View Projects
+                See my work
               </a>
               <a href={personal.resumeUrl} target="_blank" rel="noopener noreferrer"
                 className="px-6 py-2.5 rounded-full text-sm font-semibold border border-zinc-300 text-zinc-700 hover:border-indigo-400 hover:text-indigo-600 transition-colors">

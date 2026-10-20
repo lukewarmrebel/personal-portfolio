@@ -12,7 +12,7 @@ function EduLogo({ src, alt, color, dark }: { src: string; alt: string; color: s
         className="w-8 h-8 object-contain"
         onError={(e) => {
           const el = e.currentTarget.parentElement!;
-          el.innerHTML = `<div class="w-10 h-10 rounded-xl bg-gradient-to-br ${color} flex items-center justify-center"><svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M22 10v6M2 10l10-5 10 5-10 5z'/><path d='M6 12v5c3 3 9 3 12 0v-5'/></svg></div>`;
+          el.innerHTML = `<div class="w-10 h-10 rounded-xl bg-indigo-500 flex items-center justify-center"><svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M22 10v6M2 10l10-5 10 5-10 5z'/><path d='M6 12v5c3 3 9 3 12 0v-5'/></svg></div>`;
         }}
       />
     </div>
@@ -26,7 +26,7 @@ export default function Education() {
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-12">
           <span className="text-xs font-semibold tracking-widest uppercase text-indigo-500">Education</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-2 text-zinc-900">
-            Academic <span className="gradient-text">journey</span>
+            Academic <span className="text-indigo-600">journey</span>
           </h2>
         </motion.div>
 
@@ -35,12 +35,12 @@ export default function Education() {
             <motion.div key={edu.institution}
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
               className="card p-6 overflow-hidden">
-              <div className={`h-1 -mx-6 -mt-6 mb-5 bg-gradient-to-r ${edu.color}`} />
+              <div className="h-1 -mx-6 -mt-6 mb-5 bg-indigo-500" />
 
               <EduLogo src={edu.logo} alt={edu.shortName} color={edu.color} dark={edu.logoDark} />
 
               <h3 className="font-bold text-zinc-900 text-base">{edu.degree}</h3>
-              <p className={`text-sm font-semibold mt-0.5 bg-gradient-to-r ${edu.color} bg-clip-text text-transparent`}>{edu.field}</p>
+              <p className="text-sm font-semibold mt-0.5 text-indigo-600">{edu.field}</p>
 
               <a href={edu.url} target="_blank" rel="noopener noreferrer"
                 className="text-sm text-zinc-600 hover:text-indigo-600 transition-colors block mt-1">
