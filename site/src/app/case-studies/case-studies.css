@@ -400,3 +400,7 @@
 .cs-root .rung.t2 .tier, .cs-root .rung.t3 .tier{color:var(--c-amber)}
 .cs-root .rung.t4 small, .cs-root .rung.t4 p, .cs-root .rung.t4 .share{color:#FFE4DF!important}
 .cs-root .rung.t4 a{color:#fff}
+
+/* Nav on small phones: keep every link on one line. */
+.cs-root .nav-links a{white-space:nowrap}
+@media (max-width:440px){.cs-root .nav-links .show-sm{display:none}.cs-root .nav-links{gap:16px}}
