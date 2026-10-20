@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#18181B">Help</text>
+<text x="20" y="70" font-size="10" font-weight="400" fill="#71717A">Today, as riders describe it</text>
+<rect x="16" y="93" width="208" height="44" rx="8" fill="#F4F4F5"/>
+<text x="26" y="111" font-size="9.5" fill="#3F3F46">Hi! I can help with your trip.</text>
+<text x="26" y="124" font-size="9.5" fill="#3F3F46">Pick a topic below.</text>
+<rect x="16" y="145" width="74" height="22" rx="11" fill="#18181B" stroke="#D4D4D8"/><text x="53.0" y="160" font-size="9.5" fill="#FFFFFF" text-anchor="middle">Fare issue</text>
+<rect x="96.0" y="145" width="68" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/><text x="130.2" y="160" font-size="9.5" fill="#3F3F46" text-anchor="middle">Lost item</text>
+<rect x="170.4" y="145" width="46" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/><text x="193.4" y="160" font-size="9.5" fill="#3F3F46" text-anchor="middle">Other</text>
+<rect x="16" y="175" width="208" height="58" rx="8" fill="#F4F4F5"/>
+<text x="26" y="193" font-size="9.5" fill="#3F3F46">Fares can change due to traffic,</text>
+<text x="26" y="206" font-size="9.5" fill="#3F3F46">waits or route. Read our fare</text>
+<text x="26" y="219" font-size="9.5" fill="#3F3F46">policy for details.</text>
+<rect x="96" y="241" width="128" height="30" rx="8" fill="#18181B"/><text x="160" y="260" font-size="9.5" fill="#FFFFFF" text-anchor="middle">Driver took ₹250 extra</text>
+<rect x="16" y="279" width="208" height="44" rx="8" fill="#F4F4F5"/>
+<text x="26" y="297" font-size="9.5" fill="#3F3F46">Sorry to hear that! Was this</text>
+<text x="26" y="310" font-size="9.5" fill="#3F3F46">article helpful?</text>
+<rect x="16" y="331" width="35" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/><text x="33.4" y="346" font-size="9.5" fill="#3F3F46" text-anchor="middle">Yes</text>
+<rect x="56.8" y="331" width="29" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/><text x="71.4" y="346" font-size="9.5" fill="#3F3F46" text-anchor="middle">No</text>
+<rect x="16" y="361" width="208" height="30" rx="8" fill="#FEF2F2"/>
+<text x="26" y="379" font-size="9.5" fill="#991B1B">No option to talk to a person</text>
+<text x="120" y="462" font-size="8.5" fill="#A1A1AA" text-anchor="middle">Before. Mock content.</text>
+</svg>
