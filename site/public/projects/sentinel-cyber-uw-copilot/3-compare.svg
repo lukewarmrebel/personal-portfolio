@@ -3,22 +3,22 @@
 <rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
 <text x="20" y="50" font-size="15" font-weight="700" fill="#3F3F46">Document check</text>
 <text x="20" y="70" font-size="10" font-weight="400" fill="#71717A">Proposal form vs audit report</text>
-<text x="20" y="88" font-size="8.5" font-weight="700" fill="#A1A1AA">PROPOSAL FORM SAYS</text>
-<rect x="16" y="102" width="208" height="42" rx="8" fill="#FAFAF9"/>
-<text x="26" y="121" font-size="10" font-weight="400" fill="#3F3F46">"Daily offline backups,</text>
-<text x="26" y="135" font-size="10" font-weight="400" fill="#3F3F46">verified every week."</text>
-<text x="20" y="154" font-size="8.5" font-weight="700" fill="#A1A1AA">AUDIT REPORT SAYS</text>
-<rect x="16" y="168" width="208" height="42" rx="8" fill="#FAFAF9"/>
-<text x="26" y="187" font-size="10" font-weight="400" fill="#3F3F46">"No restore test since 2021."</text>
-<text x="26" y="201" font-size="10" font-weight="400" fill="#3F3F46">Page 22, section 4.3</text>
-<text x="20" y="220" font-size="8.5" font-weight="700" fill="#A1A1AA">AI READING</text>
-<rect x="16" y="234" width="208" height="56" rx="8" fill="#FDECE7"/>
-<text x="26" y="253" font-size="10" font-weight="400" fill="#B9381B">These two can't both be true.</text>
-<text x="26" y="267" font-size="10" font-weight="400" fill="#B9381B">Ask the broker for a recent</text>
-<text x="26" y="281" font-size="10" font-weight="400" fill="#B9381B">restore test before quoting.</text>
-<rect x="16" y="300" width="208" height="34" rx="17" fill="#18181B"/>
-<text x="120" y="321" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">Ask broker for proof</text>
-<rect x="16" y="344" width="208" height="34" rx="17" fill="#FFFFFF" stroke="#3F3F46"/>
-<text x="120" y="365" font-size="11" font-weight="600" fill="#18181B" text-anchor="middle">Mark as resolved</text>
+<text x="20" y="96" font-size="8.5" font-weight="700" fill="#A1A1AA">PROPOSAL FORM SAYS</text>
+<rect x="16" y="108" width="208" height="42" rx="8" fill="#FAFAF9"/>
+<text x="26" y="127" font-size="10" font-weight="400" fill="#3F3F46">"Daily offline backups,</text>
+<text x="26" y="141" font-size="10" font-weight="400" fill="#3F3F46">verified every week."</text>
+<text x="20" y="168" font-size="8.5" font-weight="700" fill="#A1A1AA">AUDIT REPORT SAYS</text>
+<rect x="16" y="180" width="208" height="42" rx="8" fill="#FAFAF9"/>
+<text x="26" y="199" font-size="10" font-weight="400" fill="#3F3F46">"No restore test since 2021."</text>
+<text x="26" y="213" font-size="10" font-weight="400" fill="#3F3F46">Page 22, section 4.3</text>
+<text x="20" y="240" font-size="8.5" font-weight="700" fill="#A1A1AA">AI READING</text>
+<rect x="16" y="252" width="208" height="56" rx="8" fill="#FDECE7"/>
+<text x="26" y="271" font-size="10" font-weight="400" fill="#B9381B">These two can't both be true.</text>
+<text x="26" y="285" font-size="10" font-weight="400" fill="#B9381B">Ask the broker for a recent</text>
+<text x="26" y="299" font-size="10" font-weight="400" fill="#B9381B">restore test before quoting.</text>
+<rect x="16" y="318" width="208" height="34" rx="17" fill="#18181B"/>
+<text x="120" y="339" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">Ask broker for proof</text>
+<rect x="16" y="362" width="208" height="34" rx="17" fill="#FFFFFF" stroke="#3F3F46"/>
+<text x="120" y="383" font-size="11" font-weight="600" fill="#18181B" text-anchor="middle">Mark as resolved</text>
 <text x="120" y="466" font-size="8.5" font-weight="400" fill="#A1A1AA" text-anchor="middle">Wireframe · sample data</text>
 </svg>
