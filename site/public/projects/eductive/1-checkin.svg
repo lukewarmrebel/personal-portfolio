@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#3F3F46">How are you today?</text>
+<text x="20" y="70" font-size="10" font-weight="400" fill="#71717A">Daily check-in · 30 seconds</text>
+<circle cx="36" cy="104" r="16" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="36" y="134" font-size="8.5" font-weight="400" fill="#71717A" text-anchor="middle">Low</text>
+<circle cx="77" cy="104" r="16" fill="#6366F1" stroke="#6366F1"/>
+<text x="77" y="134" font-size="8.5" font-weight="600" fill="#3730A3" text-anchor="middle">Meh</text>
+<circle cx="118" cy="104" r="16" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="118" y="134" font-size="8.5" font-weight="400" fill="#71717A" text-anchor="middle">Okay</text>
+<circle cx="159" cy="104" r="16" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="159" y="134" font-size="8.5" font-weight="400" fill="#71717A" text-anchor="middle">Good</text>
+<circle cx="200" cy="104" r="16" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="200" y="134" font-size="8.5" font-weight="400" fill="#71717A" text-anchor="middle">Great</text>
+<text x="20" y="158" font-size="8.5" font-weight="700" fill="#A1A1AA">WHAT'S ON YOUR MIND?</text>
+<rect x="16" y="170" width="46.0" height="22" rx="11" fill="#18181B" stroke="#D4D4D8"/>
+<text x="39.0" y="185" font-size="9.5" font-weight="400" fill="#FFFFFF" text-anchor="middle">Exams</text>
+<rect x="68.0" y="170" width="46.0" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="91.0" y="185" font-size="9.5" font-weight="400" fill="#3F3F46" text-anchor="middle">Sleep</text>
+<rect x="120.0" y="170" width="57.199999999999996" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="148.6" y="185" font-size="9.5" font-weight="400" fill="#3F3F46" text-anchor="middle">Friends</text>
+<text x="20" y="212" font-size="8.5" font-weight="700" fill="#A1A1AA">HOW STRESSED, 0 TO 10?</text>
+<text x="20" y="224" font-size="10" font-weight="400" fill="#3F3F46">Stress level</text>
+<text x="220" y="224" font-size="10" font-weight="600" fill="#18181B" text-anchor="end">6 / 10</text>
+<rect x="20" y="230" width="200" height="8" rx="4" fill="#E4E4E7"/>
+<rect x="20" y="230" width="120.0" height="8" rx="4" fill="#B9381B"/>
+<rect x="16" y="258" width="208" height="50" rx="8" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="26" y="278" font-size="9.5" font-weight="400" fill="#A1A1AA">Write a line (private)...</text>
+<rect x="16" y="318" width="208" height="34" rx="17" fill="#18181B"/>
+<text x="120" y="339" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">Save check-in</text>
+<text x="120" y="466" font-size="8.5" font-weight="400" fill="#A1A1AA" text-anchor="middle">Wireframe · sample data</text>
+</svg>
