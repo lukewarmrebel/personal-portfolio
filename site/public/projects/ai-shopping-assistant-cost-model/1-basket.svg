@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#18181B">Your basket</text>
+<text x="20" y="70" font-size="10" fill="#71717A">“2 packet milk aur aadha kilo tamatar”</text>
+<rect x="16" y="86" width="208" height="44" rx="10" fill="#EEF2FF" stroke="#EEF2FF" stroke-width="1.5"/>
+<text x="28" y="106" font-size="10" fill="#3730A3">Spoken list · Hinglish · routed to</text>
+<text x="28" y="121" font-size="10" fill="#3730A3">the small model</text>
+<text x="20" y="150" font-size="10" fill="#3F3F46">Amul Taaza 500 ml × 2</text><text x="220" y="150" font-size="10" font-weight="700" fill="#18181B" text-anchor="end">₹58</text><line x1="20" y1="158" x2="220" y2="158" stroke="#E4E4E7"/>
+<text x="20" y="174" font-size="10" fill="#3F3F46">Tomato 500 g</text><text x="220" y="174" font-size="10" font-weight="700" fill="#18181B" text-anchor="end">₹24</text><line x1="20" y1="182" x2="220" y2="182" stroke="#E4E4E7"/>
+<rect x="16" y="190" width="208" height="62" rx="10" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="1.5"/>
+<text x="28" y="210" font-size="11.5" font-weight="700" fill="#18181B">One item I am not sure of</text>
+<text x="28" y="227" font-size="10" fill="#3F3F46">“Milk”: did you mean toned or full</text>
+<text x="28" y="242" font-size="10" fill="#3F3F46">cream? Tap one.</text>
+<rect x="16" y="260" width="46" height="22" rx="11" fill="#4F46E5" stroke="#4F46E5"/><text x="39.0" y="275" font-size="9.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">Toned</text>
+<rect x="68" y="260" width="74" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/><text x="105.0" y="275" font-size="9.5" font-weight="600" fill="#3F3F46" text-anchor="middle">Full cream</text>
+<rect x="148" y="260" width="40" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/><text x="168.0" y="275" font-size="9.5" font-weight="600" fill="#3F3F46" text-anchor="middle">Skip</text>
+<rect x="16" y="292" width="208" height="44" rx="10" fill="#F4F4F5" stroke="#F4F4F5" stroke-width="1.5"/>
+<text x="28" y="312" font-size="10" fill="#3F3F46">Shown on screen, never read aloud.</text>
+<text x="28" y="327" font-size="10" fill="#3F3F46">Never auto-checked out.</text>
+<rect x="16" y="344" width="208" height="34" rx="17" fill="#18181B"/><text x="120" y="365" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">Place order · ₹82</text>
+<text x="120" y="466" font-size="8.5" fill="#A1A1AA" text-anchor="middle">Wireframe · sample data</text>
+</svg>
+
+
+
