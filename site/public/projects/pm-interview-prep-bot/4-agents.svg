@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#3F3F46">How it works</text>
+<text x="20" y="70" font-size="10" font-weight="400" fill="#71717A">Agents behind the mock</text>
+<rect x="50" y="88" width="140" height="32" rx="8" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="120.0" y="108" font-size="9.5" font-weight="600" fill="#18181B" text-anchor="middle">Resume + job (RAG)</text>
+<line x1="120" y1="120" x2="120" y2="140" stroke="#71717A"/>
+<rect x="50" y="140" width="140" height="32" rx="8" fill="#6366F1" stroke="#D4D4D8"/>
+<text x="120.0" y="160" font-size="9.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">Manager agent</text>
+<line x1="120" y1="172" x2="50" y2="200" stroke="#71717A"/>
+<rect x="16" y="200" width="68" height="32" rx="8" fill="#EEF2FF" stroke="#D4D4D8"/>
+<text x="50.0" y="220" font-size="9.5" font-weight="600" fill="#3730A3" text-anchor="middle">Questions</text>
+<line x1="120" y1="172" x2="120" y2="200" stroke="#71717A"/>
+<rect x="86" y="200" width="68" height="32" rx="8" fill="#EEF2FF" stroke="#D4D4D8"/>
+<text x="120.0" y="220" font-size="9.5" font-weight="600" fill="#3730A3" text-anchor="middle">Probing</text>
+<line x1="120" y1="172" x2="190" y2="200" stroke="#71717A"/>
+<rect x="156" y="200" width="68" height="32" rx="8" fill="#EEF2FF" stroke="#D4D4D8"/>
+<text x="190.0" y="220" font-size="9.5" font-weight="600" fill="#3730A3" text-anchor="middle">Feedback</text>
+<rect x="16" y="248" width="208" height="56" rx="8" fill="#EEF2FF"/>
+<text x="26" y="267" font-size="10" font-weight="400" fill="#3730A3">The manager decides what</text>
+<text x="26" y="281" font-size="10" font-weight="400" fill="#3730A3">happens next after each answer:</text>
+<text x="26" y="295" font-size="10" font-weight="400" fill="#3730A3">ask, probe, or wrap up.</text>
+<text x="20" y="314" font-size="10" font-weight="400" fill="#3F3F46">Built in</text>
+<text x="220" y="314" font-size="10" font-weight="600" fill="#18181B" text-anchor="end">2 days</text>
+<line x1="20" y1="322" x2="220" y2="322" stroke="#E4E4E7"/>
+<text x="20" y="338" font-size="10" font-weight="400" fill="#3F3F46">Mock length</text>
+<text x="220" y="338" font-size="10" font-weight="600" fill="#18181B" text-anchor="end">under 5 min</text>
+<line x1="20" y1="346" x2="220" y2="346" stroke="#E4E4E7"/>
+<text x="120" y="466" font-size="8.5" font-weight="400" fill="#A1A1AA" text-anchor="middle">Diagram · how the bot is built</text>
+</svg>
