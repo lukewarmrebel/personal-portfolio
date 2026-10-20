@@ -1,4 +1,4 @@
-import { workGroups, featuredItems, workCount, linkIsExternal, type WorkItem, type WorkLink } from "@/data/work";
+import { workGroups, featuredItems, linkIsExternal, type WorkItem, type WorkLink } from "@/data/work";
 
 // Home page: a quick-links bar to every group of work, then three featured pieces.
 // Flat on purpose: no motion, no gradients. Everything links to /work for the full index.
@@ -53,16 +53,15 @@ function FeaturedCard({ item }: { item: WorkItem }) {
         ) : null}
       </div>
       <div className="p-6 flex flex-col gap-3 flex-1">
+        <div className="flex flex-col gap-3 flex-1">
         <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500">{item.tag}</p>
         <h3 className="text-xl font-bold text-zinc-900 leading-snug">{item.title}</h3>
-        <p className="text-sm text-zinc-600 leading-relaxed">{item.what}</p>
-        {item.proof && (
-          <div className="mt-auto pt-3 border-t border-dashed border-zinc-300">
-            <p className="text-2xl font-extrabold tracking-tight text-zinc-900">{item.proof.value}</p>
-            <p className="text-sm text-zinc-500 leading-snug">{item.proof.label}</p>
-          </div>
+        <p className="text-[15px] text-zinc-600 leading-relaxed">{item.what}</p>
+        {item.stat && (
+          <p className="pt-3 border-t border-dashed border-zinc-300 text-[15px] font-semibold text-zinc-900 leading-snug">{item.stat}</p>
         )}
-        <LinkRow links={item.links} />
+        </div>
+        <div className="pt-1"><LinkRow links={item.links} /></div>
       </div>
     </article>
   );
@@ -74,10 +73,10 @@ export default function WorkHighlights() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
           <div>
-            <span className="text-xs font-semibold tracking-widest uppercase text-indigo-500">New work · October 2026</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-2 text-zinc-900">{workCount} AI PM pieces, grouped</h2>
-            <p className="text-zinc-600 mt-3 max-w-2xl leading-relaxed">
-              Prototypes you can tap, eval and cost sheets, real data and kill docs. All self-initiated. Each one is how I would build it, not something I shipped.
+            <span className="text-xs font-semibold tracking-widest uppercase text-indigo-500">My work</span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-2 text-zinc-900">What I&apos;ve built and written</h2>
+            <p className="text-zinc-600 mt-3 max-w-2xl text-base md:text-lg leading-relaxed">
+              Working prototypes, AI testing, data analysis and product memos. All self-initiated in October 2026. Each one shows how I would build it, not a product I shipped.
             </p>
           </div>
           <a href="/work" className="self-start md:self-auto shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold bg-zinc-900 text-white hover:bg-zinc-700 transition-colors">
@@ -85,22 +84,28 @@ export default function WorkHighlights() {
           </a>
         </div>
 
-        <nav aria-label="Jump to a group of work" className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 mb-12">
+        <nav aria-label="Jump to a group of work" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 mb-12">
           {workGroups.map((g) => (
             <a key={g.id} href={`/work#${g.id}`}
-              className="group border border-zinc-200 rounded-xl px-4 py-3 bg-zinc-50/60 hover:border-indigo-400 hover:bg-indigo-50 transition-colors">
-              <span className="block text-2xl font-extrabold text-zinc-900 group-hover:text-indigo-600">{g.items.length}</span>
-              <span className="block text-sm font-medium text-zinc-600">{g.short}</span>
+              className="group flex items-center justify-between gap-3 border border-zinc-200 rounded-xl px-4 py-3.5 bg-zinc-50/60 hover:border-indigo-400 hover:bg-indigo-50 transition-colors">
+              <span>
+                <span className="block text-base font-semibold text-zinc-900 group-hover:text-indigo-600">{g.short}</span>
+                <span className="block text-sm text-zinc-500 leading-snug mt-0.5">{g.hint}</span>
+              </span>
+              <span aria-hidden="true" className="text-indigo-500 font-semibold">→</span>
             </a>
           ))}
           <a href="#projects"
-            className="group border border-zinc-200 rounded-xl px-4 py-3 bg-zinc-50/60 hover:border-indigo-400 hover:bg-indigo-50 transition-colors">
-            <span className="block text-2xl font-extrabold text-zinc-900 group-hover:text-indigo-600">+</span>
-            <span className="block text-sm font-medium text-zinc-600">Apps I&apos;ve built</span>
+            className="group flex items-center justify-between gap-3 border border-zinc-200 rounded-xl px-4 py-3.5 bg-zinc-50/60 hover:border-indigo-400 hover:bg-indigo-50 transition-colors">
+            <span>
+              <span className="block text-base font-semibold text-zinc-900 group-hover:text-indigo-600">Earlier apps</span>
+              <span className="block text-sm text-zinc-500 leading-snug mt-0.5">Apps and projects I built before</span>
+            </span>
+            <span aria-hidden="true" className="text-indigo-500 font-semibold">→</span>
           </a>
         </nav>
 
-        <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-500 mb-4">Start with these three</h3>
+        <h3 className="text-base font-semibold text-zinc-900 mb-4">Start here: my three strongest pieces</h3>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {featuredItems.map((item) => <FeaturedCard key={item.id} item={item} />)}
         </div>

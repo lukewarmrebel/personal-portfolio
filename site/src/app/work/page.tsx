@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { workGroups, featuredItems, workCount, linkIsExternal, type WorkItem, type WorkLink } from "@/data/work";
+import { workGroups, featuredItems, linkIsExternal, type WorkItem, type WorkLink } from "@/data/work";
 import { projects, projectSlug, personal } from "@/data/portfolio";
 
 export const metadata: Metadata = {
   title: "Work · Pranav Thatavarti",
   description:
-    "Every AI PM piece in one place: clickable prototypes, an eval suite and cost model, a ride-hailing review analysis, kill docs and case studies.",
+    "All of Pranav's AI product work in one place: working prototypes, AI testing and cost, a ride-hailing review analysis, feature teardowns and case studies.",
 };
 
 function Links({ links }: { links: WorkLink[] }) {
@@ -15,16 +15,13 @@ function Links({ links }: { links: WorkLink[] }) {
       {links.map((l) => (
         <a key={l.href} href={l.href} className={`wk-link k-${l.kind}`}
           {...(linkIsExternal(l.href) ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
-          <span className="wk-kind">{kindLabel[l.kind]}</span>{l.label}
+          {l.label}
         </a>
       ))}
     </div>
   );
 }
 
-const kindLabel: Record<WorkLink["kind"], string> = {
-  live: "Live", prototype: "App", page: "Page", pdf: "PDF", sheet: "XLSX", code: "PY",
-};
 
 function Visual({ item }: { item: WorkItem }) {
   if (item.bars) {
@@ -70,9 +67,7 @@ function Card({ item, big = false }: { item: WorkItem; big?: boolean }) {
         <p className="wk-tag">{item.tag}</p>
         <h3>{item.title}</h3>
         <p className="wk-what">{item.what}</p>
-        {item.proof && (
-          <div className="wk-proof"><b>{item.proof.value}</b><span>{item.proof.label}</span></div>
-        )}
+        {item.stat && <p className="wk-stat">{item.stat}</p>}
         {item.note && <p className="wk-note">{item.note}</p>}
         <Links links={item.links} />
       </div>
@@ -101,10 +96,10 @@ export default function WorkIndex() {
       <main id="main">
         <div className="idx-hero wk-hero"><div className="wrap">
           <div className="crumbs"><Link href="/">Portfolio</Link> / Work</div>
-          <div className="eyebrow" style={{ marginBottom: 14 }}>All work · AI product management</div>
+          <div className="eyebrow" style={{ marginBottom: 14 }}>My work · AI product management</div>
           <h1>Everything I&apos;ve made, in one place.</h1>
           <p className="sub wk-sub">
-            {`${workCount} self-initiated pieces from October 2026, grouped by what they prove. Prototypes you can tap, the eval and cost sheets behind an AI feature, real data, and memos where I decide what to kill. None of it is a product I shipped. It's how I would build it.`}
+            Prototypes you can try, AI testing and cost, a data study, feature teardowns and case studies. All self-initiated in October 2026. Each one shows how I would build it, not a product I shipped.
           </p>
         </div></div>
 
@@ -112,16 +107,16 @@ export default function WorkIndex() {
           <div className="wrap"><div className="wk-jump-row">
             <a href="#start">Start here</a>
             {workGroups.map((g) => (
-              <a key={g.id} href={`#${g.id}`}>{g.short} <span>{g.items.length}</span></a>
+              <a key={g.id} href={`#${g.id}`}>{g.short}</a>
             ))}
-            <a href="#earlier">Apps I&apos;ve built <span>{earlier.length}</span></a>
+            <a href="#earlier">Earlier apps</a>
           </div></div>
         </nav>
 
         <section id="start" className="wk-section"><div className="wrap">
           <div className="wk-head">
             <h2>Start here</h2>
-            <p>If you only open three things, open these.</p>
+            <p>My three strongest pieces, if you only have a minute.</p>
           </div>
           <div className="wk-featured">
             {featuredItems.map((item) => (
@@ -149,8 +144,8 @@ export default function WorkIndex() {
         <section id="earlier" className="wk-section"><div className="wrap">
           <div className="wk-head">
             <p className="wk-num">{String(workGroups.length + 1).padStart(2, "0")}</p>
-            <h2>Apps I&apos;ve built and earlier teardowns</h2>
-            <p>Working builds and strategy work from before this series. Each opens its own page with screenshots.</p>
+            <h2>Earlier apps and projects</h2>
+            <p>Apps and strategy work from before this series. Each opens its own page with screenshots.</p>
           </div>
           <ul className="wk-earlier">
             {earlier.map((p) => (
