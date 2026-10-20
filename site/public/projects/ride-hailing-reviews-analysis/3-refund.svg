@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#18181B">Refund approved</text>
+<text x="20" y="70" font-size="10" fill="#71717A">Checked against the trip data</text>
+<rect x="16" y="86" width="208" height="62" rx="10" fill="#F0FDF4" stroke="#15803D" stroke-width="1.5"/>
+<text x="28" y="106" font-size="11.5" font-weight="700" fill="#15803D">You pay the app fare only</text>
+<text x="28" y="123" font-size="10" fill="#3F3F46">₹250 goes back to your UPI within a</text>
+<text x="28" y="138" font-size="10" fill="#3F3F46">day.</text>
+<text x="20" y="168" font-size="10" fill="#3F3F46">App fare</text><text x="220" y="168" font-size="10" font-weight="700" fill="#18181B" text-anchor="end">₹550</text><line x1="20" y1="176" x2="220" y2="176" stroke="#E4E4E7"/>
+<text x="20" y="192" font-size="10" fill="#3F3F46">You paid</text><text x="220" y="192" font-size="10" font-weight="700" fill="#18181B" text-anchor="end">₹800</text><line x1="20" y1="200" x2="220" y2="200" stroke="#E4E4E7"/>
+<text x="20" y="216" font-size="10" fill="#3F3F46">Back to you</text><text x="220" y="216" font-size="10" font-weight="700" fill="#15803D" text-anchor="end">₹250</text><line x1="20" y1="224" x2="220" y2="224" stroke="#E4E4E7"/>
+<rect x="16" y="232" width="208" height="44" rx="10" fill="#EEF2FF" stroke="#EEF2FF" stroke-width="1.5"/>
+<text x="28" y="252" font-size="10" fill="#3730A3">A model can approve clear cases.</text>
+<text x="28" y="267" font-size="10" fill="#3730A3">Only a person can say no.</text>
+<rect x="16" y="284" width="208" height="34" rx="17" fill="#18181B"/><text x="120" y="305" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">Done</text>
+<text x="120" y="466" font-size="8.5" fill="#A1A1AA" text-anchor="middle">Wireframe · sample data</text>
+</svg>
+
+
+
+
