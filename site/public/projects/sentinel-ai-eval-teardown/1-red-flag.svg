@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#18181B">Red flag · High risk</text>
+<text x="20" y="70" font-size="10" fill="#71717A">Backup verification conflict</text>
+<rect x="16" y="86" width="208" height="77" rx="10" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="1.5"/>
+<text x="28" y="106" font-size="11.5" font-weight="700" fill="#18181B">Proposal form says</text>
+<text x="28" y="123" font-size="10" fill="#3F3F46">“Daily offline backups, verified</text>
+<text x="28" y="138" font-size="10" fill="#3F3F46">weekly”</text>
+<text x="28" y="153" font-size="10" fill="#3F3F46">Section 4.2 · Backup policy</text>
+<rect x="16" y="171" width="208" height="77" rx="10" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="1.5"/>
+<text x="28" y="191" font-size="11.5" font-weight="700" fill="#18181B">Audit report says</text>
+<text x="28" y="208" font-size="10" fill="#3F3F46">“No restore test since 2021,</text>
+<text x="28" y="223" font-size="10" fill="#3F3F46">expired”</text>
+<text x="28" y="238" font-size="10" fill="#3F3F46">Page 14 · Audit report</text>
+<rect x="16" y="256" width="208" height="44" rx="10" fill="#EEF2FF" stroke="#EEF2FF" stroke-width="1.5"/>
+<text x="28" y="276" font-size="10" fill="#3730A3">Confidence 97%. Every flag cites</text>
+<text x="28" y="291" font-size="10" fill="#3730A3">document, page and section.</text>
+<rect x="16" y="308" width="208" height="34" rx="17" fill="#18181B"/><text x="120" y="329" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">Confirm flag</text>
+<rect x="16" y="350" width="208" height="34" rx="17" fill="#FFFFFF" stroke="#D4D4D8"/><text x="120" y="371" font-size="11" font-weight="600" fill="#3F3F46" text-anchor="middle">Mark as false positive</text>
+<text x="120" y="466" font-size="8.5" fill="#A1A1AA" text-anchor="middle">Wireframe · sample data</text>
+</svg>
+
