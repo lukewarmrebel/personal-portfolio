@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#3F3F46">Institute portal</text>
+<text x="20" y="70" font-size="10" font-weight="400" fill="#71717A">Counsellor view · no names shown</text>
+<text x="20" y="88" font-size="10" font-weight="400" fill="#3F3F46">Weekly check-ins</text>
+<text x="220" y="88" font-size="10" font-weight="600" fill="#18181B" text-anchor="end">68% (sample)</text>
+<rect x="20" y="94" width="200" height="8" rx="4" fill="#E4E4E7"/>
+<rect x="20" y="94" width="136.0" height="8" rx="4" fill="#6366F1"/>
+<text x="20" y="122" font-size="10" font-weight="400" fill="#3F3F46">High stress this week</text>
+<text x="220" y="122" font-size="10" font-weight="600" fill="#18181B" text-anchor="end">9% (sample)</text>
+<rect x="20" y="128" width="200" height="8" rx="4" fill="#E4E4E7"/>
+<rect x="20" y="128" width="18.0" height="8" rx="4" fill="#B9381B"/>
+<text x="20" y="164" font-size="8.5" font-weight="700" fill="#A1A1AA">GROUPS NEEDING ATTENTION</text>
+<rect x="16" y="176" width="208" height="43" rx="8" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="26" y="194" font-size="10.5" font-weight="600" fill="#18181B">2nd year, Engineering</text>
+<rect x="174.0" y="183" width="40.0" height="16" rx="8" fill="#FDECE7"/>
+<text x="194.0" y="194.5" font-size="8.5" font-weight="600" fill="#B9381B" text-anchor="middle">Watch</text>
+<text x="26" y="210" font-size="9" font-weight="400" fill="#71717A">Stress up 3 weeks in a row</text>
+<rect x="16" y="227" width="208" height="43" rx="8" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="26" y="245" font-size="10.5" font-weight="600" fill="#18181B">Hostel block C</text>
+<rect x="174.0" y="234" width="40.0" height="16" rx="8" fill="#FDECE7"/>
+<text x="194.0" y="245.5" font-size="8.5" font-weight="600" fill="#B9381B" text-anchor="middle">Watch</text>
+<text x="26" y="261" font-size="9" font-weight="400" fill="#71717A">Sleep scores falling</text>
+<rect x="16" y="278" width="208" height="42" rx="8" fill="#EEF2FF"/>
+<text x="26" y="297" font-size="10" font-weight="400" fill="#3730A3">Students are only named if they</text>
+<text x="26" y="311" font-size="10" font-weight="400" fill="#3730A3">ask for help or hit level 4.</text>
+<rect x="16" y="330" width="208" height="34" rx="17" fill="#FFFFFF" stroke="#3F3F46"/>
+<text x="120" y="351" font-size="11" font-weight="600" fill="#18181B" text-anchor="middle">Download weekly report</text>
+<text x="120" y="466" font-size="8.5" font-weight="400" fill="#A1A1AA" text-anchor="middle">Wireframe · sample data</text>
+</svg>
