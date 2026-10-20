@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#3F3F46">Book a consultation</text>
+<text x="20" y="70" font-size="10" font-weight="400" fill="#71717A">Studio Aangan · 30 min, free</text>
+<text x="20" y="96" font-size="8.5" font-weight="700" fill="#A1A1AA">PICK A DAY</text>
+<rect x="16" y="108" width="51.599999999999994" height="22" rx="11" fill="#18181B" stroke="#D4D4D8"/>
+<text x="41.8" y="123" font-size="9.5" font-weight="400" fill="#FFFFFF" text-anchor="middle">Sat 25</text>
+<rect x="73.6" y="108" width="51.599999999999994" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="99.39999999999999" y="123" font-size="9.5" font-weight="400" fill="#3F3F46" text-anchor="middle">Sun 26</text>
+<rect x="131.2" y="108" width="51.599999999999994" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="157.0" y="123" font-size="9.5" font-weight="400" fill="#3F3F46" text-anchor="middle">Mon 27</text>
+<text x="20" y="150" font-size="8.5" font-weight="700" fill="#A1A1AA">PICK A TIME</text>
+<rect x="16" y="162" width="46.0" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="39.0" y="177" font-size="9.5" font-weight="400" fill="#3F3F46" text-anchor="middle">11:00</text>
+<rect x="68.0" y="162" width="46.0" height="22" rx="11" fill="#18181B" stroke="#D4D4D8"/>
+<text x="91.0" y="177" font-size="9.5" font-weight="400" fill="#FFFFFF" text-anchor="middle">14:30</text>
+<rect x="120.0" y="162" width="46.0" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="143.0" y="177" font-size="9.5" font-weight="400" fill="#3F3F46" text-anchor="middle">17:00</text>
+<text x="20" y="204" font-size="8.5" font-weight="700" fill="#A1A1AA">TELL THEM ABOUT YOUR HOME</text>
+<text x="20" y="216" font-size="10" font-weight="400" fill="#3F3F46">Home type</text>
+<text x="220" y="216" font-size="10" font-weight="400" fill="#18181B" text-anchor="end">2BHK apartment</text>
+<line x1="20" y1="224" x2="220" y2="224" stroke="#E4E4E7"/>
+<text x="20" y="240" font-size="10" font-weight="400" fill="#3F3F46">Rooms</text>
+<text x="220" y="240" font-size="10" font-weight="400" fill="#18181B" text-anchor="end">Living, kitchen, 2 beds</text>
+<line x1="20" y1="248" x2="220" y2="248" stroke="#E4E4E7"/>
+<text x="20" y="264" font-size="10" font-weight="400" fill="#3F3F46">Budget</text>
+<text x="220" y="264" font-size="10" font-weight="600" fill="#18181B" text-anchor="end">₹6L to ₹8L</text>
+<line x1="20" y1="272" x2="220" y2="272" stroke="#E4E4E7"/>
+<rect x="16" y="288" width="208" height="34" rx="17" fill="#18181B"/>
+<text x="120" y="309" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">Confirm booking</text>
+<text x="120" y="466" font-size="8.5" font-weight="400" fill="#A1A1AA" text-anchor="middle">Wireframe · sample data</text>
+</svg>
