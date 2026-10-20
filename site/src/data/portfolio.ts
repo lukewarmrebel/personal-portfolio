@@ -17,7 +17,7 @@ export const personal = {
   linkedin: "https://linkedin.com/in/pranav-thatavarthi",
   github: "https://github.com/lukewarmrebel",
   resumeUrl: "/resume.pdf",
-  bio: "Product Manager with a strong foundation in software engineering and an MBA from IIM Ranchi. Drawing on 6+ years of experience in Data, Platform, and P&C Insurance, I drive product strategy, lead cross-functional teams, and deliver impactful solutions at the intersection of AI, analytics, and user experience.",
+  bio: "Product Manager with a strong foundation in software engineering and an MBA from IIM Ranchi. Drawing on 7 years of experience in Data, Platform, and P&C Insurance, I drive product strategy, lead cross-functional teams, and deliver impactful solutions at the intersection of AI, analytics, and user experience.",
   bio2: "I help drive growth and efficiency for companies in dynamic environments by building scalable, data-driven products using design thinking and first principles.",
   featuredSkills: ["Product Strategy", "Cross-functional Leadership", "0 → 1 Products", "Data-driven Decisions", "User-centric Design", "P&C Insurance"],
   interests: [

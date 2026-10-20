@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://pranav-portfolio.vercel.app"),
   title: "Pranav Thatavarti — Product Manager",
   description:
-    "Product Manager with 6+ years of experience in Data, Platform, and product industries. Building scalable, user-centric products.",
+    "Product Manager with 7 years of experience in Data, Platform, and product industries. Building scalable, user-centric products.",
   openGraph: {
     title: "Pranav Thatavarti — Product Manager",
     description: "Building scalable products that users love — from 0 to 1 and beyond.",
