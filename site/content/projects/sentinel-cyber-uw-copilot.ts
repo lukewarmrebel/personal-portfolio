@@ -722,7 +722,7 @@ const project: ProjectFile = {
       },
       {
         "name": "Reasoning",
-        "target": "est. 90% with a valid page link",
+        "target": "est. 90% valid links",
         "how": "Check the cited page actually supports the flag"
       },
       {
