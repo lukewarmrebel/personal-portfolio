@@ -673,7 +673,7 @@ export function FlowDiagram({ nodes, title }: { nodes: FlowNode[]; title?: strin
 export function Flow({ p }: { p: ProjectFile }) {
   if (!show(p.flow)) return null;
   return (
-    <Section id="flow" title={p.flow.title ?? "User flow"} kicker="User flow">
+    <Section id="flow" title={p.flow.title ?? "User flow"} kicker="Flow">
       <div className={`${box} p-4 sm:p-6`}><FlowDiagram nodes={p.flow.nodes} title={p.flow.title} /></div>
       {p.flow.caption && <p className="text-sm text-zinc-600 mt-3">{p.flow.caption}</p>}
     </Section>
