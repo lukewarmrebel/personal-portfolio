@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import SiteFooter from "@/components/SiteFooter";
 import { allProjects, projectGroups, isExternal } from "@/data/projects";
-import { Tiles, Glance, Persona, Frameworks, Flow, Wireframes, Solution, Metrics, Next, Extra } from "@/components/ProjectSections";
+import { Tiles, Glance, Judgment, Persona, Frameworks, Flow, Wireframes, Solution, Metrics, Next, Extra } from "@/components/ProjectSections";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -63,12 +63,14 @@ export default async function ProjectPage({ params }: Props) {
           {p.label && <p className="text-[13px] text-zinc-500 mt-4 max-w-3xl">{p.label}</p>}
         </header>
 
+        {/* Lead with the problem, what I built and the result. The frameworks come after, and only the ones that earn a place. */}
         <Glance p={p} />
+        <Solution p={p} />
+        <Wireframes p={p} />
+        <Judgment p={p} />
         <Persona p={p} />
         <Frameworks p={p} />
         <Flow p={p} />
-        <Wireframes p={p} />
-        <Solution p={p} />
         <Metrics p={p} />
         <Next p={p} />
         <Extra p={p} />

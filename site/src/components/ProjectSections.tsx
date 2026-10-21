@@ -33,7 +33,7 @@ export function Tiles({ p }: { p: ProjectFile }) {
 export function Glance({ p }: { p: ProjectFile }) {
   if (!show(p.glance)) return null;
   const g = p.glance;
-  const cards: [string, string][] = [["Problem", g.problem], ["Users", g.users], ["My role", g.role], ["Outcome", g.outcome]];
+  const cards: [string, string][] = [["Problem", g.problem], ["Users", g.users], ["My role", g.role], ["Result", g.outcome]];
   return (
     <Section id="glance" title="At a glance">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -538,6 +538,27 @@ function Market({ b }: { b: Extract<FrameworkBlock, { kind: "market" }> }) {
   );
 }
 
+function TableBlock({ b }: { b: Extract<FrameworkBlock, { kind: "table" }> }) {
+  return (
+    <div>
+      <BlockTitle kind={b.label} title={b.title} />
+      <div className={`${box} overflow-x-auto`}>
+        <table className="w-full text-[13px] sm:text-[14px] leading-snug">
+          <thead><tr className="text-left text-zinc-500 border-b border-zinc-200">{b.columns.map((h) => <th key={h} scope="col" className="px-3 sm:px-4 py-2 font-semibold align-bottom">{h}</th>)}</tr></thead>
+          <tbody>
+            {b.rows.map((r, i) => (
+              <tr key={i} className="border-b border-zinc-100 last:border-0 align-top">
+                {r.map((c, j) => <td key={j} className={`px-3 sm:px-4 py-2 ${j === 0 ? "font-medium text-zinc-900" : "text-zinc-700"}`}>{c}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {b.note && <p className="text-xs text-zinc-500 mt-2">{b.note}</p>}
+    </div>
+  );
+}
+
 function Block({ b }: { b: FrameworkBlock }) {
   switch (b.kind) {
     case "journey": return <Journey b={b} />;
@@ -555,7 +576,22 @@ function Block({ b }: { b: FrameworkBlock }) {
     case "circles": return <Circles b={b} />;
     case "research": return <Research b={b} />;
     case "market": return <Market b={b} />;
+    case "table": return <TableBlock b={b} />;
   }
+}
+
+export function Judgment({ p }: { p: ProjectFile }) {
+  const j = p.judgment;
+  if (!j) return null;
+  return (
+    <section id="judgment" aria-labelledby="judgment-h" className="py-8 border-t border-zinc-200 scroll-mt-20">
+      <div className={`${box} p-5 sm:p-6 max-w-3xl`}>
+        <h2 id="judgment-h" className="text-lg font-bold text-zinc-900 mb-3">Frameworks I used, and what I skipped</h2>
+        <p className="text-[15px] text-zinc-700 leading-relaxed"><span className="font-semibold text-indigo-700">Used: </span>{j.used}</p>
+        <p className="text-[15px] text-zinc-700 leading-relaxed mt-2"><span className="font-semibold text-zinc-500">Skipped: </span>{j.skipped}</p>
+      </div>
+    </section>
+  );
 }
 
 export function Frameworks({ p }: { p: ProjectFile }) {
@@ -563,7 +599,7 @@ export function Frameworks({ p }: { p: ProjectFile }) {
   const blocks = p.frameworks.blocks.filter((b) => !b.todo);
   if (!blocks.length) return null;
   return (
-    <Section id="frameworks" title="How I thought about it" kicker="PM frameworks">
+    <Section id="frameworks" title="How I thought about it" kicker="Frameworks">
       <div className="flex flex-col gap-12">{blocks.map((b, i) => <Block key={i} b={b} />)}</div>
     </Section>
   );
@@ -647,7 +683,7 @@ export function Flow({ p }: { p: ProjectFile }) {
 export function Wireframes({ p }: { p: ProjectFile }) {
   if (!show(p.wireframes)) return null;
   return (
-    <Section id="wireframes" title="Wireframes" kicker="Screens">
+    <Section id="wireframes" title={p.wireframes.title ?? "Wireframes"} kicker="Screens">
       <div className="flex gap-4 overflow-x-auto pb-3 -mx-1 px-1 snap-x">
         {p.wireframes.screens.map((s) => (
           <figure key={s.src} className="shrink-0 snap-start w-[220px] sm:w-[240px]">
@@ -666,7 +702,7 @@ export function Solution({ p }: { p: ProjectFile }) {
   if (!show(p.solution)) return null;
   const s = p.solution;
   return (
-    <Section id="solution" title="Solution and key decisions">
+    <Section id="solution" title="What I built, and the calls I made">
       <p className="text-lg text-zinc-800 leading-relaxed mb-6 max-w-3xl">{s.summary}</p>
       {s.steps && s.steps.length > 0 && (
         <ol className="flex flex-wrap items-center gap-2 mb-8" aria-label="Process">
@@ -702,14 +738,14 @@ export function Metrics({ p }: { p: ProjectFile }) {
           <p className="text-base font-bold mt-1">{m.northStar}</p>
         </div>
       )}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+      {m.rows.length > 0 && <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
         {m.rows.map((r) => (
           <div key={r.name} className={`${box} p-4 flex gap-4 items-start`}>
             {r.target && <p className="text-xl font-extrabold text-indigo-600 leading-none shrink-0 min-w-[76px]">{r.target}</p>}
             <div><p className="text-sm font-semibold text-zinc-900">{r.name}</p><p className="text-[13px] text-zinc-600 mt-1 leading-snug">{r.how}</p></div>
           </div>
         ))}
-      </div>
+      </div>}
       {m.tests.length > 0 && (
         <div className={`${box} p-5`}>
           <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-3">Checks before launch</p>

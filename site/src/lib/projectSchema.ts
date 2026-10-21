@@ -29,7 +29,10 @@ export type FrameworkBlock =
   | ({ kind: "heart"; title?: string; rows: { dimension: "Happiness" | "Engagement" | "Adoption" | "Retention" | "Task success"; goal: string; signal: string; metric: string }[]; note?: string } & Todo)
   | ({ kind: "journey"; title?: string; stages: { stage: string; doing: string; feeling: "good" | "okay" | "bad"; pain: string; opportunity: string }[] } & Todo)
   | ({ kind: "kano"; title?: string; basic: string[]; performance: string[]; delight: string[] } & Todo)
-  | ({ kind: "risks"; title?: string; items: { risk: string; likelihood: Level; impact: Level; mitigation: string }[] } & Todo);
+  | ({ kind: "risks"; title?: string; items: { risk: string; likelihood: Level; impact: Level; mitigation: string }[] } & Todo)
+  // A plain table for anything else that earns a place: a metric definition, a failure taxonomy, a launch bar.
+  // `label` is the small grey kicker above the title (e.g. "Failure taxonomy").
+  | ({ kind: "table"; label: string; title?: string; columns: string[]; rows: string[][]; note?: string } & Todo);
 
 // A flow diagram is drawn from data as a vertical flowchart (readable at 390px).
 // kind: "start" | "step" | "decision" | "end". A decision can send a side branch ("no" path) to a short note.
@@ -48,16 +51,21 @@ export type ProjectFile = {
     thumb?: string; // image on the card (path on the site)
     bars?: { title: string; rows: { label: string; value: string; pct: number; muted?: boolean }[]; note: string };
   };
+  // Flagships only: the line on the "Start here" card saying what the project proves, and its real number if it has one.
+  proof?: string;
+  proofStat?: { value: string; label: string };
   tiles?: { value: string; label: string }[]; // flat stat tiles in the hero; real numbers only, or say "sample data" / "est." in the label
   label?: string; // honesty line under the hero, e.g. "How I would build it. Sample data."
   glance: Section<{ problem: string; users: string; role: string; outcome: string }>;
+  // "Frameworks I used, and what I skipped": one or two short lines each. Shown before the frameworks.
+  judgment?: { used: string; skipped: string };
   problem?: Section<{
     persona: { name: string; who: string; context: string; needs: string[]; frustrations: string[] };
     jtbd: string;
   }>;
   frameworks?: Section<{ blocks: FrameworkBlock[] }>;
   flow?: Section<{ title?: string; nodes: FlowNode[]; caption?: string }>;
-  wireframes?: Section<{ screens: { src: string; caption: string; device?: "phone" | "desktop" }[]; caption?: string }>;
+  wireframes?: Section<{ title?: string; screens: { src: string; caption: string; device?: "phone" | "desktop" }[]; caption?: string }>;
   solution?: Section<{ summary: string; steps?: string[]; decisions: { decision: string; why: string; rejected?: string }[] }>;
   metrics?: Section<{ northStar?: string; rows: { name: string; target?: string; how: string }[]; tests: string[]; note?: string }>;
   next?: Section<{ items: string[] }>;
