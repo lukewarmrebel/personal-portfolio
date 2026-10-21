@@ -1,12 +1,12 @@
 // About the project: Tata Imagination Challenge: national winner
-// Earlier project: a competition strategy, not a product. Built from the site's bullets. Storefront wireframes show how I'd bring the plan to life; numbers are sample data or est.
+// Project page: a competition strategy, not a product. Built from the site's bullets. Storefront wireframes show how I'd bring the plan to life; numbers are sample data or est.
 // Schema: src/lib/projectSchema.ts
 import type { ProjectFile } from "../../src/lib/projectSchema";
 
 const project: ProjectFile = {
   "slug": "tata-imagination-challenge",
-  "group": "earlier",
-  "order": 9,
+  "group": "strategy",
+  "order": 3,
   "title": "Tata Imagination Challenge: national winner",
   "oneLine": "Ranked first in the D2C track with a direct-to-customer plan for a Tata brand, presented to Tata Group leaders.",
   "tag": "Strategy · MBA, IIM Ranchi",

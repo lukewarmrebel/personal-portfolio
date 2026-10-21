@@ -1,12 +1,12 @@
 // About the project: Centrico: find an interior designer
-// Earlier project. Built from the site's bullets and the live prototype. How I approached it; illustrative numbers are sample data or est.
+// Project page. Built from the site's bullets and the live prototype. How I approached it; illustrative numbers are sample data or est.
 // Schema: src/lib/projectSchema.ts
 import type { ProjectFile } from "../../src/lib/projectSchema";
 
 const project: ProjectFile = {
   "slug": "centrico",
-  "group": "earlier",
-  "order": 7,
+  "group": "strategy",
+  "order": 2,
   "title": "Centrico: find an interior designer",
   "oneLine": "A marketplace that helps homeowners find, compare and book interior designers. Researched, scoped and prototyped in 2 weeks.",
   "tag": "Prototype · Marketplace",

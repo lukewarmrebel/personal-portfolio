@@ -1,12 +1,12 @@
 // About the project: ResuAgent: tailor your resume to a job
-// Earlier project. Built from the site's bullets and the live app. How I approached it; illustrative numbers are sample data or est.
+// Project page. Built from the site's bullets and the live app. How I approached it; illustrative numbers are sample data or est.
 // Schema: src/lib/projectSchema.ts
 import type { ProjectFile } from "../../src/lib/projectSchema";
 
 const project: ProjectFile = {
   "slug": "resuagent",
-  "group": "earlier",
-  "order": 4,
+  "group": "agents",
+  "order": 3,
   "title": "ResuAgent: tailor your resume to a job",
   "oneLine": "Upload your resume and a job description, and AI rewrites your bullet points to match the role without changing your voice.",
   "tag": "Web app · AI",

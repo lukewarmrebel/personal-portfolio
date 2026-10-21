@@ -1,12 +1,12 @@
 // About the project: Car damage labelling tool
-// Earlier project. Built from the site's bullets and the live app. How I approached it; illustrative numbers are sample data or est.
+// Project page. Built from the site's bullets and the live app. How I approached it; illustrative numbers are sample data or est.
 // Schema: src/lib/projectSchema.ts
 import type { ProjectFile } from "../../src/lib/projectSchema";
 
 const project: ProjectFile = {
   "slug": "car-damage-annotation",
-  "group": "earlier",
-  "order": 5,
+  "group": "prototypes",
+  "order": 4,
   "title": "Car damage labelling tool",
   "oneLine": "Mark damage on car photos by hand or with one AI click, then export the labelled photos to train a damage-detection model.",
   "tag": "Web app · Computer vision",

@@ -1,12 +1,12 @@
 // About the project: PM interview practice bot
-// Earlier project. Built from the site's bullets and the demo video. How I approached it; illustrative numbers are sample data or est.
+// Project page. Built from the site's bullets and the demo video. How I approached it; illustrative numbers are sample data or est.
 // Schema: src/lib/projectSchema.ts
 import type { ProjectFile } from "../../src/lib/projectSchema";
 
 const project: ProjectFile = {
   "slug": "pm-interview-prep-bot",
-  "group": "earlier",
-  "order": 6,
+  "group": "agents",
+  "order": 4,
   "title": "PM interview practice bot",
   "oneLine": "A mock product manager interview that reads your resume and the job, asks follow-up questions on weak answers and gives feedback.",
   "tag": "Demo video · AI",

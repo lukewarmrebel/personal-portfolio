@@ -3,7 +3,7 @@
 // Any section can carry `todo: true`: the page then hides that section completely (no placeholder).
 // A section is "done" when it is present and has no `todo: true`.
 
-export type GroupId = "prototypes" | "ai-testing" | "data" | "teardowns" | "side" | "earlier";
+export type GroupId = "prototypes" | "agents" | "ai-testing" | "data" | "teardowns" | "strategy" | "side";
 
 export type Todo = { todo?: boolean };
 

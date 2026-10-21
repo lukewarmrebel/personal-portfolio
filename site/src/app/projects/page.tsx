@@ -7,7 +7,7 @@ import SiteFooter from "@/components/SiteFooter";
 export const metadata: Metadata = {
   title: "Projects · Pranav Thatavarti",
   description:
-    "All of Pranav's projects in one place: working prototypes, AI testing and cost, data analysis, feature teardowns, side projects and earlier apps.",
+    "All of Pranav's projects in one place: working prototypes, AI agents and copilots, AI testing and cost, data analysis, feature teardowns, product strategy and side projects.",
 };
 
 export default function ProjectsPage() {

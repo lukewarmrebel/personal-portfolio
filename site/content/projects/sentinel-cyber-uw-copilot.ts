@@ -1,11 +1,11 @@
 // About the project: Sentinel: an AI helper for cyber insurance underwriters
-// Earlier project. Built from the site's own bullets and the live demo. How I approached it; illustrative numbers are sample data or est.
+// Project page. Built from the site's own bullets and the live demo. How I approached it; illustrative numbers are sample data or est.
 // Schema: src/lib/projectSchema.ts
 import type { ProjectFile } from "../../src/lib/projectSchema";
 
 const project: ProjectFile = {
   "slug": "sentinel-cyber-uw-copilot",
-  "group": "earlier",
+  "group": "agents",
   "order": 1,
   "title": "Sentinel: an AI helper for cyber insurance underwriters",
   "oneLine": "A walk-through of an AI tool that reads a company's documents, flags risks and conflicts, and drafts a summary for the underwriter.",

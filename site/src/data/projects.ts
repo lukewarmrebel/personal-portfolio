@@ -5,12 +5,13 @@ import type { GroupId, ProjectFile } from "@/lib/projectSchema";
 export type { ProjectFile, GroupId };
 
 export const projectGroups: { id: GroupId; label: string; blurb: string }[] = [
-  { id: "prototypes", label: "Working prototypes", blurb: "Clickable apps you can try on your phone. Sample data and pre-written AI answers." },
+  { id: "prototypes", label: "Working prototypes", blurb: "Apps you can open and try. Some use sample data and pre-written AI answers." },
+  { id: "agents", label: "AI agents and copilots", blurb: "AI tools I built that read, draft and answer for people. Insurance underwriting, resumes and interview practice." },
   { id: "ai-testing", label: "AI testing and cost", blurb: "Is the AI safe to launch, and is it cheap enough to run?" },
   { id: "data", label: "Data analysis", blurb: "Real public data I collected and analysed myself." },
   { id: "teardowns", label: "Feature teardowns: what I'd cut", blurb: "Short memos on real app features. Practice exercises; I don't work at these companies." },
+  { id: "strategy", label: "Product strategy and business plans", blurb: "Who the customer is, how big the market is, and how I'd launch. Business plans and strategy pitches." },
   { id: "side", label: "Side projects", blurb: "Smaller things I made for fun." },
-  { id: "earlier", label: "Earlier apps and strategy work", blurb: "Apps and AI tools I built before, plus MBA strategy work." },
 ];
 
 const groupRank = (g: GroupId) => projectGroups.findIndex((x) => x.id === g);

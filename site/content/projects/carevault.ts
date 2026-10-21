@@ -1,4 +1,4 @@
-// About the project: CareVault. Gold-standard example for an earlier project: every section filled.
+// About the project: CareVault. Gold-standard example for a mobile app project: every section filled.
 // Built only from what the site already said about the app. Framed as how I approached it; no invented outcomes.
 // Schema: src/lib/projectSchema.ts
 import type { ProjectFile } from "../../src/lib/projectSchema";
@@ -7,8 +7,8 @@ const W = "/projects/carevault";
 
 const project: ProjectFile = {
   slug: "carevault",
-  group: "earlier",
-  order: 2,
+  group: "prototypes",
+  order: 3,
   title: "CareVault: a family health app",
   oneLine: "One app for a family to track medicines, vitals, documents and doctor visits for everyone at home, including parents and kids.",
   tag: "Mobile app · Flutter",

@@ -1,12 +1,12 @@
 // About the project: InsurAgents: AI that handles 7 insurance tasks
-// Earlier project. Built from the site's bullets and the GitHub repo. How I approached it; illustrative numbers are sample data or est.
+// Project page. Built from the site's bullets and the GitHub repo. How I approached it; illustrative numbers are sample data or est.
 // Schema: src/lib/projectSchema.ts
 import type { ProjectFile } from "../../src/lib/projectSchema";
 
 const project: ProjectFile = {
   "slug": "insuragents",
-  "group": "earlier",
-  "order": 3,
+  "group": "agents",
+  "order": 2,
   "title": "InsurAgents: AI that handles 7 insurance tasks",
   "oneLine": "AI agents that sort claims, score fraud risk, summarise policies and check compliance, and can switch between three AI providers.",
   "tag": "Code · Insurance",

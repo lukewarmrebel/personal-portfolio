@@ -1,12 +1,12 @@
 // About the project: Eductive: student mental health platform
-// Earlier project. Built from the site's bullets, screenshots and business plan. How I approached it; plan figures are projections, other numbers are sample data or est.
+// Project page. Built from the site's bullets, screenshots and business plan. How I approached it; plan figures are projections, other numbers are sample data or est.
 // Schema: src/lib/projectSchema.ts
 import type { ProjectFile } from "../../src/lib/projectSchema";
 
 const project: ProjectFile = {
   "slug": "eductive",
-  "group": "earlier",
-  "order": 8,
+  "group": "strategy",
+  "order": 1,
   "title": "Eductive: student mental health platform",
   "oneLine": "A plan for schools and colleges to spot students who are struggling early and get them the right level of help.",
   "tag": "Business plan · EdTech",
