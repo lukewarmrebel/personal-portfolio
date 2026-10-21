@@ -10,7 +10,7 @@ export function projectSlug(title: string): string {
 export const personal = {
   name: "Pranav Thatavarti",
   title: "Product Manager",
-  tagline: "Building scalable products that users love — from 0 to 1 and beyond.",
+  tagline: "Building scalable products that users love, from 0 to 1 and beyond.",
   location: "Hyderabad, India",
   email: "pranavtatavarthi@gmail.com",
   phone: "+91 8919053740",
