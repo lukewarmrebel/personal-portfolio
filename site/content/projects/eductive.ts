@@ -15,11 +15,20 @@ const project: ProjectFile = {
     "EdTech",
     "India"
   ],
-  "links": [],
+  "links": [
+    {
+      "label": "See the prize-winning pitch",
+      "href": "/projects/tata-imagination-challenge"
+    }
+  ],
   "card": {
     "thumb": "/eductive/00_hero.png"
   },
   "tiles": [
+    {
+      "value": "1st",
+      "label": "prize, Tata Imagination Challenge"
+    },
     {
       "value": "4",
       "label": "levels of support"
@@ -33,7 +42,7 @@ const project: ProjectFile = {
     "problem": "Many students face serious stress, and most never seek help.",
     "users": "Schools and colleges, and their students.",
     "role": "Product and business plan: research, flows, model and roadmap.",
-    "outcome": "A business plan and product design. Not built."
+    "outcome": "Won first prize at the Tata Imagination Challenge, a case study competition. Not built."
   },
   "problem": {
     "persona": {
