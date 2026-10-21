@@ -302,16 +302,16 @@ export const projects: Project[] = [
   },
   {
     title: "Tata Imagination Challenge",
-    subtitle: "National Winner — D2C Strategy, IIM Ranchi",
+    subtitle: "First Prize, Case Study Competition",
     category: "PM & Strategy",
     summary:
-      "Ranked #1 nationally (D2C track) at Tata's flagship business competition during MBA at IIM Ranchi. Developed a full D2C strategy for a Tata brand — covering consumer segmentation, digital channel architecture, pricing model, and go-to-market sequencing.",
+      "A case study competition. I pitched a mental health app for students and won first prize.",
     highlights: [
-      "Achieved D2C Rank 1 out of national MBA cohort",
-      "Delivered consumer segmentation, channel strategy, and P&L model for a Tata brand",
-      "Presented to Tata Group senior executives",
+      "Won first prize in the Tata Imagination Challenge, a case study competition",
+      "Pitched a mental health app for students: private check-ins, small self-help steps, and an easy path to a counsellor",
+      "The full plan grew into Eductive",
     ],
-    skills: ["Business Strategy", "D2C", "Market Analysis", "Competitive Strategy", "Storytelling"],
+    skills: ["Problem Framing", "User Empathy", "Product Thinking", "Pitching", "Storytelling"],
     color: "from-amber-500 to-yellow-500",
     emoji: "🏆",
   },
@@ -322,6 +322,7 @@ export const projects: Project[] = [
     summary:
       "Designed and pitched a B2B2C digital wellness platform targeting India's student mental health crisis — where >40% of students face severe depression or stress and >80% never seek support. Eductive gives institutions AI-driven non-cognitive behavioural insights (SEL) to detect, track, and intervene in student mental health before it escalates.",
     highlights: [
+      "Won first prize at the Tata Imagination Challenge, a case study competition",
       "Designed 4-tier intervention framework: self-directed (low) → mentor-guided (average) → CBT/DBT/ACT via psychologist (severe)",
       "Mapped full non-cognitive data pipeline: mood journals, SUDS/PWB/M3 metrics, academic tracking → weekly diagnostic reports",
       "Built B2B2C model: ₹999/yr freemium (B2C) + bundle subscriptions for institutions (B2B); projected ₹2.04Cr revenue in Year 2",
