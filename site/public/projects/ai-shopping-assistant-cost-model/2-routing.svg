@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#18181B">How a request is routed</text>
+<text x="20" y="70" font-size="10" fill="#71717A">A small model reads it first</text>
+<text x="20" y="96" font-size="9.5" fill="#3F3F46">No AI: rules or classic ML</text><text x="220" y="96" font-size="9.5" font-weight="700" fill="#3730A3" text-anchor="end">44%</text>
+<rect x="20" y="101" width="200" height="8" rx="4" fill="#E4E4E7"/><rect x="20" y="101" width="88" height="8" rx="4" fill="#4F46E5"/>
+<text x="20" y="128" font-size="9.5" fill="#3F3F46">Small model</text><text x="220" y="128" font-size="9.5" font-weight="700" fill="#3730A3" text-anchor="end">39%</text>
+<rect x="20" y="133" width="200" height="8" rx="4" fill="#E4E4E7"/><rect x="20" y="133" width="78" height="8" rx="4" fill="#4F46E5"/>
+<text x="20" y="160" font-size="9.5" fill="#3F3F46">Mid model</text><text x="220" y="160" font-size="9.5" font-weight="700" fill="#3730A3" text-anchor="end">15%</text>
+<rect x="20" y="165" width="200" height="8" rx="4" fill="#E4E4E7"/><rect x="20" y="165" width="30" height="8" rx="4" fill="#4F46E5"/>
+<text x="20" y="192" font-size="9.5" fill="#3F3F46">Frontier model</text><text x="220" y="192" font-size="9.5" font-weight="700" fill="#3730A3" text-anchor="end">2%</text>
+<rect x="20" y="197" width="200" height="8" rx="4" fill="#E4E4E7"/><rect x="20" y="197" width="4" height="8" rx="4" fill="#4F46E5"/>
+<rect x="16" y="216" width="208" height="59" rx="10" fill="#EEF2FF" stroke="#EEF2FF" stroke-width="1.5"/>
+<text x="28" y="236" font-size="10" fill="#3730A3">If the router or the model is</text>
+<text x="28" y="251" font-size="10" fill="#3730A3">unsure, the request moves one tier</text>
+<text x="28" y="266" font-size="10" fill="#3730A3">up.</text>
+<rect x="16" y="283" width="208" height="59" rx="10" fill="#FEF2F2" stroke="#B9381B" stroke-width="1.5"/>
+<text x="28" y="303" font-size="10" fill="#3F3F46">Allergy requests also pass a hard</text>
+<text x="28" y="318" font-size="10" fill="#3F3F46">allergen filter that trusts no</text>
+<text x="28" y="333" font-size="10" fill="#3F3F46">model.</text>
+<text x="120" y="466" font-size="8.5" fill="#A1A1AA" text-anchor="middle">Wireframe · sample data</text>
+</svg>
+

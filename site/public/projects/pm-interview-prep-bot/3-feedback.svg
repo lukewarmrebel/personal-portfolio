@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#3F3F46">Your feedback</text>
+<text x="20" y="70" font-size="10" font-weight="400" fill="#71717A">Mock done in 4 min 40 s (sample)</text>
+<text x="20" y="88" font-size="10" font-weight="400" fill="#3F3F46">Structure</text>
+<text x="220" y="88" font-size="10" font-weight="600" fill="#18181B" text-anchor="end">4 / 5</text>
+<rect x="20" y="94" width="200" height="8" rx="4" fill="#E4E4E7"/>
+<rect x="20" y="94" width="160.0" height="8" rx="4" fill="#6366F1"/>
+<text x="20" y="122" font-size="10" font-weight="400" fill="#3F3F46">User focus</text>
+<text x="220" y="122" font-size="10" font-weight="600" fill="#18181B" text-anchor="end">2 / 5</text>
+<rect x="20" y="128" width="200" height="8" rx="4" fill="#E4E4E7"/>
+<rect x="20" y="128" width="80.0" height="8" rx="4" fill="#B9381B"/>
+<text x="20" y="156" font-size="10" font-weight="400" fill="#3F3F46">Metrics</text>
+<text x="220" y="156" font-size="10" font-weight="600" fill="#18181B" text-anchor="end">3 / 5</text>
+<rect x="20" y="162" width="200" height="8" rx="4" fill="#E4E4E7"/>
+<rect x="20" y="162" width="120.0" height="8" rx="4" fill="#6366F1"/>
+<text x="20" y="198" font-size="8.5" font-weight="700" fill="#A1A1AA">FIX NEXT TIME</text>
+<rect x="16" y="210" width="208" height="43" rx="8" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="26" y="228" font-size="10.5" font-weight="600" fill="#18181B">Name the user first</text>
+<rect x="163.6" y="217" width="50.4" height="16" rx="8" fill="#FDECE7"/>
+<text x="188.8" y="228.5" font-size="8.5" font-weight="600" fill="#B9381B" text-anchor="middle">Top fix</text>
+<text x="26" y="244" font-size="9" font-weight="400" fill="#71717A">You jumped to the solution in Q2</text>
+<rect x="16" y="261" width="208" height="43" rx="8" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="26" y="279" font-size="10.5" font-weight="600" fill="#18181B">Pick one metric</text>
+<rect x="184.4" y="268" width="29.6" height="16" rx="8" fill="#EEF2FF"/>
+<text x="199.2" y="279.5" font-size="8.5" font-weight="600" fill="#3730A3" text-anchor="middle">Tip</text>
+<text x="26" y="295" font-size="9" font-weight="400" fill="#71717A">You listed 5; pick the one that matters</text>
+<rect x="16" y="312" width="208" height="34" rx="17" fill="#18181B"/>
+<text x="120" y="333" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">Retry weak questions</text>
+<text x="120" y="466" font-size="8.5" font-weight="400" fill="#A1A1AA" text-anchor="middle">Wireframe · sample data</text>
+</svg>

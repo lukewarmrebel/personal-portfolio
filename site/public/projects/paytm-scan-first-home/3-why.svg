@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#18181B">Likely next</text>
+<text x="20" y="70" font-size="10" font-weight="400" fill="#71717A">Why you see this</text>
+<rect x="16" y="93" width="208" height="69" rx="8" fill="#EEF2FF"/>
+<text x="26" y="111" font-size="11" font-weight="700" fill="#3730A3">Sri Sai Kirana</text>
+<text x="26" y="126" font-size="9.5" fill="#3730A3">You paid here 14 times in</text>
+<text x="26" y="139" font-size="9.5" fill="#3730A3">30 days, mostly before 10 am.</text>
+<text x="26" y="152" font-size="9.5" fill="#3730A3">Not an ad. Nobody paid for this.</text>
+<rect x="16" y="170" width="208" height="34" rx="17" fill="#18181B"/><text x="120" y="191" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">Pay again</text>
+<rect x="16" y="212" width="208" height="34" rx="17" fill="#FFFFFF" stroke="#D4D4D8"/><text x="120" y="233" font-size="11" font-weight="600" fill="#3F3F46" text-anchor="middle">Not useful, hide it</text>
+<text x="20" y="263" font-size="11" font-weight="700" fill="#18181B">Never used to pick this slot</text>
+<text x="20" y="281" font-size="9.5" font-weight="400" fill="#3F3F46">·  Low balance or failed payments</text>
+<text x="20" y="297" font-size="9.5" font-weight="400" fill="#3F3F46">·  A partner paying for the spot</text>
+<text x="20" y="313" font-size="9.5" font-weight="400" fill="#3F3F46">·  Credit, unless you asked for it</text>
+<rect x="16" y="333" width="208" height="30" rx="8" fill="#F4F4F5"/>
+<text x="26" y="351" font-size="9.5" fill="#3F3F46">Pin or reset your shortcuts any time</text>
+<text x="120" y="462" font-size="8.5" fill="#A1A1AA" text-anchor="middle">Mock content.</text>
+</svg>

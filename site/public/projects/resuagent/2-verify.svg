@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#3F3F46">Check what I read</text>
+<text x="20" y="70" font-size="10" font-weight="400" fill="#71717A">Step 2 of 4 · Verify and edit</text>
+<circle cx="28" cy="88" r="9" fill="#6366F1" stroke="#6366F1"/>
+<text x="28" y="91.5" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<line x1="38" y1="88" x2="76" y2="88" stroke="#6366F1" stroke-width="2"/>
+<circle cx="86" cy="88" r="9" fill="#6366F1" stroke="#6366F1"/>
+<text x="86" y="91.5" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<line x1="96" y1="88" x2="134" y2="88" stroke="#D4D4D8" stroke-width="2"/>
+<circle cx="144" cy="88" r="9" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="144" y="91.5" font-size="9" font-weight="700" fill="#71717A" text-anchor="middle">3</text>
+<line x1="154" y1="88" x2="192" y2="88" stroke="#D4D4D8" stroke-width="2"/>
+<circle cx="202" cy="88" r="9" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="202" y="91.5" font-size="9" font-weight="700" fill="#71717A" text-anchor="middle">4</text>
+<text x="20" y="120" font-size="8.5" font-weight="700" fill="#A1A1AA">EXPERIENCE</text>
+<rect x="16" y="132" width="208" height="56" rx="8" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="26" y="150" font-size="10.5" font-weight="600" fill="#18181B">Product Manager</text>
+<rect x="179.2" y="139" width="34.8" height="16" rx="8" fill="#EEF2FF"/>
+<text x="196.6" y="150.5" font-size="8.5" font-weight="600" fill="#3730A3" text-anchor="middle">Edit</text>
+<text x="26" y="166" font-size="9" font-weight="400" fill="#71717A">Insurer · 2023 to now</text>
+<text x="26" y="179" font-size="9" font-weight="400" fill="#71717A">8 bullets found</text>
+<rect x="16" y="196" width="208" height="56" rx="8" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="26" y="214" font-size="10.5" font-weight="600" fill="#18181B">Business Analyst</text>
+<rect x="179.2" y="203" width="34.8" height="16" rx="8" fill="#EEF2FF"/>
+<text x="196.6" y="214.5" font-size="8.5" font-weight="600" fill="#3730A3" text-anchor="middle">Edit</text>
+<text x="26" y="230" font-size="9" font-weight="400" fill="#71717A">IT services · 2019 to 2021</text>
+<text x="26" y="243" font-size="9" font-weight="400" fill="#71717A">5 bullets found</text>
+<text x="20" y="268" font-size="8.5" font-weight="700" fill="#A1A1AA">SKILLS</text>
+<rect x="16" y="280" width="34.8" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="33.4" y="295" font-size="9.5" font-weight="400" fill="#3F3F46" text-anchor="middle">SQL</text>
+<rect x="56.8" y="280" width="51.599999999999994" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="82.6" y="295" font-size="9.5" font-weight="400" fill="#3F3F46" text-anchor="middle">Python</text>
+<rect x="114.39999999999999" y="280" width="68.4" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="148.6" y="295" font-size="9.5" font-weight="400" fill="#3F3F46" text-anchor="middle">A/B tests</text>
+<rect x="16" y="314" width="208" height="42" rx="8" fill="#EEF2FF"/>
+<text x="26" y="333" font-size="10" font-weight="400" fill="#3730A3">Fix anything I misread before</text>
+<text x="26" y="347" font-size="10" font-weight="400" fill="#3730A3">the AI starts rewriting.</text>
+<rect x="16" y="366" width="208" height="34" rx="17" fill="#18181B"/>
+<text x="120" y="387" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">Looks right, tailor it</text>
+<text x="120" y="466" font-size="8.5" font-weight="400" fill="#A1A1AA" text-anchor="middle">Wireframe · sample data</text>
+</svg>
+
+

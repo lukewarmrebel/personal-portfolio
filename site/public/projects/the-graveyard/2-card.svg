@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#18181B">Kruti</text>
+<text x="20" y="70" font-size="10" font-weight="400" fill="#71717A">Ola Krutrim's AI assistant</text>
+<rect x="16" y="93" width="208" height="69" rx="8" fill="#F4F4F5"/>
+<text x="26" y="111" font-size="11" font-weight="700" fill="#3F3F46">Cause of death</text>
+<text x="26" y="126" font-size="9.5" fill="#3F3F46">Got under 500,000 downloads and</text>
+<text x="26" y="139" font-size="9.5" fill="#3F3F46">was pulled from the app stores</text>
+<text x="26" y="152" font-size="9.5" fill="#3F3F46">within a year.</text>
+<rect x="16" y="170" width="208" height="69" rx="8" fill="#EEF2FF"/>
+<text x="26" y="188" font-size="11" font-weight="700" fill="#3730A3">What I'd have done</text>
+<text x="26" y="203" font-size="9.5" fill="#3730A3">Start with one job riders struggle</text>
+<text x="26" y="216" font-size="9.5" fill="#3730A3">with, like booking a cab by voice</text>
+<text x="26" y="229" font-size="9.5" fill="#3730A3">in Telugu, and earn the rest.</text>
+<text x="20" y="256" font-size="10" font-weight="600" fill="#18181B">Every card has the same 4 parts:</text>
+<text x="20" y="273" font-size="9.5" font-weight="400" fill="#3F3F46">·  Born and died, month and year</text>
+<text x="20" y="289" font-size="9.5" font-weight="400" fill="#3F3F46">·  A one-line epitaph, witty but fair</text>
+<text x="20" y="305" font-size="9.5" font-weight="400" fill="#3F3F46">·  Cause of death in one sentence</text>
+<text x="20" y="321" font-size="9.5" font-weight="400" fill="#3F3F46">·  What I'd have done in one sentence</text>
+<rect x="16" y="341" width="208" height="34" rx="17" fill="#FFFFFF" stroke="#D4D4D8"/><text x="120" y="362" font-size="11" font-weight="600" fill="#3F3F46" text-anchor="middle">Read my Ola memo</text>
+<text x="120" y="462" font-size="8.5" fill="#A1A1AA" text-anchor="middle">Mock of the live page.</text>
+</svg>

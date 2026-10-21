@@ -20,5 +20,5 @@ export default async function CaseStudyPage({ params }: Props) {
   const { slug } = await params;
   const c = caseStudies.find((x) => x.slug === slug);
   if (!c) notFound();
-  return <div dangerouslySetInnerHTML={{ __html: readCaseStudyHtml(c.slug) }} />;
+  return <div className="cs-root" dangerouslySetInnerHTML={{ __html: readCaseStudyHtml(c.slug) }} />;
 }

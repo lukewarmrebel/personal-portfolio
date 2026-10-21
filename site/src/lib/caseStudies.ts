@@ -12,6 +12,6 @@ export const caseStudies = [
 
 export type CaseStudySlug = (typeof caseStudies)[number]["slug"];
 
-export function readCaseStudyHtml(name: CaseStudySlug | "index"): string {
+export function readCaseStudyHtml(name: CaseStudySlug): string {
   return fs.readFileSync(path.join(process.cwd(), "src", "content", "case-studies", `${name}.html`), "utf8");
 }

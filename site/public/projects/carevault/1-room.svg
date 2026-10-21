@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#18181B">Rao family room</text>
+<text x="20" y="70" font-size="10" fill="#71717A">Shared care room</text>
+<rect x="16" y="86" width="66" height="22" rx="11" fill="#18181B" stroke="#D4D4D8"/><text x="49.0" y="101" font-size="9.5" fill="#FFFFFF" text-anchor="middle">Everyone</text>
+<rect x="88" y="86" width="48" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/><text x="112.0" y="101" font-size="9.5" fill="#3F3F46" text-anchor="middle">Nanna</text>
+<rect x="142" y="86" width="42" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/><text x="163.0" y="101" font-size="9.5" fill="#3F3F46" text-anchor="middle">Amma</text>
+<rect x="190" y="86" width="42" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/><text x="211.0" y="101" font-size="9.5" fill="#3F3F46" text-anchor="middle">Riya</text>
+<rect x="16" y="116" width="208" height="28" rx="8" fill="#EEF2FF"/>
+<text x="26" y="135" font-size="10" fill="#3730A3">Today: 3 doses due · 1 refill needed</text>
+<rect x="16" y="152" width="100" height="50" rx="8" fill="#F4F4F5" stroke="#E4E4E7"/><text x="26" y="182" font-size="10" fill="#3F3F46">Medicines</text>
+<rect x="124" y="152" width="100" height="50" rx="8" fill="#F4F4F5" stroke="#E4E4E7"/><text x="134" y="182" font-size="10" fill="#3F3F46">Vitals</text>
+<rect x="16" y="210" width="100" height="50" rx="8" fill="#F4F4F5" stroke="#E4E4E7"/><text x="26" y="240" font-size="10" fill="#3F3F46">Documents</text>
+<rect x="124" y="210" width="100" height="50" rx="8" fill="#F4F4F5" stroke="#E4E4E7"/><text x="134" y="240" font-size="10" fill="#3F3F46">Appointments</text>
+<rect x="16" y="272" width="208" height="40" rx="8" fill="#F8F7F4" stroke="#E4E4E7"/>
+<text x="26" y="289" font-size="11" font-weight="600" fill="#18181B">Nanna · Metformin 500</text>
+<text x="26" y="303" font-size="9" fill="#71717A">8:00 pm · due in 2 h</text>
+<circle cx="210" cy="292" r="5" fill="#3F7D58"/>
+<rect x="16" y="318" width="208" height="40" rx="8" fill="#F8F7F4" stroke="#E4E4E7"/>
+<text x="26" y="335" font-size="11" font-weight="600" fill="#18181B">Amma · Thyroxine</text>
+<text x="26" y="349" font-size="9" fill="#71717A">Only 4 tablets left</text>
+<circle cx="210" cy="338" r="5" fill="#B9381B"/>
+<text x="120.0" y="466" font-size="8.5" fill="#A1A1AA" text-anchor="middle">Wireframe · sample data</text>
+</svg>

@@ -6,12 +6,12 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://pranav-portfolio.vercel.app"),
-  title: "Pranav Thatavarti — Product Manager",
+  title: "Pranav Thatavarti, Product Manager",
   description:
     "Product Manager with 7 years of experience in Data, Platform, and product industries. Building scalable, user-centric products.",
   openGraph: {
-    title: "Pranav Thatavarti — Product Manager",
-    description: "Building scalable products that users love — from 0 to 1 and beyond.",
+    title: "Pranav Thatavarti, Product Manager",
+    description: "Building scalable products that users love, from 0 to 1 and beyond.",
     type: "website",
     url: "https://pranav-portfolio.vercel.app",
     images: [
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
         url: "/pranav-formal.jpg",
         width: 800,
         height: 800,
-        alt: "Pranav Thatavarti — Product Manager",
+        alt: "Pranav Thatavarti, Product Manager",
       },
     ],
   },

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#18181B">Monthly AI scorecard</text>
+<text x="20" y="70" font-size="10" fill="#71717A">Model v2.3 · 4 tiers · sample data</text>
+<rect x="16" y="86" width="208" height="72" rx="10" fill="#F4F4F5" stroke="#F4F4F5" stroke-width="1.5"/>
+<text x="28" y="104" font-size="9" font-weight="700" fill="#71717A">Tier 1 · Output quality</text>
+<text x="28" y="122" font-size="11" font-weight="600" fill="#18181B">Precision@K</text>
+<text x="28" y="142" font-size="16" font-weight="700" fill="#3730A3">0.82</text>
+<rect x="140" y="130" width="72" height="18" rx="9" fill="#EEF2FF" stroke="#EEF2FF"/><text x="176.0" y="142.5" font-size="8.5" font-weight="600" fill="#3730A3" text-anchor="middle">target ≥ 0.8</text>
+<rect x="16" y="166" width="208" height="72" rx="10" fill="#F4F4F5" stroke="#F4F4F5" stroke-width="1.5"/>
+<text x="28" y="184" font-size="9" font-weight="700" fill="#71717A">Tier 2 · Reasoning</text>
+<text x="28" y="202" font-size="11" font-weight="600" fill="#18181B">Hallucination rate</text>
+<text x="28" y="222" font-size="16" font-weight="700" fill="#3730A3">1.6%</text>
+<rect x="140" y="210" width="72" height="18" rx="9" fill="#EEF2FF" stroke="#EEF2FF"/><text x="176.0" y="222.5" font-size="8.5" font-weight="600" fill="#3730A3" text-anchor="middle">target &lt; 2%</text>
+<rect x="16" y="246" width="208" height="72" rx="10" fill="#F4F4F5" stroke="#F4F4F5" stroke-width="1.5"/>
+<text x="28" y="264" font-size="9" font-weight="700" fill="#71717A">Tier 3 · Human + AI</text>
+<text x="28" y="282" font-size="11" font-weight="600" fill="#18181B">Override rate</text>
+<text x="28" y="302" font-size="16" font-weight="700" fill="#3730A3">18%</text>
+<rect x="140" y="290" width="72" height="18" rx="9" fill="#EEF2FF" stroke="#EEF2FF"/><text x="176.0" y="302.5" font-size="8.5" font-weight="600" fill="#3730A3" text-anchor="middle">target 10-30%</text>
+<rect x="16" y="326" width="208" height="72" rx="10" fill="#F4F4F5" stroke="#F4F4F5" stroke-width="1.5"/>
+<text x="28" y="344" font-size="9" font-weight="700" fill="#71717A">Tier 4 · Portfolio</text>
+<text x="28" y="362" font-size="11" font-weight="600" fill="#18181B">Loss ratio vs manual</text>
+<text x="28" y="382" font-size="16" font-weight="700" fill="#71717A">Too early</text>
+<rect x="140" y="370" width="72" height="18" rx="9" fill="#FFFFFF" stroke="#D4D4D8"/><text x="176.0" y="382.5" font-size="8.5" font-weight="600" fill="#71717A" text-anchor="middle">needs a year</text>
+<rect x="16" y="410" width="208" height="34" rx="17" fill="#18181B"/><text x="120" y="431" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">Open full report</text>
+<text x="120" y="466" font-size="8.5" fill="#A1A1AA" text-anchor="middle">Wireframe · sample data</text></svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#3F3F46">Find a designer</text>
+<text x="20" y="70" font-size="10" font-weight="400" fill="#71717A">Hyderabad · 2BHK · sample</text>
+<rect x="16" y="88" width="51.599999999999994" height="22" rx="11" fill="#18181B" stroke="#D4D4D8"/>
+<text x="41.8" y="103" font-size="9.5" font-weight="400" fill="#FFFFFF" text-anchor="middle">Modern</text>
+<rect x="73.6" y="88" width="85.19999999999999" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="116.19999999999999" y="103" font-size="9.5" font-weight="400" fill="#3F3F46" text-anchor="middle">Budget ₹5-8L</text>
+<rect x="164.79999999999998" y="88" width="62.8" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="196.2" y="103" font-size="9.5" font-weight="400" fill="#3F3F46" text-anchor="middle">Rated 4+</text>
+<rect x="16" y="122" width="208" height="56" rx="8" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="26" y="140" font-size="10.5" font-weight="600" fill="#18181B">Studio Aangan</text>
+<rect x="158.4" y="129" width="55.6" height="16" rx="8" fill="#E9F5EC"/>
+<text x="186.2" y="140.5" font-size="8.5" font-weight="600" fill="#15803D" text-anchor="middle">Verified</text>
+<text x="26" y="156" font-size="9" font-weight="400" fill="#71717A">Modern, small homes · 4.7 (sample)</text>
+<text x="26" y="169" font-size="9" font-weight="400" fill="#71717A">From ₹6L · 38 projects</text>
+<rect x="16" y="186" width="208" height="56" rx="8" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="26" y="204" font-size="10.5" font-weight="600" fill="#18181B">Neha Rao Interiors</text>
+<rect x="158.4" y="193" width="55.6" height="16" rx="8" fill="#E9F5EC"/>
+<text x="186.2" y="204.5" font-size="8.5" font-weight="600" fill="#15803D" text-anchor="middle">Verified</text>
+<text x="26" y="220" font-size="9" font-weight="400" fill="#71717A">Warm minimal · 4.5 (sample)</text>
+<text x="26" y="233" font-size="9" font-weight="400" fill="#71717A">From ₹5L · 21 projects</text>
+<rect x="16" y="250" width="208" height="56" rx="8" fill="#FFFFFF" stroke="#D4D4D8"/>
+<text x="26" y="268" font-size="10.5" font-weight="600" fill="#18181B">Lineform Design</text>
+<rect x="184.4" y="257" width="29.6" height="16" rx="8" fill="#EEF2FF"/>
+<text x="199.2" y="268.5" font-size="8.5" font-weight="600" fill="#3730A3" text-anchor="middle">New</text>
+<text x="26" y="284" font-size="9" font-weight="400" fill="#71717A">Contemporary · 4.4 (sample)</text>
+<text x="26" y="297" font-size="9" font-weight="400" fill="#71717A">From ₹8L · 54 projects</text>
+<rect x="16" y="314" width="208" height="42" rx="8" fill="#EEF2FF"/>
+<text x="26" y="333" font-size="10" font-weight="400" fill="#3730A3">Prices shown up front, so you</text>
+<text x="26" y="347" font-size="10" font-weight="400" fill="#3730A3">only call people you can afford.</text>
+<rect x="16" y="366" width="208" height="34" rx="17" fill="#18181B"/>
+<text x="120" y="387" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">Compare 2 selected</text>
+<text x="120" y="466" font-size="8.5" font-weight="400" fill="#A1A1AA" text-anchor="middle">Wireframe · sample data</text>
+</svg>

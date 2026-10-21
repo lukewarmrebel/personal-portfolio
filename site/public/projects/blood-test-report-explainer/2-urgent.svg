@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#18181B">One result needs a doctor</text>
+<text x="20" y="70" font-size="10" fill="#71717A">Urgent check runs first</text>
+<rect x="16" y="86" width="208" height="75" rx="10" fill="#FEF2F2" stroke="#B9381B" stroke-width="1.5"/>
+<text x="28" y="107" font-size="12" font-weight="700" fill="#B9381B">Please contact his doctor today</text>
+<text x="28" y="124" font-size="10" fill="#3F3F46">Potassium 6.6 mmol/L is on the</text>
+<text x="28" y="139" font-size="10" fill="#3F3F46">urgent list. No summary is shown</text>
+<text x="28" y="154" font-size="10" fill="#3F3F46">until this is seen.</text>
+<rect x="16" y="169" width="208" height="34" rx="17" fill="#18181B"/><text x="120.0" y="190" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">Call his doctor</text>
+<rect x="16" y="211" width="208" height="34" rx="17" fill="#FFFFFF" stroke="#D4D4D8"/><text x="120.0" y="232" font-size="11" font-weight="600" fill="#3F3F46" text-anchor="middle">Share with the doctor</text>
+<text x="20" y="270" font-size="10.5" fill="#3F3F46">Why am I seeing this?</text>
+<rect x="20" y="278" width="190" height="7" rx="3.5" fill="#E4E4E7"/>
+<rect x="20" y="291" width="160" height="7" rx="3.5" fill="#E4E4E7"/>
+<rect x="20" y="304" width="120" height="7" rx="3.5" fill="#E4E4E7"/>
+<rect x="16" y="321" width="208" height="42" rx="8" fill="#EEF2FF"/>
+<text x="26" y="340" font-size="10" fill="#3730A3">Fixed text, reviewed by doctors.</text>
+<text x="26" y="354" font-size="10" fill="#3730A3">The AI cannot change this screen.</text>
+<text x="120.0" y="466" font-size="8.5" fill="#A1A1AA" text-anchor="middle">Wireframe · sample data</text>
+</svg>

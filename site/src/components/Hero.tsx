@@ -78,9 +78,9 @@ export default function Hero() {
             </motion.p>
 
             <motion.div {...up(0.4)} className="flex flex-wrap gap-3 mb-10">
-              <a href="/work"
+              <a href="/projects"
                 className="px-6 py-2.5 rounded-full text-sm font-semibold bg-zinc-900 text-white hover:bg-zinc-700 transition-colors shadow-sm">
-                See my work
+                See my projects
               </a>
               <a href={personal.resumeUrl} target="_blank" rel="noopener noreferrer"
                 className="px-6 py-2.5 rounded-full text-sm font-semibold border border-zinc-300 text-zinc-700 hover:border-indigo-400 hover:text-indigo-600 transition-colors">
@@ -100,7 +100,7 @@ export default function Hero() {
                 >
                   <span className="text-7xl leading-none font-serif bg-gradient-to-br from-indigo-400 to-violet-400 bg-clip-text text-transparent select-none block mb-2 text-center">&ldquo;</span>
                   <p className="text-xl sm:text-2xl md:text-3xl text-zinc-700 italic leading-snug font-medium mb-4 text-center">{quotes[quoteIdx].text}</p>
-                  <p className="text-sm text-zinc-400 text-center">— {quotes[quoteIdx].author}</p>
+                  <p className="text-sm text-zinc-400 text-center">{quotes[quoteIdx].author}</p>
                 </motion.div>
               </AnimatePresence>
 

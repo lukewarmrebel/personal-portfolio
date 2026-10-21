@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 480" width="240" height="480" font-family="Inter, system-ui, sans-serif">
+<rect x="1" y="1" width="238" height="478" rx="28" fill="#FFFFFF" stroke="#3F3F46" stroke-width="2"/>
+<rect x="90" y="12" width="60" height="6" rx="3" fill="#D4D4D8"/>
+<text x="20" y="50" font-size="15" font-weight="700" fill="#18181B">Opening the app</text>
+<text x="20" y="70" font-size="10" font-weight="400" fill="#71717A">Today, as reviewers describe it</text>
+<rect x="16" y="93" width="208" height="150" rx="8" fill="#E4E4E7"/>
+<text x="120" y="120" font-size="13" font-weight="700" fill="#52525B" text-anchor="middle">Full-screen ad</text><text x="120" y="140" font-size="10" fill="#71717A" text-anchor="middle">Skip in 5</text>
+<rect x="16" y="251" width="74" height="22" rx="11" fill="#18181B" stroke="#D4D4D8"/><text x="53.0" y="266" font-size="9.5" fill="#FFFFFF" text-anchor="middle">Scan &amp; Pay</text>
+<rect x="96.0" y="251" width="68" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/><text x="130.2" y="266" font-size="9.5" fill="#3F3F46" text-anchor="middle">To mobile</text>
+<rect x="170.4" y="251" width="57" height="22" rx="11" fill="#FFFFFF" stroke="#D4D4D8"/><text x="199.0" y="266" font-size="9.5" fill="#3F3F46" text-anchor="middle">To bank</text>
+<rect x="16" y="281" width="208" height="56" rx="8" fill="#F4F4F5"/>
+<text x="26" y="299" font-size="11" font-weight="700" fill="#3F3F46">Your Money</text>
+<text x="26" y="314" font-size="9.5" fill="#3F3F46">Postpaid · credit card · gold</text>
+<text x="26" y="327" font-size="9.5" fill="#3F3F46">Same for every user</text>
+<rect x="16" y="345" width="208" height="41" rx="8" fill="#F4F4F5"/>
+<text x="26" y="363" font-size="9.5" fill="#3F3F46">Get a loan up to ₹5 lakh</text>
+<text x="26" y="376" font-size="9.5" fill="#3F3F46">Shown even after a decline</text>
+<rect x="16" y="394" width="100" height="40" rx="8" fill="#18181B"/><text x="66" y="418" font-size="10" font-weight="600" fill="#FFFFFF" text-anchor="middle">Scan QR</text><rect x="124" y="394" width="100" height="40" rx="8" fill="#E4E4E7"/><text x="174" y="418" font-size="10" fill="#52525B" text-anchor="middle">Ad banner</text>
+<text x="20" y="450" font-size="9.5" font-weight="500" fill="#991B1B">Easy to tap the ad by mistake</text>
+<text x="120" y="462" font-size="8.5" fill="#A1A1AA" text-anchor="middle">Before. Mock layout.</text>
+</svg>
+
+
+
