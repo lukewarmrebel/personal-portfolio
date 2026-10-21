@@ -51,7 +51,7 @@ const project: ProjectFile = {
     "outcome": "A 2-page memo: a scan-first home, with credit shown only after intent. Practice exercise."
   },
   "judgment": {
-    "used": "My review analysis and a weighted trade-off between four options. A teardown memo has to show the evidence and make one call.",
+    "used": "CIRCLES to frame the problem, my review analysis, a weighted trade-off between four options, and a metric tree for the test. A teardown memo has to frame the problem, show the evidence, make one call and say how I'd measure it.",
     "skipped": "User flows, journey maps, an emotional journey, RICE, HEART and acceptance criteria. Those belong to the build, not to the memo that argues for it."
   },
   "solution": {
@@ -83,6 +83,19 @@ const project: ProjectFile = {
   },
   "frameworks": {
     "blocks": [
+      {
+        "kind": "circles",
+        "title": "The problem, worked through step by step",
+        "steps": {
+          "comprehend": "Payments bring users in; credit makes the money. So home became the credit shelf, in front of the scanner.",
+          "identify": "Daily scan-and-pay users; the few lakh who want credit; partners paying for placement.",
+          "report": "Fast scan, no mis-taps, credit only when they want it.",
+          "cut": "Time to pay first. Credit discovery second, but only for people who raise a hand.",
+          "list": "Strip home to pay only, drop just the two ads, keep the Nov 2025 cleanup, or kill and replace.",
+          "evaluate": "Stripping hurts the credit funnel. Dropping two ads still shows loans to everyone.",
+          "summarise": "Scan-first home with ranked shortcuts; credit in a Money tab and on home only after intent."
+        }
+      },
       {
         "kind": "research",
         "mode": "findings",
@@ -189,6 +202,52 @@ const project: ProjectFile = {
           }
         ],
         "note": "Scores 1 to 5 are my judgement from the memo, not measured."
+      },
+      {
+        "kind": "northstar",
+        "title": "Metric tree",
+        "northStar": {
+          "name": "Scan-and-pay transactions per monthly user",
+          "detail": "Share gains come from frequency",
+          "target": "+3% (est.)"
+        },
+        "inputs": [
+          {
+            "name": "Median time from open to pay screen",
+            "detail": "The habit lives or dies here",
+            "target": "−30% (est.)"
+          },
+          {
+            "name": "Promo tap, then back within 3 s",
+            "detail": "Proxy for mis-taps on the banner",
+            "target": "−80% (est.)"
+          },
+          {
+            "name": "Credit offers shown to declined users",
+            "detail": "Stops the trust leak",
+            "target": "−50% (est.)"
+          },
+          {
+            "name": "Likely-next slot used",
+            "detail": "Taps vs hides",
+            "target": "sample data"
+          }
+        ],
+        "guardrails": [
+          {
+            "name": "Financial services revenue per user",
+            "target": "within −5% (est.)"
+          },
+          {
+            "name": "Payment success rate",
+            "target": "no drop"
+          },
+          {
+            "name": "Services used per user",
+            "target": "no drop"
+          }
+        ],
+        "note": "Targets are my estimates for an 8-week test."
       }
     ]
   },

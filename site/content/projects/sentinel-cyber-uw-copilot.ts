@@ -96,7 +96,7 @@ const project: ProjectFile = {
     "title": "Core screens"
   },
   "judgment": {
-    "used": "Jobs to be done, a trade-off on how much the AI should decide, and a flow with a human gate at each step. In underwriting, who makes the call is the product decision.",
+    "used": "Jobs to be done, a trade-off on how much the AI should decide, a risk list and acceptance criteria. In underwriting, who makes the call is the product decision, so the risks and the criteria pin down where the human stays in charge.",
     "skipped": "HEART, an emotional journey, RICE and a market size. Underwriters are paid to decide well, not to enjoy the tool, so the real outcome is the loss ratio, and that is in my test plan."
   },
   "frameworks": {
@@ -174,6 +174,66 @@ const project: ProjectFile = {
           }
         ],
         "note": "Scores 1 to 5 are my judgement. Keeping the human in charge wins on trust."
+      },
+      {
+        "kind": "acceptance",
+        "title": "Acceptance criteria",
+        "stories": [
+          {
+            "story": "See red flags with proof",
+            "given": "a submission with an audit report",
+            "when": "AI triage finishes",
+            "then": "each flag shows its severity and the page or scan it came from"
+          },
+          {
+            "story": "Spot document conflicts",
+            "given": "the proposal form and audit disagree",
+            "when": "I open the case",
+            "then": "both statements appear side by side with a suggested question"
+          },
+          {
+            "story": "Correct the AI",
+            "given": "a flag I think is wrong",
+            "when": "I tap \"No, wrong\" and add a reason",
+            "then": "the flag is hidden for this case and logged for review"
+          },
+          {
+            "story": "Keep the human in charge",
+            "given": "a drafted decision",
+            "when": "I approve or override it",
+            "then": "nothing goes to the broker without my approval, and overrides keep my reason"
+          }
+        ]
+      },
+      {
+        "kind": "risks",
+        "title": "Risks and how I'd handle them",
+        "items": [
+          {
+            "risk": "AI invents a flag that isn't in the documents",
+            "likelihood": "medium",
+            "impact": "high",
+            "mitigation": "Every flag must link to a page or scan; no link, no flag"
+          },
+          {
+            "risk": "Underwriters over-trust the score",
+            "likelihood": "medium",
+            "impact": "high",
+            "mitigation": "Show reasons first, score second; require a note on approval"
+          },
+          {
+            "risk": "Bad scans break document reading",
+            "likelihood": "high",
+            "impact": "medium",
+            "mitigation": "Show a \"couldn't read\" warning per page"
+          },
+          {
+            "risk": "Regulator questions AI pricing",
+            "likelihood": "low",
+            "impact": "high",
+            "mitigation": "AI never sets price; keep an audit trail"
+          }
+        ]
       }
     ]
   },

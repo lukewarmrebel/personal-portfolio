@@ -38,7 +38,7 @@ const project: ProjectFile = {
     "outcome": "A live web app."
   },
   "judgment": {
-    "used": "Jobs to be done and one trade-off: where the API key lives. Privacy and cost were the real decisions in this app.",
+    "used": "Jobs to be done, one trade-off on where the API key lives, a risk list and acceptance criteria. Privacy, cost and never adding a fake skill were the real decisions in this app.",
     "skipped": "A market size, RICE, HEART and an emotional journey. It's a small live app for one job, and they wouldn't change it."
   },
   "solution": {
@@ -159,6 +159,66 @@ const project: ProjectFile = {
           }
         ],
         "note": "Scores 1 to 5 are my judgement. Privacy and cost won for a free tool."
+      },
+      {
+        "kind": "acceptance",
+        "title": "Acceptance criteria",
+        "stories": [
+          {
+            "story": "Upload",
+            "given": "a text-based PDF resume",
+            "when": "I upload it with a job description",
+            "then": "my roles, dates and bullets show up in editable fields"
+          },
+          {
+            "story": "Tailor",
+            "given": "verified details",
+            "when": "I tap tailor",
+            "then": "each bullet shows a before and after, and no new facts are added"
+          },
+          {
+            "story": "Stay in control",
+            "given": "a rewritten bullet I don't like",
+            "when": "I tap undo",
+            "then": "the original bullet comes back"
+          },
+          {
+            "story": "Export",
+            "given": "my reviewed resume",
+            "when": "I tap download",
+            "then": "I get a clean PDF in under 10 seconds"
+          }
+        ]
+      },
+      {
+        "kind": "risks",
+        "title": "Risks and how I'd handle them",
+        "items": [
+          {
+            "risk": "AI adds skills the person doesn't have",
+            "likelihood": "medium",
+            "impact": "high",
+            "mitigation": "Prompt forbids new facts; show before/after for every bullet"
+          },
+          {
+            "risk": "PDF parsing fails on fancy layouts",
+            "likelihood": "high",
+            "impact": "medium",
+            "mitigation": "Verify step lets the user fix fields"
+          },
+          {
+            "risk": "Users don't have an API key",
+            "likelihood": "high",
+            "impact": "medium",
+            "mitigation": "One-screen guide to get a free key"
+          },
+          {
+            "risk": "Every resume starts to sound the same",
+            "likelihood": "medium",
+            "impact": "medium",
+            "mitigation": "Rewrite only to the job's needs, keep the user's verbs"
+          }
+        ]
       }
     ]
   },

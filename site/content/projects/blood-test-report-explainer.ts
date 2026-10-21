@@ -108,7 +108,7 @@ const project: ProjectFile = {
     "caption": "Two screens from the clickable prototype (mock report) and two flat wireframes with sample data."
   },
   "judgment": {
-    "used": "Jobs to be done, one user flow and a trade-off on who decides what is urgent. In health the worst failure is a missed urgent value, so that one trust call shapes every screen.",
+    "used": "Jobs to be done, a trade-off on who decides what is urgent, a risk list and key stories. In health the worst failure is a missed urgent value, so the risks and the stories spell out exactly how the app behaves when a report is urgent, unclear or out of range.",
     "skipped": "RICE, CIRCLES, HEART, a market size and journey maps. There was no backlog to rank and no live users to measure, and none of them would change a screen."
   },
   "frameworks": {
@@ -186,6 +186,72 @@ const project: ProjectFile = {
           }
         ],
         "note": "Scores 1 to 5 are my judgement. The list wins because recall has to be 100% and checkable."
+      },
+      {
+        "kind": "acceptance",
+        "title": "Key stories",
+        "stories": [
+          {
+            "story": "Urgent value",
+            "given": "a report with potassium 6.6 mmol/L",
+            "when": "it is uploaded",
+            "then": "only the “contact a doctor today” screen shows, with no summary"
+          },
+          {
+            "story": "Missing range",
+            "given": "a value with no range printed",
+            "when": "the summary is built",
+            "then": "the value shows with “no range on the report”, and no range is filled in"
+          },
+          {
+            "story": "Unreadable value",
+            "given": "a smudged creatinine line",
+            "when": "the report is read",
+            "then": "it is listed as “couldn't read”, and the report is never called all clear"
+          },
+          {
+            "story": "Medicine question",
+            "given": "the user asks “should he start a medicine?”",
+            "when": "the AI answers",
+            "then": "it declines and adds the question to the doctor list"
+          }
+        ]
+      },
+      {
+        "kind": "risks",
+        "title": "Risks and how I'd handle them",
+        "items": [
+          {
+            "risk": "Misread value or made-up range",
+            "likelihood": "medium",
+            "impact": "high",
+            "mitigation": "Per-field confidence, page reference on every range, arithmetic not AI"
+          },
+          {
+            "risk": "Missing an urgent value",
+            "likelihood": "low",
+            "impact": "high",
+            "mitigation": "Fixed list, runs first; an unreadable urgent test blocks “all clear”"
+          },
+          {
+            "risk": "Read as a diagnosis",
+            "likelihood": "high",
+            "impact": "high",
+            "mitigation": "No scores, no advice, every path ends with a doctor"
+          },
+          {
+            "risk": "Treated as a medical device",
+            "likelihood": "medium",
+            "impact": "high",
+            "mitigation": "Stay on the information side; regulatory advice before launch"
+          },
+          {
+            "risk": "Labs give a version away free",
+            "likelihood": "high",
+            "impact": "medium",
+            "mitigation": "Compete on cross-lab and caregiver-first, or sell to insurers"
+          }
+        ]
       }
     ]
   },

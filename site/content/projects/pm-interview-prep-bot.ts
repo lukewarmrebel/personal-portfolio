@@ -39,7 +39,7 @@ const project: ProjectFile = {
     "outcome": "A working bot, shown in a demo video."
   },
   "judgment": {
-    "used": "Jobs to be done and one trade-off: one prompt or several agents. That was the main design call in a 2-day build.",
+    "used": "Jobs to be done, one trade-off on one prompt or several agents, acceptance criteria and a risk list. The agent design was the main call in a 2-day build, and the criteria and risks say what good feedback has to look like.",
     "skipped": "A market size, RICE, HEART and an emotional journey. It's a 2-day build shown in a demo video, with no users to measure."
   },
   "solution": {
@@ -152,6 +152,66 @@ const project: ProjectFile = {
           }
         ],
         "note": "Scores 1 to 5 are my judgement. The manager agent decides when to probe."
+      },
+      {
+        "kind": "acceptance",
+        "title": "Acceptance criteria",
+        "stories": [
+          {
+            "story": "Personal questions",
+            "given": "my resume and a job description",
+            "when": "the mock starts",
+            "then": "the first question mentions something from my resume or the job"
+          },
+          {
+            "story": "Probe weak answers",
+            "given": "an answer with no user or metric",
+            "when": "I submit it",
+            "then": "the bot asks one follow-up on the missing part"
+          },
+          {
+            "story": "Feedback",
+            "given": "the mock is over",
+            "when": "I open feedback",
+            "then": "I see a score per skill and no more than 3 fixes"
+          },
+          {
+            "story": "Short session",
+            "given": "default settings",
+            "when": "I finish a full mock",
+            "then": "it takes under 5 minutes"
+          }
+        ]
+      },
+      {
+        "kind": "risks",
+        "title": "Risks and how I'd handle them",
+        "items": [
+          {
+            "risk": "Feedback is generic or wrong",
+            "likelihood": "medium",
+            "impact": "high",
+            "mitigation": "Feedback must quote the user's answer; expert review of samples"
+          },
+          {
+            "risk": "Follow-ups feel harsh",
+            "likelihood": "medium",
+            "impact": "medium",
+            "mitigation": "Tone set by the personality input; always explain why"
+          },
+          {
+            "risk": "Resume data privacy",
+            "likelihood": "low",
+            "impact": "high",
+            "mitigation": "Don't store resumes after the session"
+          },
+          {
+            "risk": "Agents loop or ramble",
+            "likelihood": "medium",
+            "impact": "medium",
+            "mitigation": "Manager caps questions and follow-ups per mock"
+          }
+        ]
       }
     ]
   },

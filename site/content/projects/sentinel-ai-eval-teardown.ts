@@ -43,7 +43,7 @@ const project: ProjectFile = {
     "outcome": "A PDF teardown with a 4-level scorecard."
   },
   "judgment": {
-    "used": "One trade-off on how to judge the co-pilot, then the scorecard itself. An eval needs clear tiers and targets, nothing more.",
+    "used": "A trade-off on how to judge the co-pilot, design rules as stories, a north star with guardrails, and a risk list. An eval needs clear tiers, targets and rules for when the AI is unsure.",
     "skipped": "CIRCLES, journey maps, an emotional journey, RICE, HEART and a market size. The main Sentinel page covers the product; this page is only about testing it."
   },
   "solution": {
@@ -150,6 +150,112 @@ const project: ProjectFile = {
           }
         ],
         "note": "Scores 1 to 5 are my judgement."
+      },
+      {
+        "kind": "acceptance",
+        "title": "Design rules as stories",
+        "stories": [
+          {
+            "story": "Evidence first",
+            "given": "Sentinel raises a red flag",
+            "when": "the underwriter opens it",
+            "then": "it shows the document, page and section for each side"
+          },
+          {
+            "story": "Calibrated confidence",
+            "given": "a flag at 60% confidence",
+            "when": "it is shown",
+            "then": "it is marked “unsure” and asks for a document, not shown as a finding"
+          },
+          {
+            "story": "Override by design",
+            "given": "the underwriter overrides a flag",
+            "when": "they save it",
+            "then": "a reason is required and the flag's weight updates"
+          },
+          {
+            "story": "Audit trail",
+            "given": "any AI-assisted decision",
+            "when": "it is made",
+            "then": "model version, confidence and the human action are logged"
+          }
+        ]
+      },
+      {
+        "kind": "northstar",
+        "title": "North star and what drives it",
+        "northStar": {
+          "name": "Submissions decided with AI help and no material miss",
+          "detail": "Faster, and nothing important slipped",
+          "target": "90% (est.)"
+        },
+        "inputs": [
+          {
+            "name": "Precision@5 on flags",
+            "detail": "T1 output quality",
+            "target": "≥ 0.8 (est.)"
+          },
+          {
+            "name": "Evidence chain complete",
+            "detail": "T2 reasoning",
+            "target": "≥ 95% (est.)"
+          },
+          {
+            "name": "Time to decision",
+            "detail": "T3 collaboration",
+            "target": "-30% (est.)"
+          },
+          {
+            "name": "Confidence calibration gap",
+            "detail": "Shown vs real accuracy",
+            "target": "≤ 5 pts (est.)"
+          }
+        ],
+        "guardrails": [
+          {
+            "name": "Hallucination on cross-refs",
+            "target": "< 2% (est.)"
+          },
+          {
+            "name": "Override rate",
+            "target": "10-30% (est.)"
+          },
+          {
+            "name": "Loss ratio vs manual book",
+            "target": "no worse"
+          }
+        ],
+        "note": "An override rate near 0% is a warning too: it can mean over-trust. All targets are estimates."
+      },
+      {
+        "kind": "risks",
+        "title": "Risks and how I'd handle them",
+        "items": [
+          {
+            "risk": "Underwriters over-trust scores",
+            "likelihood": "medium",
+            "impact": "high",
+            "mitigation": "Track override rate; seed known-bad flags to check attention"
+          },
+          {
+            "risk": "No benchmark to compare against",
+            "likelihood": "high",
+            "impact": "medium",
+            "mitigation": "A synthetic portfolio benchmark, fixed per quarter"
+          },
+          {
+            "risk": "Model drifts with feedback",
+            "likelihood": "medium",
+            "impact": "medium",
+            "mitigation": "Freeze a test set; compare each version on it"
+          },
+          {
+            "risk": "Loss ratio takes a year",
+            "likelihood": "high",
+            "impact": "medium",
+            "mitigation": "Use tiers 1 to 3 as leading signals"
+          }
+        ]
       }
     ]
   },

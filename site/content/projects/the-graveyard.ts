@@ -48,8 +48,8 @@ const project: ProjectFile = {
     "outcome": "A live one-page site with 10 tombstones, filters and a watchlist."
   },
   "judgment": {
-    "used": "My desk research and the rules for what goes in. A curated site is only as good as its rules.",
-    "skipped": "Personas, journey maps, acceptance criteria and HEART. It's a small side project, and those would be heavier than the site."
+    "used": "My desk research, a visitor's journey, the rules for what goes in, and acceptance criteria. A curated site is only as good as its rules, and the journey and criteria keep a visit short and clear.",
+    "skipped": "Personas, HEART, RICE and a metric tree. It's a small side project, and those would be heavier than the site."
   },
   "solution": {
     "summary": "A one-page cemetery that reads in two minutes: a grid of tombstones, filters by category, and a corner for live features I'd cut.",
@@ -117,6 +117,40 @@ const project: ProjectFile = {
         "note": "Desk research from public reporting, not user research."
       },
       {
+        "kind": "journey",
+        "title": "A visitor's two minutes",
+        "stages": [
+          {
+            "stage": "Land",
+            "doing": "Reads the title and my one line",
+            "feeling": "good",
+            "pain": "Could feel like a gimmick",
+            "opportunity": "Tasteful, flat, no skulls"
+          },
+          {
+            "stage": "Filter",
+            "doing": "Taps AI",
+            "feeling": "good",
+            "pain": "Too many cards",
+            "opportunity": "4 chips with counts"
+          },
+          {
+            "stage": "Read",
+            "doing": "Reads 2 or 3 tombstones",
+            "feeling": "good",
+            "pain": "Wants the why fast",
+            "opportunity": "Cause and fix in one line each"
+          },
+          {
+            "stage": "Go deeper",
+            "doing": "Opens a memo",
+            "feeling": "good",
+            "pain": "Dead ends",
+            "opportunity": "Link to my full kill docs"
+          }
+        ]
+      },
+      {
         "kind": "moscow",
         "title": "Rules for what goes in",
         "must": [
@@ -136,6 +170,30 @@ const project: ProjectFile = {
           "Rumours or leaks",
           "Calling a pivot a death",
           "Mocking the people who built it"
+        ]
+      },
+      {
+        "kind": "acceptance",
+        "title": "Acceptance criteria for the site",
+        "stories": [
+          {
+            "story": "Filter",
+            "given": "I'm on the page",
+            "when": "I tap a category chip",
+            "then": "only that category's tombstones show, with the count on the chip"
+          },
+          {
+            "story": "Honest status",
+            "given": "a product was cut back but still runs",
+            "when": "I read its tombstone",
+            "then": "it says Narrowed, not Dead"
+          },
+          {
+            "story": "Phone first",
+            "given": "I'm on a 390px phone",
+            "when": "I scroll the graves",
+            "then": "they stack in one column with nothing cut off"
+          }
         ]
       }
     ]

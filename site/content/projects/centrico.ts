@@ -39,7 +39,7 @@ const project: ProjectFile = {
     "outcome": "A working prototype, built in 2 weeks."
   },
   "judgment": {
-    "used": "Jobs to be done and one trade-off: which side of the marketplace to build for first. In a marketplace that call decides everything else.",
+    "used": "A market map, jobs to be done, the journey of finding a designer today, and one trade-off: which side of the marketplace to build for first. In a marketplace that call decides everything else, and the journey shows why prices up front matter.",
     "skipped": "HEART, an emotional journey, acceptance criteria and RICE. It's a 2-week prototype, not a build spec, and there were no users to measure."
   },
   "solution": {
@@ -89,6 +89,128 @@ const project: ProjectFile = {
   "frameworks": {
     "blocks": [
       {
+        "kind": "market",
+        "title": "Where Centrico fits",
+        "funnel": [
+          {
+            "level": "TAM",
+            "label": "Home interiors spend in India",
+            "value": "est.",
+            "assumption": "A large, fragmented market"
+          },
+          {
+            "level": "SAM",
+            "label": "Urban new-home buyers hiring a designer",
+            "assumption": "Mostly metro apartments"
+          },
+          {
+            "level": "SOM",
+            "label": "Hyderabad and Bengaluru home owners, year 1",
+            "assumption": "Start city by city to keep supply dense"
+          }
+        ],
+        "positioning": {
+          "x": [
+            "Find anyone",
+            "Matched to my budget and style"
+          ],
+          "y": [
+            "Listings only",
+            "Book and manage"
+          ],
+          "points": [
+            {
+              "name": "Social media",
+              "x": 0.2,
+              "y": 0.15
+            },
+            {
+              "name": "Home services apps",
+              "x": 0.35,
+              "y": 0.6
+            },
+            {
+              "name": "Full-service interior brands",
+              "x": 0.55,
+              "y": 0.9
+            },
+            {
+              "name": "Centrico",
+              "x": 0.85,
+              "y": 0.65,
+              "me": true
+            }
+          ]
+        },
+        "features": {
+          "columns": [
+            "Prices up front",
+            "Real portfolios",
+            "Compare designers",
+            "Book a meeting",
+            "Choice of independents"
+          ],
+          "rows": [
+            {
+              "name": "Social media",
+              "values": [
+                "no",
+                "partial",
+                "no",
+                "no",
+                "yes"
+              ]
+            },
+            {
+              "name": "Home services apps",
+              "values": [
+                "partial",
+                "partial",
+                "partial",
+                "yes",
+                "partial"
+              ]
+            },
+            {
+              "name": "Full-service brands",
+              "values": [
+                "partial",
+                "yes",
+                "no",
+                "yes",
+                "no"
+              ]
+            },
+            {
+              "name": "Centrico",
+              "values": [
+                "yes",
+                "yes",
+                "yes",
+                "yes",
+                "yes"
+              ],
+              "me": true
+            }
+          ]
+        },
+        "trends": [
+          {
+            "value": "New homes",
+            "label": "Steady flow of new city apartments needing fit-outs"
+          },
+          {
+            "value": "Online first",
+            "label": "People research designers online before calling"
+          },
+          {
+            "value": "Independents",
+            "label": "Many designers work solo and need leads"
+          }
+        ],
+        "note": "Categories, not named companies. Sizes are directional (est.)."
+      },
+      {
         "kind": "jtbd",
         "title": "Jobs to be done",
         "items": [
@@ -106,6 +228,47 @@ const project: ProjectFile = {
             "when": "I'm a designer",
             "want": "leads that match my price range",
             "so": "my calls turn into projects"
+          }
+        ]
+      },
+      {
+        "kind": "journey",
+        "title": "Finding a designer today",
+        "stages": [
+          {
+            "stage": "Search",
+            "doing": "Asks friends, scrolls Instagram",
+            "feeling": "okay",
+            "pain": "Scattered, hard to judge",
+            "opportunity": "One place with filters"
+          },
+          {
+            "stage": "Shortlist",
+            "doing": "Calls 5 to 6 designers",
+            "feeling": "bad",
+            "pain": "Prices only revealed on calls",
+            "opportunity": "Prices on the profile"
+          },
+          {
+            "stage": "Compare",
+            "doing": "Notes quotes on paper",
+            "feeling": "bad",
+            "pain": "Apples to oranges",
+            "opportunity": "Side-by-side compare"
+          },
+          {
+            "stage": "Meet",
+            "doing": "Books site visits",
+            "feeling": "okay",
+            "pain": "Back-and-forth on timing",
+            "opportunity": "Book a slot online"
+          },
+          {
+            "stage": "Decide",
+            "doing": "Picks one",
+            "feeling": "good",
+            "pain": "Still unsure",
+            "opportunity": "Reviews from past clients"
           }
         ]
       },

@@ -107,7 +107,7 @@ const project: ProjectFile = {
     "caption": "The chart is real data. The two wireframes show the fix I recommend for Ola, with sample data."
   },
   "judgment": {
-    "used": "A findings table with my method, a trade-off on how to fix the top complaint, and one north star with guardrails. The data has to lead to one decision, and these show how I got there.",
+    "used": "A findings table with my method, RICE to rank the fixes, a trade-off on how to fix the top complaint, and one north star with guardrails. The data has to lead to one decision, and these show how I got there.",
     "skipped": "Personas, journey maps, user flows and acceptance criteria. This is an analysis, not a build spec, and inventing a persona would weaken real data."
   },
   "frameworks": {
@@ -159,6 +159,48 @@ const project: ProjectFile = {
           }
         ],
         "note": "Real public reviews. Reviews over-represent bad days and miss Hindi and Telugu script."
+      },
+      {
+        "kind": "rice",
+        "title": "Which Ola fix first (sample scores, est.)",
+        "rows": [
+          {
+            "item": "Fare guarantee button",
+            "reach": 9,
+            "impact": 3,
+            "confidence": 0.8,
+            "effort": 3
+          },
+          {
+            "item": "Higher fee for cancel after a call",
+            "reach": 6,
+            "impact": 2,
+            "confidence": 0.7,
+            "effort": 1
+          },
+          {
+            "item": "AI triage of reports",
+            "reach": 7,
+            "impact": 2,
+            "confidence": 0.6,
+            "effort": 3
+          },
+          {
+            "item": "Repeat-driver flags",
+            "reach": 5,
+            "impact": 2,
+            "confidence": 0.7,
+            "effort": 2
+          },
+          {
+            "item": "Reachable support line",
+            "reach": 8,
+            "impact": 2,
+            "confidence": 0.5,
+            "effort": 5
+          }
+        ],
+        "note": "Reach out of 10, impact 1 to 3, effort in weeks. Sample scores to show the method."
       },
       {
         "kind": "tradeoff",

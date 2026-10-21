@@ -46,8 +46,8 @@ const project: ProjectFile = {
     "outcome": "A clickable prototype with sample data. Not shipped."
   },
   "judgment": {
-    "used": "Jobs to be done and one trade-off: who picks the restaurant. The whole app hangs on making that choice fair and fast.",
-    "skipped": "RICE, HEART, a market size and acceptance criteria. It's a prototype with sample data, and none of those would change the flow."
+    "used": "Jobs to be done, the group order journey today, one trade-off on who picks the restaurant, and key stories. The whole app hangs on making that choice fair and fast, and the stories cover the hard nights: allergies, private budgets, splitting the bill.",
+    "skipped": "RICE, HEART and a market size. It's a prototype with sample data, and none of those would change the flow."
   },
   "solution": {
     "summary": "The cart was never the hard part. Choosing the restaurant is, so I collect everyone's limits before anyone picks a place.",
@@ -101,6 +101,47 @@ const project: ProjectFile = {
             "when": "the order is placed",
             "want": "each person to get their exact amount",
             "so": "the host isn't the bank"
+          }
+        ]
+      },
+      {
+        "kind": "journey",
+        "title": "A group order today, and where the app steps in",
+        "stages": [
+          {
+            "stage": "Someone asks",
+            "doing": "“dinner?” in the flat group",
+            "feeling": "okay",
+            "pain": "11 messages, no decision",
+            "opportunity": "One link instead of a debate"
+          },
+          {
+            "stage": "Constraints",
+            "doing": "Veg, budget, a call at 9, an allergy",
+            "feeling": "bad",
+            "pain": "Said in passing, half remembered",
+            "opportunity": "Four taps each, saved"
+          },
+          {
+            "stage": "Picking",
+            "doing": "Scrolling apps, sharing screenshots",
+            "feeling": "bad",
+            "pain": "Nobody wants to decide",
+            "opportunity": "2 or 3 picks with reasons"
+          },
+          {
+            "stage": "Ordering",
+            "doing": "One phone, everyone shouting dishes",
+            "feeling": "okay",
+            "pain": "Host types for everyone",
+            "opportunity": "Each adds from a filtered menu"
+          },
+          {
+            "stage": "Settling up",
+            "doing": "Chasing ₹280 for two days",
+            "feeling": "bad",
+            "pain": "Host fronts the money",
+            "opportunity": "UPI pay links, one nudge"
           }
         ]
       },
@@ -165,6 +206,42 @@ const project: ProjectFile = {
           }
         ],
         "note": "Scores 1 to 5 are my judgement. The vote costs one tap and stops the pushback."
+      },
+      {
+        "kind": "acceptance",
+        "title": "Key stories",
+        "stories": [
+          {
+            "story": "Allergy filter",
+            "given": "Riya marks a peanut allergy",
+            "when": "places are ranked",
+            "then": "any place without peanut labels is removed, and her menu hides peanut dishes"
+          },
+          {
+            "story": "Hard night",
+            "given": "no place fits all six",
+            "when": "the picks are built",
+            "then": "the closest match shows with who compromises, and that person is asked privately first"
+          },
+          {
+            "story": "Private budget",
+            "given": "Kabir sets “under ₹250”",
+            "when": "the group sees the picks",
+            "then": "his budget is used for ranking but never shown to anyone"
+          },
+          {
+            "story": "Split",
+            "given": "the host places a ₹1,622 order",
+            "when": "the order goes through",
+            "then": "each friend gets a UPI link with their exact share filled in"
+          },
+          {
+            "story": "Model is slow",
+            "given": "the reason-writing model times out",
+            "when": "the picks load",
+            "then": "they still show, with a plain template reason"
+          }
+        ]
       }
     ]
   },

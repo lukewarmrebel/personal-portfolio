@@ -35,7 +35,7 @@ const project: ProjectFile = {
     "outcome": "First prize."
   },
   "judgment": {
-    "used": "The student's job to be done, CIRCLES and a research plan. A competition pitch is judged on how clearly I frame the problem, so CIRCLES earns its place here.",
+    "used": "The student's jobs to be done, CIRCLES and a research plan. A competition pitch is judged on how clearly I frame the problem, so CIRCLES and the jobs earn their place here.",
     "skipped": "RICE, HEART, metric trees and acceptance criteria. It was a pitch, not a product, so there was nothing to rank or measure."
   },
   "problem": {
@@ -84,6 +84,27 @@ const project: ProjectFile = {
   },
   "frameworks": {
     "blocks": [
+      {
+        "kind": "jtbd",
+        "title": "The jobs a student hires the app for",
+        "items": [
+          {
+            "when": "I feel off but can't say why",
+            "want": "a quick, private check-in",
+            "so": "I can name what's going on"
+          },
+          {
+            "when": "exams or deadlines pile up",
+            "want": "small steps I can do in a few minutes",
+            "so": "I feel back in control"
+          },
+          {
+            "when": "it's getting serious",
+            "want": "an easy way to reach a real person",
+            "so": "I don't have to struggle alone"
+          }
+        ]
+      },
       {
         "kind": "circles",
         "title": "How I framed the pitch",

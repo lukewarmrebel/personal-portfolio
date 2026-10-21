@@ -66,7 +66,7 @@ const project: ProjectFile = {
     "outcome": "A cost spreadsheet and PDF. Built on published AI prices; figures are estimates."
   },
   "judgment": {
-    "used": "A trade-off between setups, the routing flow, and the list of assumptions I'd replace first. In a cost model the assumptions are the work, so they stay in view.",
+    "used": "The assumptions I'd replace first, a trade-off between setups, a north star with guardrails, and a risk list. In a cost model the assumptions and the budget are the work, so they stay in view.",
     "skipped": "Journey maps, an emotional journey, HEART, CIRCLES and RICE. Shoppers never see which model answers them, so their feelings don't change the routing."
   },
   "solution": {
@@ -169,6 +169,82 @@ const project: ProjectFile = {
           }
         ],
         "note": "Scores 1 to 5 are my judgement. Routing costs some complexity and wins on everything else."
+      },
+      {
+        "kind": "northstar",
+        "title": "North star and what drives it",
+        "northStar": {
+          "name": "AI cost per assisted order, within budget, at the quality bar",
+          "detail": "Cheapest setup that still passes every golden set",
+          "target": "≤ ₹1 India, ≤ $0.05 US"
+        },
+        "inputs": [
+          {
+            "name": "Frontier share of requests",
+            "detail": "Biggest cost driver",
+            "target": "≤ 2% (est.)"
+          },
+          {
+            "name": "No-LLM share",
+            "detail": "Rules and classic ML",
+            "target": "≥ 40% (est.)"
+          },
+          {
+            "name": "Escalation rate",
+            "detail": "Requests moved one tier up",
+            "target": "≤ 10% (est.)"
+          },
+          {
+            "name": "Cache hit share",
+            "detail": "Repeated prompt prefix",
+            "target": "≥ 50% (est.)"
+          }
+        ],
+        "guardrails": [
+          {
+            "name": "Golden-set pass rate per tier",
+            "target": "≥ 95% (est.)"
+          },
+          {
+            "name": "Allergen filter misses",
+            "target": "0"
+          },
+          {
+            "name": "Median reply time, short lists",
+            "target": "< 2 s (est.)"
+          }
+        ],
+        "note": "The budgets come from the case study; the rest are my estimates."
+      },
+      {
+        "kind": "risks",
+        "title": "Risks and how I'd handle them",
+        "items": [
+          {
+            "risk": "Frontier share creeps up",
+            "likelihood": "medium",
+            "impact": "high",
+            "mitigation": "Daily dashboard, alert at 10%, review what is escalating"
+          },
+          {
+            "risk": "My traffic shares are wrong",
+            "likelihood": "high",
+            "impact": "medium",
+            "mitigation": "Replace with 30 days of real logs"
+          },
+          {
+            "risk": "Small model fails a hard request",
+            "likelihood": "medium",
+            "impact": "high",
+            "mitigation": "Escalate when unsure; golden set per tier"
+          },
+          {
+            "risk": "LLM prices change",
+            "likelihood": "medium",
+            "impact": "medium",
+            "mitigation": "Prices are inputs; re-run the sheet each quarter"
+          }
+        ]
       }
     ]
   },

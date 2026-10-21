@@ -42,7 +42,7 @@ const project: ProjectFile = {
     "outcome": "A live web app."
   },
   "judgment": {
-    "used": "Jobs to be done and one trade-off on how AI labels are saved. The tool lives or dies on whether a labeller trusts the AI's first guess.",
+    "used": "Jobs to be done, one trade-off on how AI labels are saved, acceptance criteria and a risk list. The tool lives or dies on whether a labeller trusts the AI's first guess, so the criteria and risks focus on that.",
     "skipped": "A market size, HEART, RICE and an emotional journey. It's a working tool for one job, and speed and label quality cover what matters."
   },
   "solution": {
@@ -157,6 +157,66 @@ const project: ProjectFile = {
           }
         ],
         "note": "Scores 1 to 5 are my judgement. A quick human check keeps most of the speed."
+      },
+      {
+        "kind": "acceptance",
+        "title": "Acceptance criteria",
+        "stories": [
+          {
+            "story": "Draw a label",
+            "given": "a photo is open",
+            "when": "I press B and drag",
+            "then": "a box appears with my chosen colour and thickness"
+          },
+          {
+            "story": "AI first pass",
+            "given": "a photo with visible damage",
+            "when": "I tap AI analyse",
+            "then": "damage areas appear as boxes I can keep, move or delete"
+          },
+          {
+            "story": "Batch",
+            "given": "24 uploaded photos",
+            "when": "I run batch analyse",
+            "then": "every photo gets AI boxes and a progress count"
+          },
+          {
+            "story": "Export",
+            "given": "a labelled batch",
+            "when": "I tap download",
+            "then": "I get one ZIP with every annotated photo"
+          }
+        ]
+      },
+      {
+        "kind": "risks",
+        "title": "Risks and how I'd handle them",
+        "items": [
+          {
+            "risk": "AI boxes accepted without a look",
+            "likelihood": "high",
+            "impact": "high",
+            "mitigation": "Low-confidence boxes need a click to accept"
+          },
+          {
+            "risk": "Bad lighting confuses the AI",
+            "likelihood": "medium",
+            "impact": "medium",
+            "mitigation": "Show confidence and allow quick delete"
+          },
+          {
+            "risk": "Export format doesn't fit training code",
+            "likelihood": "medium",
+            "impact": "medium",
+            "mitigation": "Add common label formats next"
+          },
+          {
+            "risk": "Customer photos show number plates",
+            "likelihood": "medium",
+            "impact": "high",
+            "mitigation": "Blur plates on export"
+          }
+        ]
       }
     ]
   },

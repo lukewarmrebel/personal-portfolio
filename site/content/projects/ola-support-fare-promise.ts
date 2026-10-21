@@ -51,7 +51,7 @@ const project: ProjectFile = {
     "outcome": "A 2-page memo: point the AI at the fare, not at FAQs. Practice exercise."
   },
   "judgment": {
-    "used": "My review analysis and a weighted trade-off between four fixes. A teardown memo has to show the evidence and make one call.",
+    "used": "CIRCLES to frame the problem, my review analysis, a weighted trade-off between four fixes, and a metric tree for the test. A teardown memo has to frame the problem, show the evidence, make one call and say how I'd know it worked.",
     "skipped": "User flows, journey maps, an emotional journey, RICE, HEART and acceptance criteria. Those come after Ola agrees on the fix, not before."
   },
   "solution": {
@@ -82,6 +82,19 @@ const project: ProjectFile = {
   },
   "frameworks": {
     "blocks": [
+      {
+        "kind": "circles",
+        "title": "The problem, worked through step by step",
+        "steps": {
+          "comprehend": "Ola's AI help desk deflects tickets. Its biggest ticket is a fare dispute, which needs money moved.",
+          "identify": "Riders overcharged after acceptance; drivers; the support ops team.",
+          "report": "Get the extra money back, fast, and reach a person when the answer is no.",
+          "cut": "Fare disputes first: the top complaint and mostly 1 star. Receipts and lost items can stay on the bot.",
+          "list": "Kill the bot, narrow it, keep and tune FAQs, or kill and replace with a fare guarantee.",
+          "evaluate": "All-human support is too costly. Tuning FAQs leaves money unmoved.",
+          "summarise": "A fare guarantee: one button, AI refunds within a day, and only a person can say no."
+        }
+      },
       {
         "kind": "research",
         "mode": "findings",
@@ -188,6 +201,48 @@ const project: ProjectFile = {
           }
         ],
         "note": "Scores 1 to 5 are my judgement from the memo, not measured. Higher is better on every column."
+      },
+      {
+        "kind": "northstar",
+        "title": "Metric tree",
+        "northStar": {
+          "name": "Rides per rider in the 30 days after a fare dispute",
+          "detail": "Test vs holdout; did we keep the rider?",
+          "target": "+10% vs holdout (est.)"
+        },
+        "inputs": [
+          {
+            "name": "Median time from report to refund",
+            "detail": "Not public today",
+            "target": "under 24 h (est.)"
+          },
+          {
+            "name": "Reviews: driver asked for more",
+            "detail": "Share of Ola reviews, 9.2% today",
+            "target": "4.6% in two quarters (est.)"
+          },
+          {
+            "name": "Reviews: support unreachable",
+            "detail": "6.3% today",
+            "target": "under 3% (est.)"
+          },
+          {
+            "name": "Reports per 1,000 trips",
+            "detail": "Should rise first, then fall",
+            "target": "sample data"
+          }
+        ],
+        "guardrails": [
+          {
+            "name": "Short-trip acceptance by drivers",
+            "target": "max 2-point drop"
+          },
+          {
+            "name": "Wrong approvals in audit",
+            "target": "under 5% (est.)"
+          }
+        ],
+        "note": "Targets are my estimates for a six-week city test."
       }
     ]
   },

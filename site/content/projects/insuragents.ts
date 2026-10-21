@@ -43,7 +43,7 @@ const project: ProjectFile = {
     "outcome": "Working code on GitHub."
   },
   "judgment": {
-    "used": "One trade-off on one big agent versus one per task, and a risk list. For AI agents in claims, the architecture and what can go wrong are the decisions.",
+    "used": "Jobs to be done, one trade-off on one big agent versus one per task, acceptance criteria and a risk list. For AI agents in claims, the architecture, what each agent must return and what can go wrong are the decisions.",
     "skipped": "Journey maps, an emotional journey, HEART and a market size. It's working code for claims teams, not a consumer app."
   },
   "solution": {
@@ -76,6 +76,27 @@ const project: ProjectFile = {
   },
   "frameworks": {
     "blocks": [
+      {
+        "kind": "jtbd",
+        "title": "Jobs to be done",
+        "items": [
+          {
+            "when": "a claim arrives",
+            "want": "it sorted as approve, deny or escalate with a reason",
+            "so": "handlers start with the right claims"
+          },
+          {
+            "when": "something looks off",
+            "want": "a fraud score with the warning signs",
+            "so": "I send only real suspects to the fraud team"
+          },
+          {
+            "when": "our AI provider changes",
+            "want": "to switch with one setting",
+            "so": "nothing downstream breaks"
+          }
+        ]
+      },
       {
         "kind": "tradeoff",
         "title": "One big agent or one agent per task?",
@@ -128,6 +149,36 @@ const project: ProjectFile = {
           }
         ],
         "note": "Scores 1 to 5 are my judgement. Small agents are each testable on their own."
+      },
+      {
+        "kind": "acceptance",
+        "title": "Acceptance criteria",
+        "stories": [
+          {
+            "story": "Triage a claim",
+            "given": "a claim with its details",
+            "when": "I run claim triage",
+            "then": "I get APPROVE, DENY or ESCALATE with at least one stated reason"
+          },
+          {
+            "story": "Score fraud risk",
+            "given": "the same claim",
+            "when": "I run fraud scoring",
+            "then": "I get LOW, MEDIUM or HIGH and the warning signs behind it"
+          },
+          {
+            "story": "Switch provider",
+            "given": "the app runs on one AI provider",
+            "when": "I change the provider setting",
+            "then": "all 7 tasks run on the new provider with no code change"
+          },
+          {
+            "story": "Prove it works",
+            "given": "the 15-claim test set",
+            "when": "I run the test suite",
+            "then": "I see triage accuracy and text scores for each provider"
+          }
+        ]
       },
       {
         "kind": "risks",

@@ -48,7 +48,7 @@ const project: ProjectFile = {
     "outcome": "A memo: don't shut it yet; run one 8-week test, then decide. Later scored against what happened."
   },
   "judgment": {
-    "used": "A weighted trade-off between three options and pass or fail criteria for the 8-week test. The call is keep or close, so the options and the kill bar are what matter.",
+    "used": "A weighted trade-off between three options, pass or fail criteria for the 8-week test, a metric tree and a risk list. The call is keep or close, so the options, the kill bar and what could go wrong are what matter.",
     "skipped": "Journey maps, an emotional journey, HEART and a market size. They describe the product, and the memo is about one decision."
   },
   "solution": {
@@ -148,6 +148,78 @@ const project: ProjectFile = {
             "given": "it's a weekday, 7 am to 3 pm",
             "when": "I open the station menu",
             "then": "I see a fixed breakfast or lunch menu, priced for daily repeat"
+          }
+        ]
+      },
+      {
+        "kind": "northstar",
+        "title": "Metric tree",
+        "northStar": {
+          "name": "Weekday orders a day per station",
+          "detail": "The fixed cost only works with volume",
+          "target": "300+ (est.)"
+        },
+        "inputs": [
+          {
+            "name": "First-time buyers who reorder in 30 days",
+            "detail": "Is it a habit or a novelty?",
+            "target": "35%+ (est.)"
+          },
+          {
+            "name": "Lunch-peak orders per office cluster",
+            "detail": "Where demand is dense",
+            "target": "sample data"
+          },
+          {
+            "name": "Average order value",
+            "detail": "Low on purpose, for daily repeat",
+            "target": "₹80–100 (est.)"
+          },
+          {
+            "name": "Station prep accuracy",
+            "detail": "Forecast vs dishes sold",
+            "target": "90%+ (est.)"
+          }
+        ],
+        "guardrails": [
+          {
+            "name": "Contribution per order after rider cost",
+            "target": "positive"
+          },
+          {
+            "name": "Rider safety incidents",
+            "target": "0 linked to speed"
+          }
+        ],
+        "note": "Targets are my estimates. All three of the first ones must hold at week 8."
+      },
+      {
+        "kind": "risks",
+        "title": "Risks and how I'd handle them",
+        "items": [
+          {
+            "risk": "A cheap menu also doesn't scale",
+            "likelihood": "high",
+            "impact": "high",
+            "mitigation": "Hard week-8 kill criteria, no extensions"
+          },
+          {
+            "risk": "“Zomato gave up” headlines",
+            "likelihood": "medium",
+            "impact": "medium",
+            "mitigation": "New name, new menu, one holding line for press"
+          },
+          {
+            "risk": "Partners lose money on stations",
+            "likelihood": "medium",
+            "impact": "medium",
+            "mitigation": "Call each partner first; settle dues on a set date"
+          },
+          {
+            "risk": "Demand exists outside offices",
+            "likelihood": "low",
+            "impact": "medium",
+            "mitigation": "Check every micro-market's data before closing"
           }
         ]
       }

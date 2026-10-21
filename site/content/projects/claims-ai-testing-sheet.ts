@@ -127,7 +127,7 @@ const project: ProjectFile = {
     "title": "Inside the spreadsheet"
   },
   "judgment": {
-    "used": "A metric definition, a failure taxonomy and launch thresholds. An eval answers one question, “can this ship?”, and these three answer it.",
+    "used": "A metric definition, a failure taxonomy, launch thresholds and a risk list. An eval answers one question, “can this ship?”. The first three answer it, and the risks say where the test itself could fool me.",
     "skipped": "CIRCLES, JTBD, journey maps, an emotional journey and RICE. The user is a risk team reading a dashboard, not a customer on a journey, and there is nothing to rank until the suite says what is broken."
   },
   "frameworks": {
@@ -258,6 +258,36 @@ const project: ProjectFile = {
           ]
         ],
         "note": "Every number is a formula over the results log. Sample data I wrote to show the method, not a real model run."
+      },
+      {
+        "kind": "risks",
+        "title": "Risks and how I'd handle them",
+        "items": [
+          {
+            "risk": "The LLM judge is wrong",
+            "likelihood": "medium",
+            "impact": "high",
+            "mitigation": "I review every P0 case and a sample of the rest"
+          },
+          {
+            "risk": "50 cases miss a real failure",
+            "likelihood": "high",
+            "impact": "medium",
+            "mitigation": "Add every real escalation to the suite in shadow mode"
+          },
+          {
+            "risk": "Language rows too small",
+            "likelihood": "high",
+            "impact": "medium",
+            "mitigation": "Treat as directional; check completion rates by language in shadow mode"
+          },
+          {
+            "risk": "Team tunes to the test",
+            "likelihood": "medium",
+            "impact": "medium",
+            "mitigation": "Hold back 10 unseen cases each round"
+          }
+        ]
       }
     ]
   },

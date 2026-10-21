@@ -46,7 +46,7 @@ const project: ProjectFile = {
     "outcome": "A working app with 21 screens and an offline mode with sample data."
   },
   "judgment": {
-    "used": "Jobs to be done and the backend trade-off for a 3-week build. Those two calls shaped what I actually built.",
+    "used": "Jobs to be done, the caregiver's journey today, the backend trade-off for a 3-week build, and key stories. The journey showed where families lose track, and the stories are what the app had to do on day one.",
     "skipped": "RICE, Kano, HEART and an emotional journey. There are no live users yet, so usage numbers would be made up."
   },
   "solution": {
@@ -119,6 +119,40 @@ const project: ProjectFile = {
         ]
       },
       {
+        "kind": "journey",
+        "title": "Caring for a parent's health, today",
+        "stages": [
+          {
+            "stage": "Daily doses",
+            "doing": "Calls to check if Nanna took his tablets",
+            "feeling": "bad",
+            "pain": "No record of doses",
+            "opportunity": "Reminders and a dose log"
+          },
+          {
+            "stage": "Refills",
+            "doing": "Notices the strip is empty",
+            "feeling": "bad",
+            "pain": "Refill is late",
+            "opportunity": "Stock bars and low-stock alerts"
+          },
+          {
+            "stage": "Readings",
+            "doing": "Writes BP in a notebook",
+            "feeling": "okay",
+            "pain": "No history to show",
+            "opportunity": "Vitals history per member"
+          },
+          {
+            "stage": "Doctor visit",
+            "doing": "Searches chats for old reports",
+            "feeling": "bad",
+            "pain": "Reports lost",
+            "opportunity": "Document vault with filters"
+          }
+        ]
+      },
+      {
         "kind": "tradeoff",
         "title": "Backend choice for a 3-week build",
         "criteria": [
@@ -170,6 +204,30 @@ const project: ProjectFile = {
           }
         ],
         "note": "Scores 1 to 5 are my judgement, showing why I picked the setup I built."
+      },
+      {
+        "kind": "acceptance",
+        "title": "Key stories",
+        "stories": [
+          {
+            "story": "Join a room",
+            "given": "a 6-character room code",
+            "when": "a family member enters it",
+            "then": "they join that private room and see its members"
+          },
+          {
+            "story": "Low stock",
+            "given": "a medicine with few tablets left",
+            "when": "stock drops below the alert level",
+            "then": "the people in the room get an alert"
+          },
+          {
+            "story": "Run a profile for a parent",
+            "given": "a parent without the app",
+            "when": "the caregiver adds a profile for them",
+            "then": "their medicines and readings can be tracked by the caregiver"
+          }
+        ]
       }
     ]
   },

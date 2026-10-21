@@ -51,8 +51,8 @@ const project: ProjectFile = {
     "outcome": "A 2-page memo: kill the scratch card, replace it with “pick 1 of 3”. Practice exercise."
   },
   "judgment": {
-    "used": "Review analysis and a weighted trade-off between four options. A teardown memo has to show the evidence and make one call.",
-    "skipped": "User flows, journey maps, an emotional journey, RICE, HEART and acceptance criteria. Those belong to the build, not to the memo that argues for it."
+    "used": "CIRCLES to frame the problem, review analysis, a weighted trade-off between four options, and HEART. Rewards are about how people feel, so HEART is the right way to check the replacement before scaling it.",
+    "skipped": "User flows, journey maps, an emotional journey, RICE and acceptance criteria. Those belong to the build, not to the memo that argues for it."
   },
   "solution": {
     "summary": "Fewer, bigger rewards, picked from places you already pay, judged by how many get used. Proven on a holdout before anything is switched off.",
@@ -83,6 +83,19 @@ const project: ProjectFile = {
   },
   "frameworks": {
     "blocks": [
+      {
+        "kind": "circles",
+        "title": "The problem, worked through step by step",
+        "steps": {
+          "comprehend": "Apps still spend crores on random scratch cards, but the payment habit is already built.",
+          "identify": "Daily UPI payers; the rewards team; the brand partners who fund vouchers.",
+          "report": "Rewards worth using, no blanks, clear expiry, and no feeling of being played.",
+          "cut": "Usefulness of each reward first. Surprise and frequency last.",
+          "list": "Kill outright, narrow to new users, keep as is, or kill and replace.",
+          "evaluate": "Killing outright risks a POP-style drop. Keeping means rising spend that users dislike.",
+          "summarise": "Kill and replace: a weekly pick 1 of 3 from shops you already pay, proven on a holdout first."
+        }
+      },
       {
         "kind": "research",
         "mode": "findings",
@@ -189,6 +202,42 @@ const project: ProjectFile = {
           }
         ],
         "note": "Scores 1 to 5 are my judgement from the memo, not measured."
+      },
+      {
+        "kind": "heart",
+        "title": "HEART",
+        "rows": [
+          {
+            "dimension": "Happiness",
+            "goal": "Rewards feel fair",
+            "signal": "Fewer angry reward reviews",
+            "metric": "1–2 star reward reviews under 40% (est.)"
+          },
+          {
+            "dimension": "Engagement",
+            "goal": "People pick each week",
+            "signal": "Weekly claims",
+            "metric": "Claims per active user a week"
+          },
+          {
+            "dimension": "Adoption",
+            "goal": "People trust the consent ask",
+            "signal": "Says yes to personalisation",
+            "metric": "Opt-in rate, 30%+ (est.)"
+          },
+          {
+            "dimension": "Retention",
+            "goal": "Paying habit holds",
+            "signal": "Payments per month vs holdout",
+            "metric": "Within 3% of holdout (est.)"
+          },
+          {
+            "dimension": "Task success",
+            "goal": "Rewards get used",
+            "signal": "Redeemed before expiry",
+            "metric": "Redemption 40%+ (est.)"
+          }
+        ]
       }
     ]
   },

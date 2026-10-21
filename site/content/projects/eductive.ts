@@ -46,7 +46,7 @@ const project: ProjectFile = {
     "outcome": "Won first prize at the Tata Imagination Challenge, a case study competition. Not built."
   },
   "judgment": {
-    "used": "Where Eductive fits, who pays, and my phased plan. A business plan has to answer the market and the money first.",
+    "used": "Where Eductive fits, the jobs students hire it for, who pays, and my phased plan. A business plan has to answer the market and the money first, and the jobs keep it tied to what a student actually needs.",
     "skipped": "Acceptance criteria, RICE, HEART and an emotional journey. Nothing is built yet, so build specs and usage metrics would be early."
   },
   "solution": {
@@ -150,6 +150,27 @@ const project: ProjectFile = {
           }
         ],
         "note": "265M, 421K and 16.3% are figures from my plan. SOM is est."
+      },
+      {
+        "kind": "jtbd",
+        "title": "Jobs to be done",
+        "items": [
+          {
+            "when": "I feel low but don't want to tell anyone",
+            "want": "a private check-in",
+            "so": "I can see if it's getting worse"
+          },
+          {
+            "when": "it does get worse",
+            "want": "help that matches how bad it is",
+            "so": "I'm not jumping straight to therapy"
+          },
+          {
+            "when": "I run student welfare (institute)",
+            "want": "early warning by group, without names",
+            "so": "we act before it becomes a crisis"
+          }
+        ]
       },
       {
         "kind": "tradeoff",
