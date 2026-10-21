@@ -385,7 +385,7 @@ export const education = [
     location: "Ranchi, India",
     period: "Class of 2023",
     url: "https://www.iimranchi.ac.in/",
-    achievement: "",
+    achievement: "Ranked #1 at IIM Ranchi on Dare2Compete, the competition platform MBAs use",
     color: "from-violet-500 to-indigo-600",
     logo: "/logos/iim-ranchi.png",
     logoDark: false,
