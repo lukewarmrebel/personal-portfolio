@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import type { FrameworkBlock, FlowNode, Level, ProjectFile } from "@/lib/projectSchema";
+import type { FrameworkBlock, FlowNode, Level, OpMode, ProjectFile, ProductSpec } from "@/lib/projectSchema";
 import { show } from "@/lib/projectSchema";
 
 // The "About the project" template. Every section reads only from the project file.
@@ -341,10 +341,10 @@ function Emotion({ b }: { b: Extract<FrameworkBlock, { kind: "emotion" }> }) {
   );
 }
 
-function Acceptance({ b }: { b: Extract<FrameworkBlock, { kind: "acceptance" }> }) {
+function Acceptance({ b, bare }: { b: Extract<FrameworkBlock, { kind: "acceptance" }>; bare?: boolean }) {
   return (
     <div>
-      <BlockTitle kind="Acceptance criteria" title={b.title} />
+      {!bare && <BlockTitle kind="Acceptance criteria" title={b.title} />}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {b.stories.map((st) => (
           <div key={st.story} className={`${box} overflow-hidden`}>
@@ -587,7 +587,15 @@ export function Judgment({ p }: { p: ProjectFile }) {
     <section id="judgment" aria-labelledby="judgment-h" className="py-8 border-t border-zinc-200 scroll-mt-20">
       <div className={`${box} p-5 sm:p-6 max-w-3xl`}>
         <h2 id="judgment-h" className="text-lg font-bold text-zinc-900 mb-3">Frameworks I used, and why</h2>
-        <p className="text-[15px] text-zinc-700 leading-relaxed">{j.used}</p>
+        {j.list && j.list.length > 0 ? (
+          <ul className="space-y-2">
+            {j.list.map((f) => (
+              <li key={f.name} className="text-[15px] text-zinc-700 leading-relaxed"><span className="font-semibold text-zinc-900">{f.name}: </span>{f.why}</li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-[15px] text-zinc-700 leading-relaxed">{j.used}</p>
+        )}
       </div>
     </section>
   );
@@ -799,5 +807,310 @@ export function Extra({ p }: { p: ProjectFile }) {
         <div className="flex flex-wrap gap-2">{e.skills.map((s) => <span key={s} className="px-3 py-1 rounded-full text-xs font-medium border border-zinc-300 text-zinc-600 bg-white">{s}</span>)}</div>
       )}
     </Section>
+  );
+}
+
+/* ---------- Product spec layout (AI agents and copilots) ---------- */
+
+function SpecSection({ id, n, title, intro, children }: { id: string; n: number; title: string; intro?: string; children: ReactNode }) {
+  return (
+    <section id={id} aria-labelledby={`${id}-h`} className="py-10 border-t border-zinc-200 scroll-mt-20">
+      <p className="text-xs font-semibold uppercase tracking-widest text-indigo-600 mb-2">Part {n} of 7</p>
+      <h2 id={`${id}-h`} className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 mb-3">{title}</h2>
+      {intro && <p className="text-[15px] text-zinc-600 leading-relaxed max-w-3xl mb-6">{intro}</p>}
+      {!intro && <div className="mb-3" />}
+      {children}
+    </section>
+  );
+}
+
+function List({ label, items, tone }: { label: string; items: string[]; tone: string }) {
+  return (
+    <div>
+      <p className={`text-xs font-semibold uppercase tracking-wider mb-2 ${tone}`}>{label}</p>
+      <ul className="space-y-1.5">
+        {items.map((t) => (
+          <li key={t} className="text-[14px] text-zinc-700 leading-snug pl-3 border-l-2 border-zinc-200">{t}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function SpecPersonas({ s }: { s: ProductSpec }) {
+  return (
+    <SpecSection id="personas" n={1} title="User personas" intro={s.personas.intro}>
+      <div className="space-y-4">
+        {s.personas.items.map((pp) => (
+          <article key={pp.name} className={`${box} overflow-hidden`}>
+            <div className="p-5 sm:p-6 flex gap-4 items-start border-b border-zinc-200">
+              <div className="w-11 h-11 rounded-full bg-zinc-900 text-white flex items-center justify-center text-lg font-bold shrink-0" aria-hidden="true">{pp.name.charAt(0)}</div>
+              <div className="min-w-0">
+                <h3 className="text-lg font-bold text-zinc-900 leading-tight">{pp.name}</h3>
+                <p className="text-sm text-zinc-500 mt-0.5">{pp.who}</p>
+                <p className="text-[14px] text-zinc-700 leading-relaxed mt-3"><span className="font-semibold text-zinc-900">Personality: </span>{pp.personality}</p>
+              </div>
+            </div>
+            <div className="p-5 sm:p-6 grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <List label="Jobs to be done" items={pp.jobs} tone="text-indigo-700" />
+              <List label="Pain points" items={pp.pains} tone="text-red-700" />
+              <List label="Key goals" items={pp.goals} tone="text-emerald-700" />
+              <List label="Non-goals" items={pp.nonGoals} tone="text-zinc-500" />
+            </div>
+          </article>
+        ))}
+      </div>
+    </SpecSection>
+  );
+}
+
+function SpecCurrent({ s }: { s: ProductSpec }) {
+  return (
+    <SpecSection id="current" n={2} title="Current state of the process" intro={s.current.intro}>
+      <ol className="space-y-3">
+        {s.current.steps.map((st, i) => (
+          <li key={st.step} className={`${box} p-4 sm:p-5 flex gap-3`}>
+            <span className="w-7 h-7 rounded-full border border-zinc-300 text-zinc-600 text-xs font-bold flex items-center justify-center shrink-0">{i + 1}</span>
+            <div className="min-w-0">
+              <p className="text-[15px] font-semibold text-zinc-900 leading-snug">{st.step}</p>
+              <p className="text-[14px] text-zinc-600 leading-relaxed mt-1">{st.detail}</p>
+              {st.pain && <p className="text-[13px] text-red-700 leading-snug mt-2"><span className="font-semibold">Pain: </span>{st.pain}</p>}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </SpecSection>
+  );
+}
+
+const modeMeta: Record<OpMode, { label: string; chip: string; bar: string; dot: string; fill: number }> = {
+  ai: { label: "Full AI automation", chip: "bg-indigo-600 border-indigo-600", bar: "bg-indigo-50 border-indigo-500", dot: "bg-indigo-600", fill: 3 },
+  assisted: { label: "AI-assisted", chip: "bg-amber-400 border-amber-400", bar: "bg-amber-50 border-amber-500", dot: "bg-amber-400", fill: 2 },
+  human: { label: "Human in the loop", chip: "border-zinc-600", bar: "bg-zinc-100 border-zinc-800", dot: "bg-zinc-800", fill: 1 },
+};
+const modeText: Record<OpMode, string> = { ai: "#FFFFFF", assisted: "#451A03", human: "#FFFFFF" };
+const modeBg: Partial<Record<OpMode, string>> = { human: "#27272A" }; // inline so dark mode keeps a dark chip with white text
+
+function ModeChip({ m }: { m: OpMode }) {
+  return (
+    <span className={`inline-flex items-center px-2.5 py-1 rounded-md border text-[11px] font-bold uppercase tracking-wide whitespace-nowrap ${modeMeta[m].chip}`} style={{ color: modeText[m], backgroundColor: modeBg[m] }}>
+      {modeMeta[m].label}
+    </span>
+  );
+}
+
+function SpecFuture({ s, screens }: { s: ProductSpec; screens?: ReactNode }) {
+  const modes: OpMode[] = ["ai", "assisted", "human"];
+  const count = (m: OpMode) => s.future.steps.filter((x) => x.mode === m).length;
+  const legend: Record<OpMode, string> = {
+    ai: "The AI does the step on its own. A person can check it later.",
+    assisted: "The AI does the work. A person checks it or chooses.",
+    human: "A person makes the call. The AI only supports.",
+  };
+  return (
+    <SpecSection id="future" n={3} title="Future state of the process" intro={s.future.intro}>
+      <div className={`${box} p-4 sm:p-5 mb-5`}>
+        <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-3">How each step is run</p>
+        <ul className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          {modes.map((m) => (
+            <li key={m} className="flex flex-col gap-1.5">
+              <span className="flex items-center gap-2"><ModeChip m={m} /><span className="text-[12px] text-zinc-500">{count(m)} {count(m) === 1 ? "step" : "steps"}</span></span>
+              <span className="text-[13px] text-zinc-600 leading-snug">{legend[m]}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <ol className="space-y-3">
+        {s.future.steps.map((st, i) => (
+          <li key={st.step} className={`${box} overflow-hidden`}>
+            <div className="p-4 sm:p-5 flex gap-3">
+              <span className="w-7 h-7 rounded-full bg-zinc-900 text-white text-xs font-bold flex items-center justify-center shrink-0">{i + 1}</span>
+              <div className="min-w-0 flex-1">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                  <p className="text-[15px] font-semibold text-zinc-900 leading-snug">{st.step}</p>
+                  <span className="shrink-0"><ModeChip m={st.mode} /></span>
+                </div>
+                <p className="text-[14px] text-zinc-600 leading-relaxed mt-1.5">{st.detail}</p>
+              </div>
+            </div>
+            <div className={`border-t border-l-4 px-4 sm:px-5 py-2.5 flex items-start gap-3 ${modeMeta[st.mode].bar}`}>
+              <span className="flex gap-0.5 mt-1 shrink-0" aria-label={`${modeMeta[st.mode].label}: ${modeMeta[st.mode].fill} of 3 AI`}>
+                {[1, 2, 3].map((d) => <span key={d} className={`w-3 h-1.5 rounded-sm ${d <= modeMeta[st.mode].fill ? modeMeta[st.mode].dot : "bg-zinc-300"}`} />)}
+              </span>
+              <p className="text-[13px] text-zinc-800 leading-snug"><span className="font-semibold">Why: </span>{st.why}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+      {screens}
+    </SpecSection>
+  );
+}
+
+function SpecMetrics({ s }: { s: ProductSpec }) {
+  const m = s.metrics;
+  const Row = ({ r, kind }: { r: { name: string; target?: string; how: string }; kind: "Input" | "Guardrail" }) => (
+    <li className={`${box} p-4 flex flex-col gap-1`}>
+      <div className="flex flex-wrap items-center gap-2">
+        <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${kind === "Guardrail" ? "bg-red-50 text-red-700 border border-red-200" : "bg-zinc-100 text-zinc-600 border border-zinc-200"}`}>{kind}</span>
+        <p className="text-[15px] font-semibold text-zinc-900">{r.name}</p>
+      </div>
+      {r.target && <p className="text-[13px] text-indigo-700 font-semibold">Target: {r.target}</p>}
+      <p className="text-[13.5px] text-zinc-600 leading-snug">{r.how}</p>
+    </li>
+  );
+  return (
+    <SpecSection id="metrics" n={4} title="Success metrics">
+      <div className={`${box} border-indigo-300 bg-indigo-50 p-5 sm:p-6 mb-4`}>
+        <p className="text-[11px] font-semibold uppercase tracking-widest text-indigo-700 mb-2">North star</p>
+        <p className="text-xl sm:text-2xl font-bold text-zinc-900 leading-snug">{m.northStar.name}</p>
+        <p className="text-[14px] text-zinc-700 leading-relaxed mt-2">{m.northStar.detail}</p>
+      </div>
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        {m.inputs.map((r) => <Row key={r.name} r={r} kind="Input" />)}
+        {m.guardrails.map((r) => <Row key={r.name} r={r} kind="Guardrail" />)}
+      </ul>
+      {m.tests && m.tests.length > 0 && (
+        <div className="mt-5">
+          <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-2">How I would test it</p>
+          <ul className="space-y-1.5">{m.tests.map((t) => <li key={t} className="text-[14px] text-zinc-700 leading-snug pl-3 border-l-2 border-indigo-300">{t}</li>)}</ul>
+        </div>
+      )}
+      {m.note && <p className="text-xs text-zinc-500 mt-3">{m.note}</p>}
+    </SpecSection>
+  );
+}
+
+const callCls: Record<string, string> = {
+  Must: "bg-zinc-900 text-white",
+  Should: "bg-indigo-50 text-indigo-700 border border-indigo-200",
+  Could: "bg-zinc-100 text-zinc-600 border border-zinc-200",
+  "Won't": "bg-white text-zinc-500 border border-dashed border-zinc-300",
+};
+
+function SpecPriorities({ s }: { s: ProductSpec }) {
+  const pr = s.priorities;
+  const mx = pr.matrix;
+  const totalW = mx.criteria.reduce((a, c) => a + c.weight, 0) || 1;
+  const rows = mx.options.map((o) => ({ ...o, total: o.scores.reduce((a, sc, i) => a + sc * (mx.criteria[i]?.weight ?? 0), 0) / totalW }));
+  const Dots = ({ n }: { n: number }) => (
+    <span className="inline-flex gap-0.5" aria-label={`${n} of 5`}>{[1, 2, 3, 4, 5].map((d) => <span key={d} className={`w-2.5 h-2.5 rounded-full ${d <= n ? "bg-zinc-800" : "bg-zinc-200"}`} />)}</span>
+  );
+  return (
+    <SpecSection id="priorities" n={5} title="Prioritisation and trade-offs" intro={pr.intro}>
+      <p className="text-[11px] font-semibold uppercase tracking-widest text-zinc-500 mb-3">What goes in version 1 (MoSCoW)</p>
+      <ul className="space-y-2 mb-8">
+        {pr.items.map((it) => (
+          <li key={it.item} className={`${box} px-4 py-3 flex flex-row items-start gap-3 sm:gap-4`}>
+            <span className={`mt-0.5 text-[11px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded w-[60px] text-center shrink-0 ${callCls[it.call]}`}>{it.call}</span>
+            <div className="min-w-0">
+              <p className="text-[14.5px] font-semibold text-zinc-900 leading-snug">{it.item}</p>
+              <p className="text-[13.5px] text-zinc-600 leading-snug mt-0.5">{it.why}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <p className="text-[11px] font-semibold uppercase tracking-widest text-zinc-500">Trade-off matrix</p>
+      <h3 className="text-lg font-bold text-zinc-900 mt-1 mb-4">{mx.title}</h3>
+      {/* Phones: one card per option. Wider screens: the full table. */}
+      <div className="sm:hidden space-y-3">
+        {rows.map((r) => (
+          <div key={r.name} className={`${box} p-4 ${r.chosen ? "border-indigo-400 bg-indigo-50" : ""}`}>
+            <div className="flex items-start justify-between gap-3 mb-3">
+              <p className="text-[15px] font-semibold text-zinc-900 leading-snug">{r.name}</p>
+              <span className="text-[15px] font-extrabold text-zinc-900">{r.total.toFixed(1)}</span>
+            </div>
+            {r.chosen && <p className="text-[10px] font-bold uppercase tracking-wider text-indigo-700 -mt-2 mb-3">My pick</p>}
+            <dl className="grid grid-cols-[1fr_auto] gap-x-3 gap-y-1.5 text-[13px]">
+              {mx.criteria.map((c, i) => (
+                <div key={c.name} className="contents">
+                  <dt className="text-zinc-600">{c.name} <span className="text-zinc-400">(weight {c.weight})</span></dt>
+                  <dd><Dots n={r.scores[i]} /></dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        ))}
+      </div>
+      <div className={`${box} hidden sm:block overflow-x-auto`}>
+        <table className="w-full text-[13px] min-w-[600px]">
+          <thead>
+            <tr className="text-left text-zinc-500 border-b border-zinc-200">
+              <th className="px-4 py-2 font-semibold">Option</th>
+              {mx.criteria.map((c) => <th key={c.name} className="px-3 py-2 font-semibold">{c.name}<span className="block text-[10px] font-normal">weight {c.weight}</span></th>)}
+              <th className="px-4 py-2 font-semibold">Weighted score</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr key={r.name} className={`border-b border-zinc-100 last:border-0 ${r.chosen ? "bg-indigo-50" : ""}`}>
+                <td className="px-4 py-3 font-semibold text-zinc-900">{r.name}{r.chosen && <span className="block text-[10px] uppercase tracking-wider text-indigo-700">My pick</span>}</td>
+                {r.scores.map((sc, i) => <td key={i} className="px-3 py-3"><Dots n={sc} /></td>)}
+                <td className="px-4 py-3 w-44"><div className="flex items-center gap-2"><div className={`h-2.5 rounded-full ${r.chosen ? "bg-indigo-500" : "bg-zinc-400"}`} style={{ width: `${(r.total / 5) * 90}px` }} /><span className="font-semibold">{r.total.toFixed(1)}</span></div></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {mx.note && <p className="text-xs text-zinc-500 mt-2">{mx.note}</p>}
+    </SpecSection>
+  );
+}
+
+function SpecGuardrails({ s }: { s: ProductSpec }) {
+  return (
+    <SpecSection id="risks" n={6} title="Guardrails and risks">
+      <p className="text-[11px] font-semibold uppercase tracking-widest text-zinc-500 mb-3">Guardrails: rules the product never breaks</p>
+      <ul className={`${box} divide-y divide-zinc-200 mb-8`}>
+        {s.guardrails.rules.map((r) => (
+          <li key={r} className="px-4 py-3 text-[14.5px] text-zinc-800 leading-snug flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-zinc-900 mt-2 shrink-0" aria-hidden="true" />{r}</li>
+        ))}
+      </ul>
+      <Risks b={{ kind: "risks", title: "Risks and how I'd handle them", items: s.guardrails.risks }} />
+    </SpecSection>
+  );
+}
+
+function SpecAcceptance({ s }: { s: ProductSpec }) {
+  return (
+    <SpecSection id="acceptance" n={7} title="Acceptance criteria">
+      <Acceptance bare b={{ kind: "acceptance", stories: s.acceptance }} />
+    </SpecSection>
+  );
+}
+
+function SpecScreens({ p }: { p: ProjectFile }) {
+  if (!show(p.wireframes)) return null;
+  return (
+    <div className="mt-8">
+      <p className="text-[11px] font-semibold uppercase tracking-widest text-zinc-500 mb-3">{p.wireframes.title ?? "The screens"}</p>
+      <div className="flex gap-4 overflow-x-auto pb-3 -mx-1 px-1 snap-x">
+        {p.wireframes.screens.map((sc) => (
+          <figure key={sc.src} className="shrink-0 snap-start w-[220px] sm:w-[240px]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={sc.src} alt={`Wireframe: ${sc.caption}`} className="w-full h-auto" />
+            <figcaption className="text-[13px] text-zinc-600 mt-2 leading-snug">{sc.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+      {p.wireframes.caption && <p className="text-xs text-zinc-500 mt-2">{p.wireframes.caption}</p>}
+    </div>
+  );
+}
+
+// The seven parts, in Pranav's order. Acceptance criteria always come last.
+export function Spec({ p }: { p: ProjectFile }) {
+  const s = p.spec;
+  if (!s) return null;
+  return (
+    <div className="spec">
+      <SpecPersonas s={s} />
+      <SpecCurrent s={s} />
+      <SpecFuture s={s} screens={<SpecScreens p={p} />} />
+      <SpecMetrics s={s} />
+      <SpecPriorities s={s} />
+      <SpecGuardrails s={s} />
+      <SpecAcceptance s={s} />
+    </div>
   );
 }
