@@ -65,3 +65,47 @@ export default function ProjectCard({ p }: { p: ProjectFile }) {
     </Link>
   );
 }
+
+// "Start here" card for the 4 flagships: bigger, with one line on what the project proves and its real number.
+export function FeaturedCard({ p, n }: { p: ProjectFile; n: number }) {
+  const main = p.links[0];
+  return (
+    <article className="relative flex flex-col bg-white border border-zinc-200 rounded-2xl overflow-hidden hover:border-indigo-400 transition-colors">
+      <div className="border-b border-zinc-200"><CardVisual p={p} /></div>
+      <div className="p-5 sm:p-6 flex flex-col gap-2 flex-1">
+        <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500"><span className="text-indigo-600">{n}.</span> {p.tag}</p>
+        <h3 className="text-xl font-bold text-zinc-900 leading-snug">
+          <Link href={`/projects/${p.slug}`} className="after:absolute after:inset-0 focus-visible:outline-none">{p.title}</Link>
+        </h3>
+        {p.proof && <p className="text-[15px] text-zinc-800 leading-relaxed">{p.proof}</p>}
+        {p.proofStat && (
+          <p className="flex items-baseline gap-2 mt-1">
+            <span className="text-2xl font-extrabold tracking-tight text-indigo-600">{p.proofStat.value}</span>
+            <span className="text-[13px] text-zinc-600">{p.proofStat.label}</span>
+          </p>
+        )}
+        <div className="mt-auto pt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-semibold">
+          <span className="text-indigo-600">Read it <span aria-hidden="true">→</span></span>
+          {main && (
+            <a href={main.href} target={main.href.startsWith("http") || /\.(pdf|xlsx|py)$/.test(main.href) ? "_blank" : undefined} rel="noopener noreferrer"
+              className="relative z-10 text-zinc-700 underline underline-offset-4 decoration-zinc-300 hover:text-zinc-900 hover:decoration-zinc-500">
+              {main.label}
+            </a>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+}
+
+// Compact card for the "More projects" library.
+export function CompactCard({ p }: { p: ProjectFile }) {
+  return (
+    <Link href={`/projects/${p.slug}`}
+      className="group flex flex-col gap-1.5 bg-white border border-zinc-200 rounded-xl p-4 hover:border-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-500 transition-colors">
+      <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">{p.tag}</p>
+      <h3 className="text-base font-bold text-zinc-900 leading-snug group-hover:text-indigo-700">{p.title}</h3>
+      <p className="text-[14px] text-zinc-600 leading-snug line-clamp-2">{p.oneLine}</p>
+    </Link>
+  );
+}

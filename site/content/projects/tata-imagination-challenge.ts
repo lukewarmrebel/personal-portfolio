@@ -1,6 +1,6 @@
 // About the project: Tata Imagination Challenge
-// A case study competition pitch: a mental health app for students. First prize is the only real result; everything else is illustrative.
-// Schema: src/lib/projectSchema.ts
+// Schema: src/lib/projectSchema.ts. Real numbers only; illustrative ones say "est." or "sample data".
+// Frameworks are chosen per project. The `judgment` note on the page says what I used and what I skipped, and why.
 import type { ProjectFile } from "../../src/lib/projectSchema";
 
 const project: ProjectFile = {
@@ -34,6 +34,10 @@ const project: ProjectFile = {
     "role": "I built and pitched the idea in a case study competition.",
     "outcome": "First prize."
   },
+  "judgment": {
+    "used": "The student's jobs to be done, CIRCLES and a research plan. A competition pitch is judged on how clearly I frame the problem, so CIRCLES and the jobs earn their place here.",
+    "skipped": "RICE, HEART, metric trees and acceptance criteria. It was a pitch, not a product, so there was nothing to rank or measure."
+  },
   "problem": {
     "persona": {
       "name": "Riya, college student",
@@ -41,16 +45,42 @@ const project: ProjectFile = {
       "context": "She feels low and anxious some weeks. She doesn't want to make a big deal of it, so she says nothing.",
       "needs": [
         "A private, low-effort way to check in",
-        "Small things that help right away",
-        "An easy path to a real person when it's serious"
+        "Small things that help right away"
       ],
       "frustrations": [
         "Asking for help feels awkward",
-        "Counselling seems only for a crisis",
-        "Generic wellness apps don't fit student life"
+        "Counselling seems only for a crisis"
       ]
     },
     "jtbd": "When I'm stressed and don't want to tell anyone, I want a quiet way to check in and get help that fits, so I can cope before it gets worse."
+  },
+  "solution": {
+    "summary": "My pitch was a mental health app for students. It makes checking in private and easy, offers small steps for everyday stress, and points students to a real person when it gets serious. The full plan grew into Eductive.",
+    "decisions": [
+      {
+        "decision": "Start with the check-in habit",
+        "why": "Nothing else helps if students don't open the app",
+        "rejected": "A big feature list on day one"
+      },
+      {
+        "decision": "Private by default",
+        "why": "Fear of being judged is what keeps students quiet",
+        "rejected": "Sharing with the college by default"
+      }
+    ]
+  },
+  "wireframes": {
+    "screens": [
+      {
+        "src": "/projects/tata-imagination-challenge/1-checkin.svg",
+        "caption": "Illustrative: a one-tap daily check-in"
+      },
+      {
+        "src": "/projects/tata-imagination-challenge/2-next-step.svg",
+        "caption": "Illustrative: a small next step that fits the mood"
+      }
+    ],
+    "caption": "Illustrative screens of the student app idea. Not a built product. Any data shown is sample data."
   },
   "frameworks": {
     "blocks": [
@@ -104,81 +134,9 @@ const project: ProjectFile = {
             "who": "Students on campus",
             "howMany": "est. 100+",
             "how": "How often they feel stressed, and what stops them asking for help"
-          },
-          {
-            "method": "Expert chats",
-            "who": "College counsellors",
-            "howMany": "est. 3 to 4",
-            "how": "When students reach them, and what they wish happened sooner"
           }
-        ],
-        "findings": [
-          {
-            "insight": "Students wait too long to ask for help",
-            "evidence": "Hypothesis to test",
-            "group": "Behaviour"
-          },
-          {
-            "insight": "Privacy decides whether they try it",
-            "evidence": "Hypothesis to test",
-            "group": "Trust"
-          },
-          {
-            "insight": "A daily check-in has to take under a minute",
-            "evidence": "Hypothesis to test",
-            "group": "Effort"
-          }
-        ],
-        "questions": [
-          "Think of a stressful week. What did you do about it?",
-          "Who, if anyone, did you talk to?",
-          "What would stop you from using an app like this?",
-          "When would you want a real person instead of an app?"
         ],
         "note": "This is a plan. I have no research data for this pitch, and the counts are estimates."
-      }
-    ]
-  },
-  "wireframes": {
-    "screens": [
-      {
-        "src": "/projects/tata-imagination-challenge/1-checkin.svg",
-        "caption": "Illustrative: a one-tap daily check-in"
-      },
-      {
-        "src": "/projects/tata-imagination-challenge/2-next-step.svg",
-        "caption": "Illustrative: a small next step that fits the mood"
-      },
-      {
-        "src": "/projects/tata-imagination-challenge/3-talk.svg",
-        "caption": "Illustrative: reach a real person when it's serious"
-      }
-    ],
-    "caption": "Illustrative screens of the student app idea. Not a built product. Any data shown is sample data."
-  },
-  "solution": {
-    "summary": "My pitch was a mental health app for students. It makes checking in private and easy, offers small steps for everyday stress, and points students to a real person when it gets serious. The full plan grew into Eductive.",
-    "steps": [
-      "Private daily check-in",
-      "Small next step matched to the mood",
-      "Simple progress over time",
-      "Easy path to a counsellor"
-    ],
-    "decisions": [
-      {
-        "decision": "Start with the check-in habit",
-        "why": "Nothing else helps if students don't open the app",
-        "rejected": "A big feature list on day one"
-      },
-      {
-        "decision": "Private by default",
-        "why": "Fear of being judged is what keeps students quiet",
-        "rejected": "Sharing with the college by default"
-      },
-      {
-        "decision": "Hand off to people for serious cases",
-        "why": "An app should not handle a crisis alone",
-        "rejected": "App-only support"
       }
     ]
   },
@@ -190,28 +148,15 @@ const project: ProjectFile = {
         "how": "Case study competition"
       }
     ],
-    "tests": [
-      "Interview students to check the problem and the privacy worry",
-      "Test whether a one-minute check-in sticks for two weeks",
-      "Ask counsellors how a hand-off should work"
-    ],
+    "tests": [],
     "note": "First prize is the only real result. The app was a pitch and was not built or launched."
   },
   "next": {
     "items": [
-      "Run the research plan with real students",
-      "Prototype the check-in and test it with a small group",
-      "Work out the counsellor hand-off with a college"
+      "Run the research plan with real students"
     ]
   },
   "extra": {
-    "skills": [
-      "Problem framing",
-      "User empathy",
-      "Product thinking",
-      "Pitching",
-      "Storytelling"
-    ],
     "paragraphs": [
       "The Tata Imagination Challenge was a case study competition. I pitched a mental health app for students and won first prize. The full plan grew into Eductive, which has its own page."
     ]

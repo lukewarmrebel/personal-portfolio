@@ -96,6 +96,19 @@ html.dark {
 .dark .border-zinc-300  { border-color: #3F3F46; }
 
 .dark .bg-indigo-50     { background-color: rgba(99,102,241,0.12); }
+.dark .bg-zinc-50,
+.dark .bg-zinc-100      { background-color: rgba(255,255,255,0.05); }
+.dark .bg-amber-50      { background-color: rgba(245,158,11,0.12); }
+.dark .bg-red-50        { background-color: rgba(239,68,68,0.10); }
+.dark .bg-emerald-50    { background-color: rgba(16,185,129,0.10); }
+/* Product spec layout (AI agents and copilots pages) */
+.dark .spec .bg-zinc-800    { background-color: #D4D4D8; }
+.dark .spec .border-zinc-800 { border-color: #A1A1AA; }
+.dark .spec .bg-zinc-200,
+.dark .spec .bg-zinc-300    { background-color: #3F3F46; }
+.dark .spec .text-red-700   { color: #F87171; }
+.dark .spec .text-emerald-700 { color: #34D399; }
+.dark .spec .text-indigo-700  { color: #A5B4FC; }
 .dark .bg-zinc-900      { background-color: #F4F4F5; }
 .dark .text-white       { color: #0D0D0F; }
 .dark .shadow-xl        { box-shadow: 0 20px 60px rgba(0,0,0,0.5); }

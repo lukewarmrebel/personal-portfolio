@@ -29,11 +29,39 @@ export type FrameworkBlock =
   | ({ kind: "heart"; title?: string; rows: { dimension: "Happiness" | "Engagement" | "Adoption" | "Retention" | "Task success"; goal: string; signal: string; metric: string }[]; note?: string } & Todo)
   | ({ kind: "journey"; title?: string; stages: { stage: string; doing: string; feeling: "good" | "okay" | "bad"; pain: string; opportunity: string }[] } & Todo)
   | ({ kind: "kano"; title?: string; basic: string[]; performance: string[]; delight: string[] } & Todo)
-  | ({ kind: "risks"; title?: string; items: { risk: string; likelihood: Level; impact: Level; mitigation: string }[] } & Todo);
+  | ({ kind: "risks"; title?: string; items: { risk: string; likelihood: Level; impact: Level; mitigation: string }[] } & Todo)
+  // A plain table for anything else that earns a place: a metric definition, a failure taxonomy, a launch bar.
+  // `label` is the small grey kicker above the title (e.g. "Failure taxonomy").
+  | ({ kind: "table"; label: string; title?: string; columns: string[]; rows: string[][]; note?: string } & Todo);
 
 // A flow diagram is drawn from data as a vertical flowchart (readable at 390px).
 // kind: "start" | "step" | "decision" | "end". A decision can send a side branch ("no" path) to a short note.
 export type FlowNode = { label: string; kind?: "start" | "step" | "decision" | "end"; side?: { label: string; text: string } };
+
+// The product spec layout (used by the AI agents and copilots pages). When `spec` is present the page runs in this order:
+// personas, current process, future process (each step tagged with how it is run), success metrics,
+// prioritisation and a trade-off matrix, guardrails and risks, acceptance criteria.
+export type OpMode = "ai" | "assisted" | "human"; // Full AI automation, AI-assisted, Human in the loop
+export type SpecPersona = { name: string; who: string; personality: string; jobs: string[]; pains: string[]; goals: string[]; nonGoals: string[] };
+export type ProductSpec = {
+  personas: { intro?: string; items: SpecPersona[] };
+  current: { intro?: string; steps: { step: string; detail: string; pain?: string }[] };
+  future: { intro?: string; steps: { step: string; detail: string; mode: OpMode; why: string }[] };
+  metrics: {
+    northStar: { name: string; detail: string };
+    inputs: { name: string; target?: string; how: string }[];
+    guardrails: { name: string; target?: string; how: string }[];
+    tests?: string[];
+    note?: string;
+  };
+  priorities: {
+    intro?: string;
+    items: { item: string; call: "Must" | "Should" | "Could" | "Won't"; why: string }[];
+    matrix: { title: string; criteria: { name: string; weight: number }[]; options: { name: string; scores: number[]; chosen?: boolean }[]; note?: string };
+  };
+  guardrails: { rules: string[]; risks: { risk: string; likelihood: Level; impact: Level; mitigation: string }[] };
+  acceptance: { story: string; given: string; when: string; then: string }[];
+};
 
 export type ProjectFile = {
   slug: string;
@@ -48,16 +76,22 @@ export type ProjectFile = {
     thumb?: string; // image on the card (path on the site)
     bars?: { title: string; rows: { label: string; value: string; pct: number; muted?: boolean }[]; note: string };
   };
+  // Flagships only: the line on the "Start here" card saying what the project proves, and its real number if it has one.
+  proof?: string;
+  proofStat?: { value: string; label: string };
   tiles?: { value: string; label: string }[]; // flat stat tiles in the hero; real numbers only, or say "sample data" / "est." in the label
   label?: string; // honesty line under the hero, e.g. "How I would build it. Sample data."
   glance: Section<{ problem: string; users: string; role: string; outcome: string }>;
+  // "Frameworks I used, and why": a short line. `list` (optional) shows each framework and what it is for.
+  judgment?: { used: string; skipped?: string; list?: { name: string; why: string }[] };
+  spec?: ProductSpec;
   problem?: Section<{
     persona: { name: string; who: string; context: string; needs: string[]; frustrations: string[] };
     jtbd: string;
   }>;
   frameworks?: Section<{ blocks: FrameworkBlock[] }>;
   flow?: Section<{ title?: string; nodes: FlowNode[]; caption?: string }>;
-  wireframes?: Section<{ screens: { src: string; caption: string; device?: "phone" | "desktop" }[]; caption?: string }>;
+  wireframes?: Section<{ title?: string; screens: { src: string; caption: string; device?: "phone" | "desktop" }[]; caption?: string }>;
   solution?: Section<{ summary: string; steps?: string[]; decisions: { decision: string; why: string; rejected?: string }[] }>;
   metrics?: Section<{ northStar?: string; rows: { name: string; target?: string; how: string }[]; tests: string[]; note?: string }>;
   next?: Section<{ items: string[] }>;

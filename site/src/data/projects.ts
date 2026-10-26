@@ -20,8 +20,13 @@ export const allProjects: ProjectFile[] = [...projectFiles].sort(
   (a, b) => groupRank(a.group) - groupRank(b.group) || a.order - b.order,
 );
 
-export const featuredSlugs = ["blood-test-report-explainer", "claims-ai-testing-sheet", "ride-hailing-reviews-analysis"];
+// The 4 flagships: "Start here" on /projects and the featured projects on the home page.
+// Each has something real a recruiter can open or check.
+export const featuredSlugs = ["blood-test-report-explainer", "claims-ai-testing-sheet", "sentinel-cyber-uw-copilot", "ride-hailing-reviews-analysis"];
 export const featuredProjects = featuredSlugs.map((s) => allProjects.find((p) => p.slug === s)!);
+// Everything else: the "More projects" library, still in topic groups.
+export const libraryProjects = allProjects.filter((p) => !featuredSlugs.includes(p.slug));
+export const libraryGroups = projectGroups.filter((g) => libraryProjects.some((p) => p.group === g.id));
 
 export function isExternal(href: string) {
   return href.startsWith("http") || /\.(pdf|xlsx|py)$/.test(href);

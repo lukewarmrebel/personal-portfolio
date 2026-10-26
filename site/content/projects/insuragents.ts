@@ -1,6 +1,7 @@
 // About the project: InsurAgents: AI that handles 7 insurance tasks
-// Project page. Built from the site's bullets and the GitHub repo. How I approached it; illustrative numbers are sample data or est.
-// Schema: src/lib/projectSchema.ts
+// Schema: src/lib/projectSchema.ts. Real numbers only; illustrative ones say "est." or "sample data".
+// Product spec layout (`spec`): personas, current process, future process with how each step is run, metrics,
+// prioritisation and trade-offs, guardrails and risks, acceptance criteria last.
 import type { ProjectFile } from "../../src/lib/projectSchema";
 
 const project: ProjectFile = {
@@ -35,386 +36,287 @@ const project: ProjectFile = {
       "label": "claims in the test set"
     }
   ],
+  "label": "How I approached it. Working code on GitHub; scores and targets on this page are sample data or est.",
   "glance": {
     "problem": "Insurance teams repeat the same tasks: sorting claims, checking fraud, summarising policies.",
     "users": "Insurance operations teams.",
     "role": "Solo: designed and built the agents and the test suite.",
     "outcome": "Working code on GitHub."
   },
-  "problem": {
-    "persona": {
-      "name": "Arjun, claims operations lead",
-      "who": "Runs a team that handles motor and home claims (illustrative persona)",
-      "context": "His team sorts claims, checks for fraud and writes the same letters every day. He wants AI help, but can't bet on one AI vendor.",
-      "needs": [
-        "Fast first sort of every claim",
-        "A fraud signal with reasons",
-        "Summaries and letters in plain English",
-        "Freedom to switch AI provider"
-      ],
-      "frustrations": [
-        "Same manual checks, claim after claim",
-        "AI pilots that only work with one vendor",
-        "No way to tell if the AI is getting worse",
-        "Black-box decisions he can't explain to a customer"
+  "judgment": {
+    "used": "Personas and jobs to be done, a current and future process map, a north star with guardrail metrics, MoSCoW, a weighted trade-off matrix, a risk matrix and acceptance criteria.",
+    "list": [
+      {
+        "name": "User personas and jobs to be done",
+        "why": "to separate the people who use the agents every day from the person who owns them."
+      },
+      {
+        "name": "Current and future process map",
+        "why": "to find the work that repeats all day, and to decide which steps the AI runs, which it helps with, and which stay with a person."
+      },
+      {
+        "name": "North star and guardrail metrics",
+        "why": "one number for claims done right the first time, plus the lines that must never be crossed, like a wrong denial."
+      },
+      {
+        "name": "MoSCoW",
+        "why": "to pick which of the 7 tasks a first pilot needs."
+      },
+      {
+        "name": "Weighted trade-off matrix",
+        "why": "to choose between one big agent and one agent per task."
+      },
+      {
+        "name": "Risk matrix",
+        "why": "to rank what can go wrong with real claims and customer data."
+      },
+      {
+        "name": "Acceptance criteria",
+        "why": "to define done for each agent in steps a tester can run."
+      }
+    ]
+  },
+  "wireframes": {
+    "screens": [
+      {
+        "src": "/projects/insuragents/1-pick.svg",
+        "caption": "Pick a task and a provider"
+      },
+      {
+        "src": "/projects/insuragents/2-triage.svg",
+        "caption": "Triage result with reasons"
+      }
+    ],
+    "caption": "My wireframes of the main screens. Claims and scores are sample data."
+  },
+  "spec": {
+    "personas": {
+      "intro": "Two people matter here. One uses the agents all day. The other owns them and the AI vendors behind them.",
+      "items": [
+        {
+          "name": "Sunita, claims handler",
+          "who": "Works a daily queue of claims in an insurance operations team.",
+          "personality": "Practical and quick. She wants a clear answer and the reason for it. She doesn't care which AI model runs underneath.",
+          "jobs": [
+            "When a claim arrives, sort it as approve, deny or escalate with a reason, so I start with the right claims.",
+            "When something looks off, give me a fraud score with the warning signs, so I send only real suspects to the fraud team.",
+            "When a customer asks about cover, summarise the policy so I can answer fast."
+          ],
+          "pains": [
+            "The same tasks repeat all day: sorting claims, checking fraud, summarising policies.",
+            "Long policies take time to read.",
+            "Fraud signs are spotted late, or clean claims get sent to the fraud team.",
+            "Compliance checks are done by hand."
+          ],
+          "goals": [
+            "Clear the queue with less rework.",
+            "Know why each decision was suggested.",
+            "Send the fraud team only real suspects."
+          ],
+          "nonGoals": [
+            "She does not want the AI to deny claims on its own.",
+            "She does not want to write prompts or pick models."
+          ]
+        },
+        {
+          "name": "Arjun, AI lead at the insurer",
+          "who": "Owns the AI tools the operations team uses, and the vendor contracts behind them.",
+          "personality": "Pragmatic and wary of lock-in. He wants proof before any change goes live.",
+          "jobs": [
+            "When our AI provider changes, switch with one setting so nothing downstream breaks.",
+            "When a new model comes out, run the test suite so I know if quality holds.",
+            "When one task goes wrong, fix that agent without touching the others."
+          ],
+          "pains": [
+            "Code written for one vendor is hard to move.",
+            "There is no shared way to measure output quality.",
+            "One big prompt is hard to debug."
+          ],
+          "goals": [
+            "Swap providers with no code change.",
+            "The same quality bar for every provider.",
+            "Keep customer data safe."
+          ],
+          "nonGoals": [
+            "Training our own model.",
+            "A chatbot for customers."
+          ]
+        }
       ]
     },
-    "jtbd": "When a claim comes in, I want the routine checks done and explained, so my team spends its time on the claims that need judgement."
-  },
-  "frameworks": {
-    "blocks": [
-      {
-        "kind": "circles",
-        "title": "Framing the problem with CIRCLES",
-        "steps": {
-          "comprehend": "Insurance ops repeat the same text-heavy tasks on every claim and policy.",
-          "identify": "Claims handlers, fraud analysts and policy servicing teams.",
-          "report": "Quick sorting, fraud signals with reasons, clear summaries, proof it works.",
-          "cut": "Claim triage and fraud scoring first: highest volume, clearest right answer.",
-          "list": "One agent per task, a provider switch, and a built-in test suite.",
-          "evaluate": "One big agent is simpler; small agents are easier to test and trust.",
-          "summarise": "Seven focused agents, any of three AI providers, measured on every run."
+    "current": {
+      "intro": "How a claim moves today, with no agents.",
+      "steps": [
+        {
+          "step": "A claim lands in the queue",
+          "detail": "Handlers open claims in the order they arrive.",
+          "pain": "Urgent or suspicious claims wait behind simple ones."
+        },
+        {
+          "step": "The handler reads the claim and the policy",
+          "detail": "She checks what is covered and what is not.",
+          "pain": "Long policies take time to read."
+        },
+        {
+          "step": "The handler looks for fraud signs",
+          "detail": "She checks by eye and sends anything odd to the fraud team.",
+          "pain": "Different handlers flag different things."
+        },
+        {
+          "step": "The handler checks compliance",
+          "detail": "She runs through the rules by hand.",
+          "pain": "Slow, and easy to skip a rule on a busy day."
+        },
+        {
+          "step": "The handler decides and writes the note",
+          "detail": "She approves, denies or escalates, then writes the letter or note.",
+          "pain": "The same writing, every day."
+        },
+        {
+          "step": "Any AI tool is tied to one vendor",
+          "detail": "Each experiment is built for one AI provider and judged by feel.",
+          "pain": "Switching vendors means rewriting it, with no way to compare quality."
         }
-      },
-      {
-        "kind": "research",
-        "mode": "plan",
-        "title": "Research plan (no interviews done yet)",
-        "methods": [
-          {
-            "method": "Job shadowing",
-            "who": "Claims handlers",
-            "howMany": "5",
-            "how": "Log every task and time spent for a day"
-          },
-          {
-            "method": "Interviews",
-            "who": "Fraud and compliance analysts",
-            "howMany": "6",
-            "how": "What signals do you trust, and why?"
-          },
-          {
-            "method": "Label review",
-            "who": "Senior handlers",
-            "howMany": "100 claims",
-            "how": "Set the right triage answer for the test set"
-          }
-        ],
-        "findings": [
-          {
-            "insight": "Triage is the biggest repeat task",
-            "evidence": "Hypothesis from my insurance work",
-            "group": "Volume"
-          },
-          {
-            "insight": "Teams need a reason, not just a label",
-            "evidence": "Hypothesis to test in interviews",
-            "group": "Trust"
-          },
-          {
-            "insight": "Vendor lock-in blocks AI pilots",
-            "evidence": "Hypothesis to test with IT and procurement",
-            "group": "Buying"
-          }
-        ],
-        "questions": [
-          "Which claim tasks feel the most repetitive?",
-          "How do you decide a claim needs escalating?",
-          "When would you trust an AI fraud score?",
-          "What would make you switch AI vendors?"
-        ],
-        "note": "A plan with hypotheses, not findings."
-      },
-      {
-        "kind": "market",
-        "title": "Where InsurAgents fits",
-        "funnel": [
-          {
-            "level": "TAM",
-            "label": "Insurers using AI for operations",
-            "value": "est.",
-            "assumption": "Most large insurers now run AI pilots"
-          },
-          {
-            "level": "SAM",
-            "label": "Claims and policy teams in mid-size insurers",
-            "assumption": "Too small for custom builds, too complex for chatbots"
-          },
-          {
-            "level": "SOM",
-            "label": "2 to 3 pilot teams, year 1",
-            "assumption": "A sale starts with one task, usually triage"
-          }
-        ],
-        "positioning": {
-          "x": [
-            "One task",
-            "Many tasks"
-          ],
-          "y": [
-            "Locked to one AI",
-            "Any AI provider"
-          ],
-          "points": [
-            {
-              "name": "Point AI tools",
-              "x": 0.15,
-              "y": 0.2
-            },
-            {
-              "name": "Core insurance suites",
-              "x": 0.75,
-              "y": 0.2
-            },
-            {
-              "name": "DIY prompts",
-              "x": 0.3,
-              "y": 0.75
-            },
-            {
-              "name": "InsurAgents",
-              "x": 0.85,
-              "y": 0.85,
-              "me": true
-            }
-          ]
+      ]
+    },
+    "future": {
+      "intro": "Seven small agents share one provider switch and one test suite. The AI does the reading. People keep every decision that can hurt a customer.",
+      "steps": [
+        {
+          "step": "Mask personal data",
+          "detail": "Names and IDs are masked before any call to an AI provider.",
+          "mode": "ai",
+          "why": "A fixed rule that runs before every call. No judgement needed."
         },
-        "features": {
-          "columns": [
-            "Claim triage",
-            "Fraud score",
-            "Summaries",
-            "Switch provider",
-            "Built-in tests"
-          ],
-          "rows": [
-            {
-              "name": "Point AI tools",
-              "values": [
-                "partial",
-                "yes",
-                "no",
-                "no",
-                "unclear"
-              ]
-            },
-            {
-              "name": "Core insurance suites",
-              "values": [
-                "yes",
-                "partial",
-                "partial",
-                "no",
-                "no"
-              ]
-            },
-            {
-              "name": "DIY prompts",
-              "values": [
-                "partial",
-                "partial",
-                "yes",
-                "yes",
-                "no"
-              ]
-            },
-            {
-              "name": "InsurAgents",
-              "values": [
-                "yes",
-                "yes",
-                "yes",
-                "yes",
-                "yes"
-              ],
-              "me": true
-            }
-          ]
+        {
+          "step": "Triage the claim",
+          "detail": "The triage agent returns APPROVE, DENY or ESCALATE with at least one reason.",
+          "mode": "assisted",
+          "why": "The AI suggests the route. The handler can always change it."
         },
-        "trends": [
-          {
-            "value": "Multi-model",
-            "label": "Teams keep more than one AI provider"
-          },
-          {
-            "value": "Evals",
-            "label": "Testing AI output is now a must-have"
-          },
-          {
-            "value": "Explain it",
-            "label": "Rules push for reasons behind decisions"
-          }
-        ],
-        "note": "Categories, not named products. Sizes are directional (est.)."
+        {
+          "step": "Score fraud risk",
+          "detail": "The fraud agent returns LOW, MEDIUM or HIGH and the warning signs behind it.",
+          "mode": "assisted",
+          "why": "The score sorts the work. Only the fraud team decides if it is fraud."
+        },
+        {
+          "step": "Summarise the policy",
+          "detail": "The summary agent turns a long policy into a short brief.",
+          "mode": "ai",
+          "why": "A summary is a reading aid. The full policy is one click away."
+        },
+        {
+          "step": "Check compliance",
+          "detail": "The compliance agent checks the claim against the rules and lists any gaps.",
+          "mode": "assisted",
+          "why": "The AI lists the gaps. The handler confirms them."
+        },
+        {
+          "step": "Check the output format",
+          "detail": "If an answer is not in the expected format, the agent retries once, then shows an error. Every result is logged for the test suite.",
+          "mode": "ai",
+          "why": "It is a pass or fail check, so no person is needed."
+        },
+        {
+          "step": "Confirm every deny or escalate",
+          "detail": "Any DENY or ESCALATE goes to a person before anything reaches the customer.",
+          "mode": "human",
+          "why": "A wrong denial hurts a real customer. The AI never denies alone."
+        },
+        {
+          "step": "Switch provider after the test suite",
+          "detail": "The suite runs on Claude, GPT-4o and Gemini. A person compares the scores before a switch.",
+          "mode": "human",
+          "why": "Providers give different answers. A person signs off the switch."
+        }
+      ]
+    },
+    "metrics": {
+      "northStar": {
+        "name": "Claims handled with no rework",
+        "detail": "A claim only counts if nobody had to redo the AI's work."
       },
-      {
-        "kind": "jtbd",
-        "title": "Jobs to be done",
-        "items": [
-          {
-            "when": "a claim arrives",
-            "want": "it sorted as approve, deny or escalate with a reason",
-            "so": "handlers start with the right claims"
-          },
-          {
-            "when": "something looks off",
-            "want": "a fraud score with the warning signs",
-            "so": "I send only real suspects to the fraud team"
-          },
-          {
-            "when": "our AI provider changes",
-            "want": "to switch with one setting",
-            "so": "nothing downstream breaks"
-          }
-        ]
-      },
-      {
-        "kind": "journey",
-        "title": "A claim's journey through the team",
-        "stages": [
-          {
-            "stage": "Intake",
-            "doing": "Claim and documents arrive",
-            "feeling": "okay",
-            "pain": "Messy, mixed formats",
-            "opportunity": "Read and structure it on arrival"
-          },
-          {
-            "stage": "Triage",
-            "doing": "Handler decides the route",
-            "feeling": "bad",
-            "pain": "Same checks every time",
-            "opportunity": "Triage agent with a reason"
-          },
-          {
-            "stage": "Fraud check",
-            "doing": "Analyst looks for warning signs",
-            "feeling": "bad",
-            "pain": "Too many false alarms",
-            "opportunity": "Score with listed signs"
-          },
-          {
-            "stage": "Decide",
-            "doing": "Approve, deny or escalate",
-            "feeling": "okay",
-            "pain": "Hard to explain the call",
-            "opportunity": "Reasons ready to share"
-          },
-          {
-            "stage": "Tell the customer",
-            "doing": "Writes the letter",
-            "feeling": "okay",
-            "pain": "Rewriting the same letter",
-            "opportunity": "Drafted customer letter"
-          }
-        ]
-      },
-      {
-        "kind": "emotion",
-        "title": "How a handler feels using it",
-        "steps": [
-          {
-            "step": "Claim lands",
-            "feeling": -1,
-            "note": "Big queue"
-          },
-          {
-            "step": "Triage ready",
-            "feeling": 1,
-            "note": "Route suggested"
-          },
-          {
-            "step": "Reason unclear",
-            "feeling": -1,
-            "note": "Why escalate?"
-          },
-          {
-            "step": "Signs listed",
-            "feeling": 1,
-            "note": "Now it makes sense"
-          },
-          {
-            "step": "Letter drafted",
-            "feeling": 2,
-            "note": "Minutes, not an hour"
-          }
-        ],
-        "note": "The dip comes when a decision has no reason. Every agent must explain itself."
-      },
-      {
-        "kind": "rice",
-        "title": "Which agent to build first (sample scores, est.)",
-        "rows": [
-          {
-            "item": "Claim triage",
-            "reach": 10,
-            "impact": 3,
-            "confidence": 0.8,
-            "effort": 2
-          },
-          {
-            "item": "Fraud score",
-            "reach": 8,
-            "impact": 3,
-            "confidence": 0.6,
-            "effort": 3
-          },
-          {
-            "item": "Policy summary",
-            "reach": 7,
-            "impact": 2,
-            "confidence": 0.8,
-            "effort": 1
-          },
-          {
-            "item": "Customer letter",
-            "reach": 8,
-            "impact": 1,
-            "confidence": 0.9,
-            "effort": 1
-          },
-          {
-            "item": "Compliance check",
-            "reach": 5,
-            "impact": 2,
-            "confidence": 0.5,
-            "effort": 3
-          },
-          {
-            "item": "Compare policies",
-            "reach": 3,
-            "impact": 1,
-            "confidence": 0.7,
-            "effort": 2
-          }
-        ],
-        "note": "Reach out of 10, impact 1 to 3, effort in weeks. Sample scores to show the method."
-      },
-      {
-        "kind": "moscow",
-        "title": "Scope",
-        "must": [
-          "Claim triage with reasons",
-          "Fraud score with signs",
-          "Provider switch in one setting",
-          "Test suite on sample claims"
-        ],
-        "should": [
-          "Policy summary",
-          "Customer letter"
-        ],
-        "could": [
-          "Compliance check",
-          "Policy comparison",
-          "Risk check"
-        ],
-        "wont": [
-          "Paying or denying claims on its own",
-          "Training a custom model"
-        ]
-      },
-      {
-        "kind": "tradeoff",
+      "inputs": [
+        {
+          "name": "Triage accuracy",
+          "target": "est. 90%",
+          "how": "Matches on the labelled claim set."
+        },
+        {
+          "name": "Text quality",
+          "target": "est. BERTScore 0.85+",
+          "how": "Summaries and letters compared with reference text."
+        }
+      ],
+      "guardrails": [
+        {
+          "name": "Denials sent without a person",
+          "target": "zero",
+          "how": "Every DENY has a person's confirmation on record."
+        },
+        {
+          "name": "Quality after a provider switch",
+          "target": "no drop on the test set",
+          "how": "Run the full suite on the new provider before switching."
+        },
+        {
+          "name": "Personal data sent to a provider",
+          "target": "zero",
+          "how": "Check masked fields in the call logs."
+        }
+      ],
+      "tests": [
+        "Run the 15-claim suite on all three providers.",
+        "Grow the test set to 100+ labelled claims before any pilot."
+      ],
+      "note": "The suite exists in the repo. Numbers here are targets, not results."
+    },
+    "priorities": {
+      "intro": "A first pilot needs the tasks that sort the queue, plus the switch and the tests that make any provider safe to use.",
+      "items": [
+        {
+          "item": "Claim triage with reasons",
+          "call": "Must",
+          "why": "It decides what handlers open first."
+        },
+        {
+          "item": "Fraud score with warning signs",
+          "call": "Must",
+          "why": "It keeps the fraud team on real suspects."
+        },
+        {
+          "item": "One provider switch and a test suite per provider",
+          "call": "Must",
+          "why": "Without them, a vendor change is a rewrite and a guess."
+        },
+        {
+          "item": "Mask names and IDs before any call",
+          "call": "Must",
+          "why": "Needed before any real customer data goes in."
+        },
+        {
+          "item": "Policy summaries and compliance checks",
+          "call": "Should",
+          "why": "Save reading time, but the queue can move without them."
+        },
+        {
+          "item": "The other tasks, like risk assessment",
+          "call": "Could",
+          "why": "Built, but not needed for the first pilot."
+        },
+        {
+          "item": "A fine-tuned model of our own",
+          "call": "Won't",
+          "why": "Slow to build, and it ties us to one setup."
+        },
+        {
+          "item": "The AI denies claims alone",
+          "call": "Won't",
+          "why": "The cost of a wrong denial is too high."
+        }
+      ],
+      "matrix": {
         "title": "One big agent or one agent per task?",
         "criteria": [
           {
@@ -464,306 +366,81 @@ const project: ProjectFile = {
             ]
           }
         ],
-        "note": "Scores 1 to 5 are my judgement. Small agents are each testable on their own."
-      },
-      {
-        "kind": "acceptance",
-        "title": "Acceptance criteria",
-        "stories": [
-          {
-            "story": "Triage a claim",
-            "given": "a claim with its details",
-            "when": "I run claim triage",
-            "then": "I get APPROVE, DENY or ESCALATE with at least one stated reason"
-          },
-          {
-            "story": "Score fraud risk",
-            "given": "the same claim",
-            "when": "I run fraud scoring",
-            "then": "I get LOW, MEDIUM or HIGH and the warning signs behind it"
-          },
-          {
-            "story": "Switch provider",
-            "given": "the app runs on one AI provider",
-            "when": "I change the provider setting",
-            "then": "all 7 tasks run on the new provider with no code change"
-          },
-          {
-            "story": "Prove it works",
-            "given": "the 15-claim test set",
-            "when": "I run the test suite",
-            "then": "I see triage accuracy and text scores for each provider"
-          }
-        ]
-      },
-      {
-        "kind": "northstar",
-        "title": "Metric tree (targets are est.)",
-        "northStar": {
-          "name": "Claims handled with no rework",
-          "detail": "AI first pass accepted by a handler",
-          "target": "est. 70%"
+        "note": "Scores 1 to 5 are my judgement. Small agents win because each one can be tested and fixed on its own."
+      }
+    },
+    "guardrails": {
+      "rules": [
+        "The AI never denies a claim alone. Every deny goes to a person.",
+        "Every decision comes with at least one stated reason.",
+        "Names and IDs are masked before any call to an AI provider.",
+        "No provider switch until the test suite passes on it.",
+        "An answer in the wrong format is retried once, then shown as an error. It is never guessed."
+      ],
+      "risks": [
+        {
+          "risk": "Wrong denial hurts a real customer",
+          "likelihood": "medium",
+          "impact": "high",
+          "mitigation": "AI never denies alone; deny always goes to a person"
         },
-        "inputs": [
-          {
-            "name": "Triage accuracy",
-            "detail": "On the labelled test set",
-            "target": "est. 90%"
-          },
-          {
-            "name": "Fraud precision",
-            "detail": "Flagged claims that were worth checking",
-            "target": "est. 60%"
-          },
-          {
-            "name": "Draft acceptance",
-            "detail": "Letters sent with light edits",
-            "target": "est. 75%"
-          },
-          {
-            "name": "Time per claim",
-            "detail": "Intake to decision",
-            "target": "est. -30%"
-          }
-        ],
-        "guardrails": [
-          {
-            "name": "Wrong denials",
-            "target": "est. < 1%"
-          },
-          {
-            "name": "Cost per claim",
-            "target": "est. < ₹5"
-          }
-        ],
-        "note": "Targets are est. They would be set after a baseline run on real claims."
-      },
-      {
-        "kind": "heart",
-        "title": "HEART for InsurAgents (illustrative)",
-        "rows": [
-          {
-            "dimension": "Happiness",
-            "goal": "Handlers trust the suggestions",
-            "signal": "Agree vs change",
-            "metric": "% suggestions accepted"
-          },
-          {
-            "dimension": "Engagement",
-            "goal": "Agents used across tasks",
-            "signal": "Runs per task",
-            "metric": "Tasks used per handler per week"
-          },
-          {
-            "dimension": "Adoption",
-            "goal": "New teams try it",
-            "signal": "First run",
-            "metric": "% of team running 1+ agent in week 1"
-          },
-          {
-            "dimension": "Retention",
-            "goal": "It stays in the workflow",
-            "signal": "Weekly runs",
-            "metric": "Handlers active 4 weeks in a row"
-          },
-          {
-            "dimension": "Task success",
-            "goal": "Right call, first time",
-            "signal": "Decision unchanged",
-            "metric": "Triage accuracy vs senior handler"
-          }
-        ]
-      },
-      {
-        "kind": "risks",
-        "title": "Risks and how I'd handle them",
-        "items": [
-          {
-            "risk": "Wrong denial hurts a real customer",
-            "likelihood": "medium",
-            "impact": "high",
-            "mitigation": "AI never denies alone; deny always goes to a person"
-          },
-          {
-            "risk": "Providers give different answers",
-            "likelihood": "high",
-            "impact": "medium",
-            "mitigation": "Run the test suite on every provider before switching"
-          },
-          {
-            "risk": "Test set is too small (15 claims)",
-            "likelihood": "high",
-            "impact": "medium",
-            "mitigation": "Grow to 100+ labelled claims before any pilot"
-          },
-          {
-            "risk": "Customer data sent to an AI provider",
-            "likelihood": "medium",
-            "impact": "high",
-            "mitigation": "Mask names and IDs before any call"
-          }
-        ]
-      },
-      {
-        "kind": "roadmap",
-        "title": "Now, next, later",
-        "now": [
-          "7 agents with reasons",
-          "Provider switch",
-          "15-claim test suite"
-        ],
-        "next": [
-          "Grow the test set to 100+ claims",
-          "Mask personal data",
-          "Handler feedback buttons"
-        ],
-        "later": [
-          "Pilot with one claims team",
-          "Cost and speed per provider",
-          "Plug into a claims system"
-        ]
-      }
-    ]
-  },
-  "flow": {
-    "title": "How a request flows through InsurAgents",
-    "nodes": [
-      {
-        "label": "User picks a task and a provider",
-        "kind": "start"
-      },
-      {
-        "label": "Provider factory loads Claude, GPT-4o or Gemini"
-      },
-      {
-        "label": "Task agent reads the claim or policy"
-      },
-      {
-        "label": "Output in the expected format?",
-        "kind": "decision",
-        "side": {
-          "label": "No",
-          "text": "Retry once, then show an error"
+        {
+          "risk": "Providers give different answers",
+          "likelihood": "high",
+          "impact": "medium",
+          "mitigation": "Run the test suite on every provider before switching"
+        },
+        {
+          "risk": "Test set is too small (15 claims)",
+          "likelihood": "high",
+          "impact": "medium",
+          "mitigation": "Grow to 100+ labelled claims before any pilot"
+        },
+        {
+          "risk": "Customer data sent to an AI provider",
+          "likelihood": "medium",
+          "impact": "high",
+          "mitigation": "Mask names and IDs before any call"
         }
+      ]
+    },
+    "acceptance": [
+      {
+        "story": "Triage a claim",
+        "given": "a claim with its details",
+        "when": "I run claim triage",
+        "then": "I get APPROVE, DENY or ESCALATE with at least one stated reason"
       },
       {
-        "label": "Decision or text shown with reasons"
+        "story": "Route a denial to a person",
+        "given": "a claim the AI marks DENY",
+        "when": "triage finishes",
+        "then": "it lands in a person's queue and nothing goes to the customer"
       },
       {
-        "label": "Is it a deny or escalate?",
-        "kind": "decision",
-        "side": {
-          "label": "Yes",
-          "text": "Route to a person to confirm"
-        }
+        "story": "Score fraud risk",
+        "given": "the same claim",
+        "when": "I run fraud scoring",
+        "then": "I get LOW, MEDIUM or HIGH and the warning signs behind it"
       },
       {
-        "label": "Result logged for the test suite",
-        "kind": "end"
+        "story": "Switch provider",
+        "given": "the app runs on one AI provider",
+        "when": "I change the provider setting",
+        "then": "all 7 tasks run on the new provider with no code change"
+      },
+      {
+        "story": "Handle bad output",
+        "given": "an answer in the wrong format",
+        "when": "the agent runs",
+        "then": "it retries once, then shows an error"
+      },
+      {
+        "story": "Prove it works",
+        "given": "the 15-claim test set",
+        "when": "I run the test suite",
+        "then": "I see triage accuracy and text scores for each provider"
       }
-    ],
-    "caption": "Every agent shares one provider switch and one way to be tested."
-  },
-  "wireframes": {
-    "screens": [
-      {
-        "src": "/projects/insuragents/1-pick.svg",
-        "caption": "Pick a task and a provider"
-      },
-      {
-        "src": "/projects/insuragents/2-triage.svg",
-        "caption": "Triage result with reasons"
-      },
-      {
-        "src": "/projects/insuragents/3-fraud.svg",
-        "caption": "Fraud score with warning signs"
-      },
-      {
-        "src": "/projects/insuragents/4-tests.svg",
-        "caption": "Test results by provider"
-      }
-    ],
-    "caption": "My wireframes of the main screens. Claims and scores are sample data."
-  },
-  "solution": {
-    "summary": "I built seven small AI agents for common insurance tasks. They all share one switch for the AI provider and one test suite, so the team can change vendors and still know the quality.",
-    "steps": [
-      "Pick a task: triage, fraud, summary, letter, risk, compliance or comparison",
-      "Pick a provider: Claude, GPT-4o or Gemini, set in one place",
-      "The task agent returns a fixed format with reasons",
-      "Text tasks are scored with ROUGE, BLEU and BERTScore",
-      "Triage is checked against 15 sample claims (motor and home)"
-    ],
-    "decisions": [
-      {
-        "decision": "One agent per task",
-        "why": "Each one can be tested and fixed on its own",
-        "rejected": "One general agent for everything"
-      },
-      {
-        "decision": "A provider factory",
-        "why": "Teams can switch AI vendor without touching anything else",
-        "rejected": "Code written for one vendor"
-      },
-      {
-        "decision": "Tests ship with the code",
-        "why": "You can't trust an AI change you can't measure",
-        "rejected": "Checking outputs by eye"
-      }
-    ]
-  },
-  "metrics": {
-    "northStar": "Claims handled with no rework",
-    "rows": [
-      {
-        "name": "Triage accuracy",
-        "target": "est. 90%",
-        "how": "Matches on the labelled claim set"
-      },
-      {
-        "name": "Text quality",
-        "target": "est. BERTScore 0.85+",
-        "how": "Summaries and letters vs reference text"
-      },
-      {
-        "name": "Provider gap",
-        "target": "est. < 5 pts",
-        "how": "Accuracy difference between providers"
-      }
-    ],
-    "tests": [
-      "Run the 15-claim suite on all three providers",
-      "Swap provider and confirm all 7 tasks still run",
-      "Have a senior handler grade 20 outputs blind"
-    ],
-    "note": "The suite exists in the repo. Numbers here are targets, not results."
-  },
-  "next": {
-    "items": [
-      "Grow the test set to 100+ labelled claims",
-      "Mask personal data before it reaches any AI provider",
-      "Add cost and speed per provider to the test report"
-    ]
-  },
-  "label": "How I approached it. Working code on GitHub; scores and targets on this page are sample data or est.",
-  "extra": {
-    "highlights": [
-      "7 workflows: claim triage (APPROVE/DENY/ESCALATE), fraud scoring (LOW/MEDIUM/HIGH), policy summary, customer comms, risk assessment, compliance check, policy comparison",
-      "Multi-provider LLM factory: Anthropic Claude, OpenAI GPT-4o, Google Gemini, swappable via a single config",
-      "Built-in eval suite: ROUGE, BLEU, BERTScore + 15-claim benchmark measuring triage accuracy across auto and homeowner scenarios"
-    ],
-    "skills": [
-      "Multi-Agent Systems",
-      "Python",
-      "Streamlit",
-      "Anthropic Claude",
-      "OpenAI",
-      "Google Gemini",
-      "LLM Eval",
-      "InsurTech"
-    ],
-    "paragraphs": [
-      "I built a full-stack AI agent system that automates 7 insurance workflows. They include claim triage, fraud detection, policy summaries, risk assessment and compliance checks. It works with any provider: you can swap Claude, GPT-4o or Gemini without touching the code after it. It ships with ROUGE/BLEU/BERTScore eval benchmarks and a 15-claim accuracy suite."
     ]
   }
 };

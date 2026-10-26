@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import SiteFooter from "@/components/SiteFooter";
 import { allProjects, projectGroups, isExternal } from "@/data/projects";
-import { Tiles, Glance, Persona, Frameworks, Flow, Wireframes, Solution, Metrics, Next, Extra } from "@/components/ProjectSections";
+import { Tiles, Glance, Judgment, Persona, Frameworks, Flow, Wireframes, Solution, Metrics, Next, Extra, Spec } from "@/components/ProjectSections";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -63,15 +63,28 @@ export default async function ProjectPage({ params }: Props) {
           {p.label && <p className="text-[13px] text-zinc-500 mt-4 max-w-3xl">{p.label}</p>}
         </header>
 
+        {/* Lead with the problem, what I built and the result. The frameworks come after, and only the ones that earn a place. */}
         <Glance p={p} />
-        <Persona p={p} />
-        <Frameworks p={p} />
-        <Flow p={p} />
-        <Wireframes p={p} />
-        <Solution p={p} />
-        <Metrics p={p} />
-        <Next p={p} />
-        <Extra p={p} />
+        {p.spec ? (
+          // Product spec layout (AI agents and copilots): personas, current process, future process, metrics,
+          // prioritisation and trade-offs, guardrails and risks, then acceptance criteria last.
+          <>
+            <Judgment p={p} />
+            <Spec p={p} />
+          </>
+        ) : (
+          <>
+            <Solution p={p} />
+            <Wireframes p={p} />
+            <Judgment p={p} />
+            <Persona p={p} />
+            <Frameworks p={p} />
+            <Flow p={p} />
+            <Metrics p={p} />
+            <Next p={p} />
+            <Extra p={p} />
+          </>
+        )}
 
         <div className="border-t border-zinc-200 pt-6 flex flex-col sm:flex-row gap-3 justify-between text-sm font-semibold">
           <Link href="/projects" className="text-indigo-600 hover:text-indigo-800"><span aria-hidden="true">←</span> All projects</Link>
