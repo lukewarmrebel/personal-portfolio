@@ -38,6 +38,31 @@ export type FrameworkBlock =
 // kind: "start" | "step" | "decision" | "end". A decision can send a side branch ("no" path) to a short note.
 export type FlowNode = { label: string; kind?: "start" | "step" | "decision" | "end"; side?: { label: string; text: string } };
 
+// The product spec layout (used by the AI agents and copilots pages). When `spec` is present the page runs in this order:
+// personas, current process, future process (each step tagged with how it is run), success metrics,
+// prioritisation and a trade-off matrix, guardrails and risks, acceptance criteria.
+export type OpMode = "ai" | "assisted" | "human"; // Full AI automation, AI-assisted, Human in the loop
+export type SpecPersona = { name: string; who: string; personality: string; jobs: string[]; pains: string[]; goals: string[]; nonGoals: string[] };
+export type ProductSpec = {
+  personas: { intro?: string; items: SpecPersona[] };
+  current: { intro?: string; steps: { step: string; detail: string; pain?: string }[] };
+  future: { intro?: string; steps: { step: string; detail: string; mode: OpMode; why: string }[] };
+  metrics: {
+    northStar: { name: string; detail: string };
+    inputs: { name: string; target?: string; how: string }[];
+    guardrails: { name: string; target?: string; how: string }[];
+    tests?: string[];
+    note?: string;
+  };
+  priorities: {
+    intro?: string;
+    items: { item: string; call: "Must" | "Should" | "Could" | "Won't"; why: string }[];
+    matrix: { title: string; criteria: { name: string; weight: number }[]; options: { name: string; scores: number[]; chosen?: boolean }[]; note?: string };
+  };
+  guardrails: { rules: string[]; risks: { risk: string; likelihood: Level; impact: Level; mitigation: string }[] };
+  acceptance: { story: string; given: string; when: string; then: string }[];
+};
+
 export type ProjectFile = {
   slug: string;
   group: GroupId;
@@ -57,8 +82,9 @@ export type ProjectFile = {
   tiles?: { value: string; label: string }[]; // flat stat tiles in the hero; real numbers only, or say "sample data" / "est." in the label
   label?: string; // honesty line under the hero, e.g. "How I would build it. Sample data."
   glance: Section<{ problem: string; users: string; role: string; outcome: string }>;
-  // "Frameworks I used, and what I skipped": one or two short lines each. Shown before the frameworks.
-  judgment?: { used: string; skipped: string };
+  // "Frameworks I used, and why": a short line. `list` (optional) shows each framework and what it is for.
+  judgment?: { used: string; skipped?: string; list?: { name: string; why: string }[] };
+  spec?: ProductSpec;
   problem?: Section<{
     persona: { name: string; who: string; context: string; needs: string[]; frustrations: string[] };
     jtbd: string;
