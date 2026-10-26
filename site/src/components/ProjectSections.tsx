@@ -586,9 +586,8 @@ export function Judgment({ p }: { p: ProjectFile }) {
   return (
     <section id="judgment" aria-labelledby="judgment-h" className="py-8 border-t border-zinc-200 scroll-mt-20">
       <div className={`${box} p-5 sm:p-6 max-w-3xl`}>
-        <h2 id="judgment-h" className="text-lg font-bold text-zinc-900 mb-3">Frameworks I used, and what I skipped</h2>
-        <p className="text-[15px] text-zinc-700 leading-relaxed"><span className="font-semibold text-indigo-700">Used: </span>{j.used}</p>
-        <p className="text-[15px] text-zinc-700 leading-relaxed mt-2"><span className="font-semibold text-zinc-500">Skipped: </span>{j.skipped}</p>
+        <h2 id="judgment-h" className="text-lg font-bold text-zinc-900 mb-3">Frameworks I used, and why</h2>
+        <p className="text-[15px] text-zinc-700 leading-relaxed">{j.used}</p>
       </div>
     </section>
   );
